@@ -1,0 +1,1389 @@
+#!/usr/bin/env python
+
+import io
+import os
+import re
+import sys
+import importlib.util
+
+import linuxcnc
+
+from qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot import VTKBackPlot
+from PySide6.QtCore import Slot, QRegularExpression, Qt, QObject, QTimer, QFile
+from PySide6.QtGui import QFontDatabase, QRegularExpressionValidator, QTextCursor, QPalette, QAction
+from PySide6.QtWidgets import QAbstractButton, QApplication, QButtonGroup
+from PySide6.QtWidgets import QWidget
+
+from qtpyvcp import actions
+from qtpyvcp.plugins import getPlugin
+from qtpyvcp.utilities import logger
+from qtpyvcp.utilities.runtime_ui_loader import load_ui as load_runtime_ui
+from qtpyvcp.widgets.form_widgets.main_window import VCPMainWindow
+from qtpyvcp.utilities.settings import getSetting, setSetting
+
+from . import probe_basic_rc  # noqa: F401 - registers Qt resources
+
+LOG = logger.getLogger('QtPyVCP.' + __name__)
+VCP_DIR = os.path.abspath(os.path.dirname(__file__))
+INIFILE = linuxcnc.ini(os.getenv("INI_FILE_NAME"))
+LIGHT_STYLESHEET_FILE = "probe_basic_light.qss"
+DARK_STYLESHEET_FILE = "probe_basic_dark.qss"
+
+
+def _load_ui(ui_path, parent):
+    return load_runtime_ui(ui_path, parent)
+
+
+QFontDatabase.addApplicationFont(os.path.join(VCP_DIR, 'fonts/ProbeBasicBebasMono.ttf'))
+
+def _resolve_config_path(path_str: str):
+    """Resolve a config path relative to the INI directory if not absolute."""
+    if not path_str:
+        return None
+    expanded = os.path.expanduser(path_str)
+    if os.path.isabs(expanded):
+        return expanded
+    ini_file = os.getenv("INI_FILE_NAME")
+    base_dir = os.path.dirname(ini_file) if ini_file else os.getcwd()
+    return os.path.abspath(os.path.join(base_dir, expanded))
+
+
+def _import_module_from_path(module_name: str, module_path: str):
+    spec = importlib.util.spec_from_file_location(module_name, module_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Unable to create module spec for {module_name} from {module_path}")
+
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[module_name] = module
+
+    module_dir = os.path.dirname(os.path.abspath(module_path))
+    added_to_path = False
+    if module_dir and module_dir not in sys.path:
+        sys.path.insert(0, module_dir)
+        added_to_path = True
+
+    try:
+        spec.loader.exec_module(module)
+    finally:
+        if added_to_path:
+            try:
+                sys.path.remove(module_dir)
+            except ValueError:
+                pass
+
+    return module
+
+
+# A user tab written on a PyQt (Bookworm) machine cannot simply be dropped into
+# this PySide6 application. Importing PyQt widgets here does not raise -- PyQt5
+# is present on every LinuxCNC install -- it calls qFatal and aborts the whole
+# process ("QWidget: Must construct a QApplication before a QWidget"), which is
+# not catchable from Python. So such files are rejected before they are imported.
+_PYQT_IMPORT_RE = re.compile(r"^\s*(?:from|import)\s+PyQt[456]\b", re.MULTILINE)
+
+
+def _imports_pyqt(module_path: str) -> bool:
+    try:
+        with io.open(module_path, encoding="utf-8", errors="replace") as fh:
+            return _PYQT_IMPORT_RE.search(fh.read()) is not None
+    except OSError:
+        return False
+
+
+def _pyqt_importing_files(folder: str):
+    """Every .py in a user folder that imports PyQt directly.
+
+    The whole folder is checked, not just the entry module, because resource
+    modules count: pyrcc5 output begins with "from PyQt5 import QtCore", so a
+    tab whose own imports look clean still aborts the process the moment it
+    does "import my_icons_rc".
+    """
+    offenders = []
+    for root, dirs, files in os.walk(folder):
+        dirs[:] = [d for d in dirs if d != "__pycache__"]
+        for name in sorted(files):
+            if name.endswith(".py"):
+                path = os.path.join(root, name)
+                if _imports_pyqt(path):
+                    offenders.append(path)
+    return offenders
+
+
+def _user_widget_identity(widget):
+    """Return (is_sidebar, label) for a user tab widget.
+
+    Tabs written against PyQt's uic.loadUi(path, self) carry the .ui root
+    widget's objectName and dynamic properties on themselves. Tabs written
+    against PySide6's QUiLoader nest a separate root widget inside the wrapper
+    instead, leaving the wrapper blank, so fall back to the nested child.
+    """
+    source = widget
+    if not widget.objectName() and widget.property("sidebar") is None:
+        nested = getattr(widget, "ui", None)
+        if not isinstance(nested, QWidget):
+            nested = next((c for c in widget.children() if isinstance(c, QWidget)), None)
+        if nested is not None:
+            source = nested
+    return bool(source.property("sidebar")), source.objectName().replace("_", " ")
+
+
+
+class ProbeBasic(VCPMainWindow):
+    """Main window class for the ProbeBasic VCP."""
+    def __init__(self, *args, **kwargs):
+        super(ProbeBasic, self).__init__(*args, **kwargs)
+        self.filesystemtable.sortByColumn(3, Qt.DescendingOrder)
+        self.filesystemtable_2.sortByColumn(3, Qt.DescendingOrder)
+        self.run_from_line_Num.setValidator(QRegularExpressionValidator(QRegularExpression("[0-9]*")))
+        self.btnMdiBksp.clicked.connect(self.mdiBackSpace_clicked)
+        self.btnMdiSpace.clicked.connect(self.mdiSpace_clicked)
+        self.btnMdiLeft_arrow.clicked.connect(self.mdiLeftArrow_clicked)
+        self.btnMdiRight_arrow.clicked.connect(self.mdiRightArrow_clicked)
+        self.probe_help_next.released.connect(self._probe_help_next_released)
+        self.probe_help_prev.released.connect(self._probe_help_prev_released)
+        
+        # M6 finder initialization
+        self.m6_lines = []
+        self.current_m6_index = 0
+        self.find_m6_button.clicked.connect(self._find_m6_clicked)
+
+        # Tool table Save button: color its text to flag unsaved edits.
+        # probe_basic's tool_table is MillToolTable (the mill flavor of
+        # qtpyvcp's unified tool table editor widget), which has
+        # dirtyChanged; the hasattr guard keeps this harmless if a config
+        # ever promotes a plain widget back in under this same object name.
+        if (hasattr(self, 'tool_table') and hasattr(self, 'tool_table_save_button')
+                and hasattr(self.tool_table, 'dirtyChanged')):
+            self._tool_table_save_btn_base_stylesheet = self.tool_table_save_button.styleSheet()
+            self.tool_table.dirtyChanged.connect(self._on_tool_table_dirty_changed)
+        # Reload Table button: color it after a Save, as a reminder that the
+        # tool data published to the running program (#<_current_tool_*>,
+        # refreshed via the M6 epilog this button also re-triggers) is only
+        # updated once Reload Table is actually clicked -- saving alone
+        # doesn't push it to a tool already loaded in the spindle.
+        if hasattr(self, 'tool_table_save_button') and hasattr(self, 'tool_table_reload_button'):
+            self._tool_table_reload_btn_base_stylesheet = self.tool_table_reload_button.styleSheet()
+            self.tool_table_save_button.clicked.connect(self._on_tool_table_saved)
+            self.tool_table_reload_button.clicked.connect(self._on_tool_table_reloaded)
+        
+        # Cycle start button interception for run from line functionality
+        self.cycle_start_button.clicked.connect(self._cycle_start_clicked)
+        self._applying_external_program_selection = False
+        self._publishing_selected_program_selection = False
+        self._install_gcode_run_from_line_context_menu()
+        self._install_gcode_selected_line_sync()
+
+        if (0 == int(INIFILE.find("DISPLAY", "ATC_TAB_DISPLAY") or 0)):
+            atc_tab_index = self.tabWidget.indexOf(self.atc_tab)
+            self.tabWidget.setTabVisible(atc_tab_index, False)
+            self.tabWidget.removeTab(atc_tab_index)
+
+        elif (1 == int(INIFILE.find("DISPLAY", "ATC_TAB_DISPLAY") or 1)):
+            LOG.info("[ATC] Loading carousel ATC")
+            self.load_atc()
+
+        else:
+            LOG.info("[ATC] Loading rack ATC")
+            self.load_rack_atc()
+
+        # Ensure the VTK backplot widget is present before using it
+        vtk_candidates = [obj for obj in self.findChildren(QObject) if "vtk" in (obj.objectName() or "").lower()]
+        LOG.debug("VTK candidates by name: %s", [obj.objectName() for obj in vtk_candidates])
+
+        # Prefer an existing VTKBackPlot; fall back to any widget named "vtk".
+        self.vtk = (
+            getattr(self, "vtk", None)
+            or self.findChild(VTKBackPlot)
+            or self.findChild(QWidget, "vtk")
+        )
+
+        if self.vtk is not None:
+            try:
+                self.vtk.setViewMachine()
+            except Exception:
+                LOG.exception("VTK widget 'vtk' found but failed to initialize")
+        else:
+            LOG.critical("VTK widget 'vtk' not found in UI; backplot disabled")
+
+        if (getSetting("spindle-rpm-display.calculated-rpm").getValue()):
+            self.spindle_rpm_source_widget.setCurrentIndex(self.spindle_calculated_rpm_button.property('page'))
+        
+        else:
+            self.spindle_rpm_source_widget.setCurrentIndex(self.spindle_encoder_rpm_button.property('page'))
+    
+        self.load_user_tabs()
+
+        self.load_user_buttons()
+        self._theme_preference_mode = self._theme_preference()
+        self._connect_theme_tracking()
+        self._apply_system_theme_stylesheet()
+        
+        # User DROs are built here, synchronously, rather than from a timer.
+        # The qtpyvcp widgets inside a DRO .ui only get their HAL pins from
+        # VCPApplication.initialiseWidgets(), which sweeps the widget tree
+        # after this window is constructed and before hal_comp.ready() seals
+        # the component. A widget created once the event loop is running
+        # misses that sweep, so its pins are never made -- and POSTGUI_HALFILE,
+        # loaded immediately after ready(), could not net them even if it were.
+        self.load_user_dros()
+        self.load_offset_dro()
+
+        # The rest of the post-UI wiring can still wait for the event loop.
+        QTimer.singleShot(100, self._finish_ui_setup)
+
+        # Set jog display index strictly from [DISPLAY] GEOMETRY.
+        self._apply_jog_display_from_ini()
+        
+        self.help_menu = self.menuBar().addMenu("Help")
+        self.interactive_help_action = QAction("Interactive Help", self, checkable=True)
+        self.interactive_help_action.setChecked(False)
+        self.interactive_help_action.toggled.connect(self.toggle_tooltips)
+        self.help_menu.addAction(self.interactive_help_action)  # Moved to HELP menu
+        self.store_original_tooltips()
+        self.toggle_tooltips(False)  # Hide tooltips by default
+
+        self.filesystemtable.gcodeFileSelected['bool'].connect(lambda x: self.main_load_gcode_button.setEnabled(True))
+
+        self.filesystemtable_2.rootChanged.connect(lambda: self.device_folder_up_button.setEnabled(False) 
+           if self.filesystemtable_2.model.rootPath().lower() == '/home'
+           else self.device_folder_up_button.setEnabled(True))
+
+        self.filesystemtable.rootChanged.connect(lambda: self.main_folder_up_button.setEnabled(False) 
+           if self.filesystemtable.model.rootPath().lower() == '/home'
+           else self.main_folder_up_button.setEnabled(True))
+        self.filesystemtable.gcodeFileSelected['bool'].connect(lambda x: (
+           self.main_load_gcode_button.setText("SELECT FOLDER") if not x else None,
+           self.main_load_gcode_button.setText("LOAD G-CODE") if x else None
+        ))
+
+        # Ensure timer labels render as zero-padded integers (no decimals)
+        for _timer_label in ("timerhours", "timerminutes", "timerseconds"):
+            lbl = getattr(self, _timer_label, None)
+            if lbl is not None:
+                if hasattr(lbl, 'valueFormat'):
+                    lbl.valueFormat = "02.0f"
+
+    def _apply_jog_display_from_ini(self):
+        jog_widget = getattr(self, "jogDisplay", None)
+        if jog_widget is None:
+            msg = "jogDisplay widget not found in UI"
+            LOG.critical(msg)
+            #raise RuntimeError(msg)
+
+        geometry = (INIFILE.find("DISPLAY", "GEOMETRY") or "").strip().upper().replace(" ", "")
+        if not geometry:
+            msg = "Missing [DISPLAY] GEOMETRY in INI; unable to determine jog display"
+            LOG.critical(msg)
+            raise RuntimeError(msg)
+
+        page_map = {
+            "XYZ": 0,
+            "XYZA": 1,
+            "XYZB": 2,
+            "XYZC": 3,
+            "XYZAB": 4,
+            "XYZAC": 5,
+            "XYZBC": 6,
+            "XYZABC": 7,
+        }
+
+        page_idx = page_map.get(geometry)
+        if page_idx is None:
+            msg = f"Unsupported [DISPLAY] GEOMETRY value for jog display: {geometry}"
+            LOG.critical(msg)
+            raise RuntimeError(msg)
+
+        if jog_widget.currentIndex() != page_idx:
+            jog_widget.setCurrentIndex(page_idx)
+        LOG.info("Jog display set from INI: geometry=%s index=%s", geometry, page_idx)
+
+    def _theme_preference(self):
+        theme_color = (INIFILE.find("DISPLAY", "THEME_COLOR") or "light").strip().lower()
+        if theme_color in ("light", "dark", "system"):
+            return theme_color
+        return "light"
+
+    def _is_dark_theme(self):
+        app = QApplication.instance()
+        if app is None:
+            return False
+        palette = app.palette()
+        window_lightness = palette.color(QPalette.Window).lightness()
+        base_lightness = palette.color(QPalette.Base).lightness()
+        return ((window_lightness + base_lightness) / 2) < 128
+
+    def _connect_theme_tracking(self):
+        if self._theme_preference_mode != 'system':
+            return
+        app = QApplication.instance()
+        if app is None:
+            return
+        palette_changed = getattr(app, 'paletteChanged', None)
+        if palette_changed is not None:
+            try:
+                palette_changed.connect(self._on_palette_changed)
+            except Exception:
+                LOG.exception("Failed to connect paletteChanged signal")
+
+    def _on_palette_changed(self, *_args):
+        if self._theme_preference_mode != 'system':
+            return
+        QTimer.singleShot(0, self._apply_system_theme_stylesheet)
+
+    def _apply_system_theme_stylesheet(self):
+        if self._theme_preference_mode != 'system':
+            return
+        dark_theme = self._is_dark_theme()
+        stylesheet_file = DARK_STYLESHEET_FILE if dark_theme else LIGHT_STYLESHEET_FILE
+        stylesheet_path = os.path.join(VCP_DIR, stylesheet_file)
+        app = QApplication.instance()
+        if app is None:
+            return
+        try:
+            with open(stylesheet_path, 'r', encoding='utf-8') as style_file:
+                app.setStyleSheet(style_file.read())
+        except Exception:
+            LOG.exception("Failed to load theme stylesheet: %s", stylesheet_path)
+
+    def _finish_ui_setup(self):
+        """Post-UI wiring that is safe to run once the event loop is up."""
+
+        self.main_load_gcode_button.clicked.connect(lambda: ( 
+            self.main_load_gcode_button.setText("LOAD G-CODE") if self.main_load_gcode_button.text() == 'SELECT FOLDER' else None
+        ))
+
+        self.filesystemtable.model.rootPathChanged.connect(lambda: (
+            self.filesystemtable.clearSelection(),
+            self.main_load_gcode_button.setEnabled(False)
+        ))
+
+        # --- Startup Tab Selection Logic (using tab text property) ---
+        startup_tab_value = getSetting("startup-settings.user-startup-tab").getValue()
+        if hasattr(self, "tabWidget") and hasattr(self, "startup_tab_combobox"):
+            # Populate ComboBox with current tab texts if not already set
+            self.startup_tab_combobox.clear()
+            for i in range(self.tabWidget.count()):
+                self.startup_tab_combobox.addItem(self.tabWidget.tabText(i))
+            # Set ComboBox to saved tab index/text, or default to first tab
+            idx = self._resolve_startup_tab_index(startup_tab_value)
+            self.startup_tab_combobox.setCurrentIndex(idx if idx != -1 else 0)
+            # Connect to save selection and switch tab on change
+            self.startup_tab_combobox.currentIndexChanged.connect(self.on_startup_tab_combobox_changed)
+            # Set the main tab widget to the correct tab at startup
+            self.set_startup_tab_by_text(self.startup_tab_combobox.currentText())
+        # --- End Startup Tab Selection Logic ---
+
+        # --- Startup Sidebar Tab Selection Logic ---
+        # Filled from the sidebar buttons rather than the .ui's static items:
+        # the USER button takes the loaded user tab's own label, and is hidden
+        # when no sidebar user tab exists, so a fixed list would go stale.
+        # load_user_tabs() has already run by this point, so both are final.
+        if hasattr(self, "sidebar_widget") and hasattr(self, "startup_sb_tab_combobox"):
+            self._populate_startup_sb_tab_combobox()
+            sb_setting = getSetting("startup-settings.user-startup-sb-tab")
+            sb_saved = sb_setting.getValue() if sb_setting is not None else None
+            sb_idx = self._resolve_startup_sb_tab_index(sb_saved)
+            self.startup_sb_tab_combobox.setCurrentIndex(sb_idx if sb_idx != -1 else 0)
+            self.startup_sb_tab_combobox.currentIndexChanged.connect(
+                self.on_startup_sb_tab_combobox_changed)
+            self.set_startup_sb_tab(self.startup_sb_tab_combobox.currentData())
+        # --- End Startup Sidebar Tab Selection Logic ---
+
+    def store_original_tooltips(self):
+        """Store the original tooltips for all widgets to restore later."""
+        self._stored_tooltips = {}
+        for widget in self.findChildren(QWidget):
+            tooltip = widget.toolTip()
+            if tooltip:  # Only store if a tooltip exists
+                self._stored_tooltips[widget] = tooltip
+        LOG.debug("Stored %d widget tooltips", len(self._stored_tooltips))
+
+    def toggle_tooltips(self, enabled):
+        """Show tooltips when Interactive Help is enabled, hide them otherwise."""
+        LOG.info(f"Toggle tooltips: enabled={enabled}")
+        count = 0
+        for widget, original_tooltip in self._stored_tooltips.items():
+            if enabled:
+                # Interactive Help ON: Show tooltip with extended duration
+                widget.setToolTip(original_tooltip)
+                widget.setToolTipDuration(-1)  # Tooltip stays until mouse moves away
+                count += 1
+            else:
+                # Interactive Help OFF: Clear tooltip to avoid distractions
+                widget.setToolTip("")
+        LOG.info(f"Toggled {count} tooltips")
+
+    def load_atc(self):
+        self.atc_modules = {}
+        self.atc = {}
+        
+        atc_paths = [os.path.join(VCP_DIR, "atc")]
+
+        for atc_path in atc_paths:
+            atc_path = os.path.expanduser(atc_path)
+            if not os.path.exists(atc_path):
+                LOG.warning(f"ATC path does not exist: {atc_path}")
+                continue
+                
+            atc_folders = os.listdir(atc_path)
+            for atc in atc_folders:
+                atc_dir = os.path.join(atc_path, atc)
+                if not os.path.isdir(atc_dir):
+                    continue
+                    
+                module_name = f"atc.{atc}"
+                module_file = os.path.join(atc_dir, f"{atc}.py")
+                LOG.info("[ATC] loading module %s from %s", module_name, module_file)
+                try:
+                    self.atc_modules[module_name] = _import_module_from_path(module_name, module_file)
+                except Exception as exc:
+                    LOG.exception("[ATC] failed to import %s: %s", module_name, exc)
+                    continue
+                try:
+                    self.atc[module_name] = self.atc_modules[module_name].Atc(parent=self)
+                    LOG.info("[ATC] instantiated %s", module_name)
+                except Exception as exc:
+                    LOG.exception("[ATC] failed to instantiate %s: %s", module_name, exc)
+                    continue
+
+                if getattr(self, "atc_layout", None) is None:
+                    LOG.error("[ATC] atc_layout not found on main window")
+                else:
+                    self.atc_layout.addWidget(self.atc[module_name])
+
+                if hasattr(self.atc[module_name], 'user_atc_buttons_layout'):
+                    self.load_user_atc_buttons(self.atc[module_name].user_atc_buttons_layout)
+                else:
+                    LOG.warning(f"user_atc_buttons_layout not found in {module_name}. Unable to add ATC buttons.")
+
+    def load_rack_atc(self):
+        self.rack_atc_modules = {}
+        self.rack_atc = {}
+
+        rack_atc_paths = [os.path.join(VCP_DIR, "rack_atc")]
+
+        for rack_atc_path in rack_atc_paths:
+            rack_atc_path = os.path.expanduser(rack_atc_path)
+            if not os.path.exists(rack_atc_path):
+                LOG.warning(f"Rack ATC path does not exist: {rack_atc_path}")
+                continue
+                
+            rack_atc_folders = os.listdir(rack_atc_path)
+            for rack_atc in rack_atc_folders:
+                rack_atc_dir = os.path.join(rack_atc_path, rack_atc)
+                if not os.path.isdir(rack_atc_dir):
+                    continue
+                    
+                module_name = f"rack_atc.{rack_atc}"
+                module_file = os.path.join(rack_atc_dir, f"{rack_atc}.py")
+                self.rack_atc_modules[module_name] = _import_module_from_path(module_name, module_file)
+                
+                self.rack_atc[module_name] = self.rack_atc_modules[module_name].RackAtc()
+                
+                self.atc_layout.addWidget(self.rack_atc[module_name])
+                
+                rack_buttons_layout = getattr(self.rack_atc[module_name], 'user_rack_atc_buttons_layout', None)
+                if rack_buttons_layout is not None:
+                    self.load_user_atc_buttons(rack_buttons_layout)
+                else:
+                    LOG.warning(
+                        "user_rack_atc_buttons_layout not found in %s. Unable to add rack ATC buttons.",
+                        module_name,
+                    )
+
+    def load_user_atc_buttons(self, layout):
+        self.user_atc_button_modules = {}
+        self.user_atc_buttons = {}
+
+        atc_tab_display = int(INIFILE.find("DISPLAY", "ATC_TAB_DISPLAY") or 0)
+        if atc_tab_display == 0:
+            return  # Do not load any user ATC buttons
+
+        if atc_tab_display == 1:
+            folder_name = "template_user_atc_buttons"
+            file_name = "template_user_atc_buttons.py"
+            class_name = "UserAtcButton"
+        elif atc_tab_display == 2:
+            folder_name = "template_user_rack_atc_buttons"
+            file_name = "template_user_rack_atc_buttons.py"
+            class_name = "UserRackAtcButton"
+        else:
+            return
+
+        user_atc_buttons_path = INIFILE.find("DISPLAY", "USER_ATC_BUTTONS_PATH")
+        if not user_atc_buttons_path:
+            LOG.warning("USER_ATC_BUTTONS_PATH not set in INI.")
+            return
+
+        user_atc_buttons_path = _resolve_config_path(user_atc_buttons_path)
+        full_folder = os.path.join(user_atc_buttons_path or "", folder_name)
+        target_path = os.path.join(full_folder, file_name)
+        if not user_atc_buttons_path or not os.path.isdir(full_folder):
+            LOG.warning(f"User ATC buttons folder does not exist: {full_folder}")
+            return
+        if not os.path.isfile(target_path):
+            LOG.warning(f"User ATC button file does not exist: {target_path}")
+            return
+
+        pyqt_files = _pyqt_importing_files(full_folder)
+        if pyqt_files:
+            LOG.error(f"[user_atc_buttons] skipping '{folder_name}': imports PyQt directly - "
+                      f"{', '.join(pyqt_files)}. This VCP runs on PySide6; see the User Tabs "
+                      f"page in the Probe Basic docs to refresh the loader.")
+            return
+
+        module_name = f"user_atc_buttons.{folder_name}.{folder_name}"
+        try:
+            module = _import_module_from_path(module_name, target_path)
+            if not hasattr(module, class_name):
+                LOG.warning(f"{class_name} not found in {target_path}")
+                return
+            self.user_atc_buttons[module_name] = getattr(module, class_name)()
+        except Exception:
+            LOG.exception(f"[user_atc_buttons] skipping '{folder_name}': {target_path} failed to load")
+            return
+
+        layout.addWidget(self.user_atc_buttons[module_name])
+        LOG.info(f"[user_atc_buttons] added {module_name}")
+
+    def load_user_buttons(self):
+        self.user_button_modules = {}
+        self.user_buttons = {}
+        layout = getattr(self, "user_buttons_layout", None)
+        if layout is None:
+            try:
+                from PySide6.QtWidgets import QVBoxLayout
+                layout = self.findChild(QVBoxLayout, "user_buttons_layout")
+            except Exception:
+                layout = None
+        if layout is None:
+            LOG.error("user_buttons_layout not found on main window; skipping user buttons load")
+            return
+
+        user_buttons_paths = INIFILE.findall("DISPLAY", "USER_BUTTONS_PATH")
+
+        for user_buttons_path in user_buttons_paths:
+            resolved_base = _resolve_config_path(user_buttons_path)
+            LOG.info(f"[user_buttons] base path from INI: {user_buttons_path} -> {resolved_base}")
+            if not resolved_base or not os.path.isdir(resolved_base):
+                LOG.warning(f"[user_buttons] path invalid or missing: {user_buttons_path}")
+                continue
+
+            for user_button in os.listdir(resolved_base):
+                folder_path = os.path.join(resolved_base, user_button)
+                if not os.path.isdir(folder_path):
+                    continue
+                target_py = os.path.join(folder_path, f"{user_button}.py")
+                LOG.info(f"[user_buttons] candidate: {target_py}")
+                if not os.path.isfile(target_py):
+                    LOG.warning(f"[user_buttons] User button file not found: {target_py}")
+                    continue
+
+                pyqt_files = _pyqt_importing_files(folder_path)
+                if pyqt_files:
+                    LOG.error(f"[user_buttons] skipping '{user_button}': imports PyQt directly - "
+                              f"{', '.join(pyqt_files)}. see the User Tabs page in the Probe Basic docs to refresh the loader.")
+                    continue
+
+                module_name = f"user_buttons.{os.path.basename(resolved_base)}.{user_button}"
+                try:
+                    self.user_button_modules[module_name] = _import_module_from_path(module_name, target_py)
+                    if not hasattr(self.user_button_modules[module_name], "UserButton"):
+                        LOG.warning(f"[user_buttons] UserButton class not found in {target_py}")
+                        continue
+                    self.user_buttons[module_name] = self.user_button_modules[module_name].UserButton()
+                except Exception:
+                    LOG.exception(f"[user_buttons] skipping '{user_button}': {target_py} failed to load")
+                    self.user_button_modules.pop(module_name, None)
+                    continue
+
+                layout.addWidget(self.user_buttons[module_name])
+                LOG.info(f"[user_buttons] added {module_name}")
+
+    def load_user_dros(self):
+        self.user_dros_modules = {}
+        self.user_dros = {}
+
+        layout = getattr(self, "dro_display_layout", None)
+        if layout is None:
+            try:
+                from PySide6.QtWidgets import QHBoxLayout
+                layout = self.findChild(QHBoxLayout, "dro_display_layout")
+            except Exception:
+                layout = None
+        if layout is None:
+            LOG.error("dro_display_layout not found on main window; skipping user DRO load")
+            return
+
+        dro_type = INIFILE.find("DISPLAY", "DRO_DISPLAY")
+        if not dro_type:
+            LOG.warning("No DRO_DISPLAY specified in INI.")
+            return
+        dro_type = dro_type.strip().lower()  # Normalize to lowercase
+
+        user_dros_paths = INIFILE.findall("DISPLAY", "USER_DROS_PATH")
+
+        for user_dros_path in user_dros_paths:
+            user_dros_path = _resolve_config_path(user_dros_path)
+            LOG.info(f"[user_dros] base path from INI: {user_dros_path}")
+            if not user_dros_path or not os.path.isdir(user_dros_path):
+                LOG.warning(f"[user_dros] path invalid or missing: {user_dros_path}")
+                continue
+            dro_folder = f"{dro_type}_dros"
+            dro_py_file = f"dros_{dro_type}.py"
+            dro_folder_path = os.path.join(user_dros_path, dro_folder)
+            dro_py_path = os.path.join(dro_folder_path, dro_py_file)
+            LOG.info(f"[user_dros] looking for {dro_py_path}")
+            if os.path.isfile(dro_py_path):
+                pyqt_files = _pyqt_importing_files(dro_folder_path)
+                if pyqt_files:
+                    LOG.error(f"[user_dros] skipping '{dro_folder}': imports PyQt directly - "
+                              f"{', '.join(pyqt_files)}. see the User Tabs page in the Probe Basic docs to refresh the loader.")
+                    return
+
+                module_name = f"user_dros.{dro_folder}.{dro_py_file[:-3]}"
+                try:
+                    module = _import_module_from_path(module_name, dro_py_path)
+                    if not hasattr(module, "UserDRO"):
+                        LOG.warning(f"[user_dros] UserDRO class not found in {dro_py_path}")
+                        return
+                    self.user_dros[module_name] = module.UserDRO()
+                except Exception:
+                    LOG.exception(f"[user_dros] skipping '{dro_folder}': {dro_py_path} failed to load")
+                    return
+
+                layout.addWidget(self.user_dros[module_name])
+                LOG.info(f"[user_dros] added {module_name}")
+                return  # Only load one DRO, then exit
+
+    def load_offset_dro(self):
+        # Clear any existing widgets from the layout
+        layout = getattr(self, "offset_dro_layout", None)
+        if layout is None:
+            try:
+                from PySide6.QtWidgets import QVBoxLayout
+                layout = self.findChild(QVBoxLayout, "offset_dro_layout")
+            except Exception:
+                layout = None
+        if layout is None:
+            LOG.error("offset_dro_layout not found on main window; skipping offset DRO load")
+            return
+
+        while layout.count():
+            child = layout.takeAt(0)
+            if child.widget():
+                child.widget().deleteLater()
+
+        dro_type = INIFILE.find("DISPLAY", "DRO_DISPLAY")
+        if not dro_type:
+            LOG.warning("No DRO_DISPLAY specified in INI.")
+            return
+        dro_type = dro_type.strip().lower()  # Normalize to lowercase
+
+        user_dros_paths = INIFILE.findall("DISPLAY", "USER_DROS_PATH")
+
+        for user_dros_path in user_dros_paths:
+            user_dros_path = _resolve_config_path(user_dros_path)
+            LOG.info(f"[offset_dro] base path from INI: {user_dros_path}")
+            if not user_dros_path or not os.path.isdir(user_dros_path):
+                LOG.warning(f"[offset_dro] path invalid or missing: {user_dros_path}")
+                continue
+            dro_folder = f"{dro_type}_dros"
+            offset_ui_file = f"offset_dros_{dro_type}.ui"
+            offset_ui_path = os.path.join(user_dros_path, dro_folder, offset_ui_file)
+            LOG.info(f"[offset_dro] looking for {offset_ui_path}")
+            if os.path.isfile(offset_ui_path):
+                offset_widget = _load_ui(offset_ui_path, self)
+                layout.addWidget(offset_widget)
+                LOG.info(f"[offset_dro] added {offset_ui_path}")
+                return  # Only load one offset DRO, then exit
+
+    def load_user_tabs(self):
+        self.user_tab_modules = {}
+        self.user_tabs = {}
+        sidebar_tab_claimed = False
+
+        for user_tabs_path in INIFILE.findall("DISPLAY", "USER_TABS_PATH"):
+            user_tabs_path = _resolve_config_path(user_tabs_path)
+            if not user_tabs_path or not os.path.isdir(user_tabs_path):
+                continue
+
+            for tab_name in sorted(os.listdir(user_tabs_path)):
+                tab_dir = os.path.join(user_tabs_path, tab_name)
+                if not os.path.isdir(tab_dir):
+                    continue
+
+                module_file = os.path.join(tab_dir, tab_name + ".py")
+                if not os.path.isfile(module_file):
+                    LOG.warning(f"Skipping user tab '{tab_name}': no {tab_name}.py found in {tab_dir}")
+                    continue
+
+                pyqt_files = _pyqt_importing_files(tab_dir)
+                if pyqt_files:
+                    LOG.error(
+                        f"Skipping user tab '{tab_name}': these files import PyQt directly - "
+                        f"{', '.join(pyqt_files)}. This VCP runs on PySide6, and loading PyQt "
+                        f"into it aborts the application. Change the imports to PySide6 (or to "
+                        f"qtpy, which follows QT_API); rebuild any .qrc resources with "
+                        f"pyside6-rcc instead of pyrcc5."
+                    )
+                    continue
+
+                module_name = "user_tab." + os.path.basename(user_tabs_path) + "." + tab_name
+                try:
+                    self.user_tab_modules[module_name] = _import_module_from_path(module_name, module_file)
+                    tab_widget = self.user_tab_modules[module_name].UserTab()
+                except Exception:
+                    LOG.exception(f"Skipping user tab '{tab_name}': {module_file} failed to load")
+                    self.user_tab_modules.pop(module_name, None)
+                    continue
+
+                self.user_tabs[module_name] = tab_widget
+                is_sidebar, tab_label = _user_widget_identity(tab_widget)
+
+                if is_sidebar:
+                    if sidebar_tab_claimed:
+                        LOG.warning(f"Ignoring sidebar user tab '{tab_name}': a sidebar tab is already loaded")
+                        continue
+                    sidebar_tab_claimed = True
+                    tab_widget.setParent(self.sb_page_4)
+                    self.user_sb_tab.setText(tab_label)
+                    LOG.info(f"[user_tabs] added '{tab_name}' to the sidebar as '{tab_label}'")
+                else:
+                    self.tabWidget.addTab(tab_widget, tab_label)
+                    LOG.info(f"[user_tabs] added '{tab_name}' as main tab '{tab_label}'")
+
+        #if not sidebar_tab_claimed:
+        #    self.user_sb_tab.hide()
+        #    self.plot_tab.setStyleSheet(self.user_sb_tab.styleSheet())
+
+    @Slot(QAbstractButton)
+    def on_probetabGroup_buttonClicked(self, button):
+        self.probe_tab_widget.setCurrentIndex(button.property('page'))
+
+    @Slot(QAbstractButton)
+    def on_settertabGroup_buttonClicked(self, button):
+        self.setter_tab_widget.setCurrentIndex(button.property('page'))
+
+    @Slot(QAbstractButton)
+    def on_sidebartabGroup_buttonClicked(self, button):
+        self.sidebar_widget.setCurrentIndex(button.property('page'))
+
+    @Slot(QAbstractButton)
+    def on_spindlerpmsourcebtnGroup_buttonClicked(self, button):
+        self.spindle_rpm_source_widget.setCurrentIndex(button.property('page'))
+
+    @Slot(QAbstractButton)
+    def on_gcodemdibtnGroup_buttonClicked(self, button):
+        self.gcode_mdi.setCurrentIndex(button.property('page'))
+
+    # Fwd/Back buttons off the stacked widget
+    @Slot()
+    def _probe_help_next_released(self):
+        last_page = self.probe_help_widget.count() - 1
+        if last_page < 0:
+            return
+        current_index = self.probe_help_widget.currentIndex()
+        if current_index >= last_page:
+            self.probe_help_widget.setCurrentIndex(0)
+        else:
+            self.probe_help_widget.setCurrentIndex(current_index + 1)
+
+    @Slot()
+    def _probe_help_prev_released(self):
+        last_page = self.probe_help_widget.count() - 1
+        if last_page < 0:
+            return
+        current_index = self.probe_help_widget.currentIndex()
+        if current_index <= 0:
+            self.probe_help_widget.setCurrentIndex(last_page)
+        else:
+            self.probe_help_widget.setCurrentIndex(current_index - 1)
+
+
+    @Slot(QAbstractButton)
+    def _fileviewerbtnGroup_buttonClicked(self, button):
+        self.file_viewer_widget.setCurrentIndex(button.property('page'))
+
+    @Slot()
+    def _cycle_start_clicked(self):
+        """Intercept cycle start to check if running from M6 line is enabled."""
+        if self.run_from_line_Btn.isChecked():
+            # Run from the queued M6 line
+            try:
+                lineNum = int(self.run_from_line_Num.text())
+                actions.program_actions.run(lineNum)
+                LOG.info(f"Cycle started from M6 line {lineNum}")
+            except ValueError:
+                LOG.warning("No valid line number queued for run from line")
+            finally:
+                # Auto-uncheck the button after running
+                self.run_from_line_Btn.setChecked(False)
+        # Normal cycle start is handled by the button's bound actionName (program.run).
+
+    # MDI Panel
+    @Slot(QAbstractButton)
+    def on_btngrpMdi_buttonClicked(self, button):
+        char = str(button.text())
+        
+        # Skip special buttons that have their own handlers
+        if not char or len(char) > 1:
+            return
+            
+        text = self.mdiEntry.text() or 'null'
+        cursor_pos = self.mdiEntry.cursorPosition()
+        
+        if text != 'null':
+            new_text = text[:cursor_pos] + char + text[cursor_pos:]
+        else:
+            new_text = char
+            
+        self.mdiEntry.setText(new_text)
+        self.mdiEntry.setFocus()
+        self.mdiEntry.setCursorPosition(cursor_pos + 1)
+        self.mdiEntry.deselect()
+
+    def mdiBackSpace_clicked(parent):
+        if len(parent.mdiEntry.text()) > 0:
+            cursor_pos = parent.mdiEntry.cursorPosition()
+            if cursor_pos > 0:
+                text = parent.mdiEntry.text()
+                new_text = text[:cursor_pos-1] + text[cursor_pos:]
+                parent.mdiEntry.setText(new_text)
+                parent.mdiEntry.setFocus()
+                parent.mdiEntry.setCursorPosition(cursor_pos - 1)
+                parent.mdiEntry.deselect()
+
+    def mdiSpace_clicked(parent):
+        text = parent.mdiEntry.text() or 'null'
+        cursor_pos = parent.mdiEntry.cursorPosition()
+        # if no text then do not add a space
+        if text != 'null':
+            new_text = text[:cursor_pos] + ' ' + text[cursor_pos:]
+            parent.mdiEntry.setText(new_text)
+            parent.mdiEntry.setFocus()
+            parent.mdiEntry.setCursorPosition(cursor_pos + 1)
+            parent.mdiEntry.deselect()
+
+    def mdiLeftArrow_clicked(parent):
+        cursor_pos = parent.mdiEntry.cursorPosition()
+        if cursor_pos > 0:
+            parent.mdiEntry.setFocus()
+            parent.mdiEntry.setCursorPosition(cursor_pos - 1)
+            parent.mdiEntry.deselect()
+
+    def mdiRightArrow_clicked(parent):
+        cursor_pos = parent.mdiEntry.cursorPosition()
+        if cursor_pos < len(parent.mdiEntry.text()):
+            parent.mdiEntry.setFocus()
+            parent.mdiEntry.setCursorPosition(cursor_pos + 1)
+            parent.mdiEntry.deselect()
+
+    def _sidebar_tab_buttons(self):
+        """The sidebar page buttons, in page order."""
+        group = getattr(self, "sidebartabGroup", None)
+        if group is None:
+            group = self.findChild(QButtonGroup, "sidebartabGroup")
+        if group is None:
+            return []
+        buttons = [b for b in group.buttons() if b.property('page') is not None]
+        return sorted(buttons, key=lambda b: int(b.property('page')))
+
+    def _populate_startup_sb_tab_combobox(self):
+        """List the sidebar buttons, with each item carrying its page index.
+
+        isHidden() rather than isVisible(): the window has not been shown yet
+        at this point, so isVisible() is False for every button, whereas
+        isHidden() is True only for one explicitly hidden -- the USER button
+        when no sidebar user tab loaded.
+        """
+        combo = self.startup_sb_tab_combobox
+        combo.clear()
+        for button in self._sidebar_tab_buttons():
+            if button.isHidden():
+                continue
+            combo.addItem(button.text(), int(button.property('page')))
+
+    def _resolve_startup_sb_tab_index(self, saved_value):
+        """Saved sidebar setting -> combobox index, by page number or label."""
+        combo = self.startup_sb_tab_combobox
+        if combo.count() == 0:
+            return -1
+        value_text = "" if saved_value is None else str(saved_value).strip()
+        if not value_text:
+            return -1
+        if value_text.isdigit():
+            idx = combo.findData(int(value_text))
+            if idx != -1:
+                return idx
+        for idx in range(combo.count()):
+            if combo.itemText(idx).strip().upper() == value_text.upper():
+                return idx
+        return -1
+
+    def on_startup_sb_tab_combobox_changed(self, index):
+        """Save the sidebar selection for next startup; leave the current page alone."""
+        page = self.startup_sb_tab_combobox.itemData(index)
+        if page is not None:
+            setSetting("startup-settings.user-startup-sb-tab", int(page))
+
+    def set_startup_sb_tab(self, page):
+        """Show a sidebar page and check its button so the group agrees."""
+        if page is None or not hasattr(self, "sidebar_widget"):
+            return
+        page = int(page)
+        for button in self._sidebar_tab_buttons():
+            if int(button.property('page')) == page:
+                button.setChecked(True)
+                break
+        self.sidebar_widget.setCurrentIndex(page)
+
+    def set_startup_tab_by_text(self, tab_text):
+        """Set the main tab widget to the tab matching tab_text."""
+        if hasattr(self, "tabWidget"):
+            for i in range(self.tabWidget.count()):
+                if self.tabWidget.tabText(i).strip() == tab_text.strip():
+                    self.tabWidget.setCurrentIndex(i)
+                    break
+
+    def _resolve_startup_tab_index(self, saved_value):
+        """Resolve saved startup-tab setting to a valid combobox index."""
+        if not hasattr(self, "startup_tab_combobox"):
+            return -1
+
+        item_count = self.startup_tab_combobox.count()
+        if item_count == 0:
+            return -1
+
+        value_text = "" if saved_value is None else str(saved_value).strip()
+        if not value_text:
+            return -1
+
+        if value_text.isdigit():
+            value_index = int(value_text)
+            if 0 <= value_index < item_count:
+                return value_index
+
+        for idx in range(item_count):
+            if self.startup_tab_combobox.itemText(idx).strip() == value_text:
+                return idx
+
+        return -1
+
+    def on_startup_tab_combobox_changed(self, value):
+        """Save ComboBox selection for startup, but do not change the current tab."""
+        setSetting("startup-settings.user-startup-tab", self.startup_tab_combobox.currentIndex())
+        # Do not call self.set_startup_tab_by_text(value)
+
+    def extract_m6_line_numbers(self):
+        """Extract line numbers containing M6 commands from the loaded G-code file."""
+        m6_lines = []
+        editor = self._resolve_m6_editor()
+        if editor is None:
+            LOG.warning("No G-code editor widget found for M6 search")
+            return m6_lines
+        
+        try:
+            text = editor.toPlainText()
+            if not text:
+                LOG.warning("No G-code loaded in editor")
+                return m6_lines
+            
+            for line_num, line in enumerate(text.split('\n'), start=1):
+                # Search for M6 (tool change command) - case insensitive
+                if 'M6' in line.upper():
+                    m6_lines.append(line_num)
+            
+            LOG.info(f"Found {len(m6_lines)} M6 commands in G-code")
+        except Exception as e:
+            LOG.error(f"Error extracting M6 line numbers: {e}")
+        
+        return m6_lines
+
+    @staticmethod
+    def _styled_with_reminder_color(base_style, active):
+        """Return base_style unchanged, or with the reminder text color
+        injected -- inside the selector block if base_style uses one
+        (`QPushButton { ... }`), else appended as a bare declaration."""
+        if not active:
+            return base_style
+        if '{' in base_style:
+            idx = base_style.rfind('}')
+            return base_style[:idx] + '\ncolor: rgb(0, 255, 133);\n' + base_style[idx:]
+        return f"{base_style}\ncolor: rgb(0, 255, 133);"
+
+    def _on_tool_table_dirty_changed(self, dirty):
+        """Reflect unsaved tool-table edits on the Save button's text color."""
+        self.tool_table_save_button.setStyleSheet(
+            self._styled_with_reminder_color(self._tool_table_save_btn_base_stylesheet, dirty))
+
+    def _on_tool_table_saved(self):
+        """After Save, remind the operator Reload Table still needs a click
+        to push fresh data to a tool already loaded in the spindle."""
+        self.tool_table_reload_button.setStyleSheet(
+            self._styled_with_reminder_color(self._tool_table_reload_btn_base_stylesheet, True))
+
+    def _on_tool_table_reloaded(self):
+        """Clear the Reload Table reminder once it's actually been clicked."""
+        self.tool_table_reload_button.setStyleSheet(self._tool_table_reload_btn_base_stylesheet)
+
+    @Slot()
+    def _find_m6_clicked(self):
+        """Find next M6 command in the loaded G-code file and display line number."""
+        # Re-extract M6 lines (in case file was reloaded)
+        self.m6_lines = self.extract_m6_line_numbers()
+        
+        if not self.m6_lines:
+            LOG.warning("No M6 commands found in G-code file")
+            self.run_from_line_Num.setText("")
+            return
+        
+        # Display the current M6 line number
+        line_num = self.m6_lines[self.current_m6_index]
+        self.run_from_line_Num.setText(str(line_num))
+        LOG.info(f"M6 found at line {line_num}")
+        
+        # Scroll and highlight the M6 line in the active G-code editor.
+        self.scroll_to_line_in_gcode(line_num)
+        
+        # Advance to next M6 for next button click (wrap around at end)
+        self.current_m6_index = (self.current_m6_index + 1) % len(self.m6_lines)
+
+    def scroll_to_line_in_gcode(self, line_num):
+        """Scroll and highlight a specific line in the G-code text editor."""
+        editor = self._resolve_m6_editor()
+        if editor is None:
+            return
+        
+        try:
+            # Get the text cursor
+            cursor = editor.textCursor()
+            
+            # Move cursor to the beginning of the desired line
+            # line_num is 1-based, so we need line_num - 1 blocks
+            cursor.movePosition(QTextCursor.Start)
+            for _ in range(line_num - 1):
+                cursor.movePosition(QTextCursor.Down)
+            
+            # Select the entire line
+            cursor.movePosition(QTextCursor.StartOfLine)
+            cursor.movePosition(QTextCursor.EndOfLine, QTextCursor.KeepAnchor)
+            
+            # Set the cursor (this will scroll the view to show the line)
+            editor.setTextCursor(cursor)
+            
+            # Ensure the line is visible in the center of the view
+            editor.ensureCursorVisible()
+            
+            LOG.info(f"Scrolled to M6 line {line_num}")
+        except Exception as e:
+            LOG.error(f"Error scrolling to line {line_num}: {e}")
+
+    def _resolve_m6_editor(self):
+        """Return the primary editor used by the FIND M6 workflow."""
+        # Keep legacy fallback last for older UI variants that may still
+        # expose the old object name.
+        for name in ('gcodeEditor', 'gcodeEditor_2', 'gcodetextedit_2'):
+            editor = getattr(self, name, None)
+            if editor is not None:
+                return editor
+        return None
+
+    def _install_gcode_run_from_line_context_menu(self):
+        for name in ('gcodeEditor', 'gcodeEditor_2', 'gcodetextedit_2'):
+            editor = getattr(self, name, None)
+            if editor is None:
+                continue
+            editor.setContextMenuPolicy(Qt.CustomContextMenu)
+            editor.customContextMenuRequested.connect(lambda pos, ed=editor: self._show_gcode_context_menu(ed, pos))
+
+    def _iter_gcode_editors_for_line_sync(self):
+        for name in ('gcodeEditor', 'gcodeEditor_2', 'gcodetextedit_2', 'gcodeeditor'):
+            editor = getattr(self, name, None)
+            if editor is not None:
+                yield editor
+
+    @staticmethod
+    def _editor_or_child_has_focus(editor):
+        try:
+            focus_widget = QApplication.focusWidget()
+            if focus_widget is None:
+                return False
+            return editor is focus_widget or editor.isAncestorOf(focus_widget)
+        except Exception:
+            return False
+
+    def _install_gcode_selected_line_sync(self):
+        self._status_plugin = getPlugin('status')
+        if self._status_plugin is None:
+            LOG.warning("Status plugin unavailable; cannot sync selected G-code line")
+            return
+
+        for editor in self._iter_gcode_editors_for_line_sync():
+            cursor_signal = getattr(editor, 'cursorPositionChanged', None)
+            if cursor_signal is None:
+                continue
+            cursor_signal.connect(lambda *args, ed=editor: self._publish_selected_program_line_from_editor(ed))
+            selection_signal = getattr(editor, 'selectionChanged', None)
+            if selection_signal is not None:
+                selection_signal.connect(lambda *args, ed=editor: self._publish_selected_program_line_from_editor(ed))
+
+        file_channel = getattr(self._status_plugin, 'file', None)
+        file_notify = getattr(file_channel, 'notify', None)
+        if callable(file_notify):
+            file_notify(lambda *_args: QTimer.singleShot(0, self._publish_selected_program_line_from_any_editor))
+
+        selected_line_channel = getattr(self._status_plugin, 'selected_program_line', None)
+        selected_line_notify = getattr(selected_line_channel, 'notify', None)
+        if callable(selected_line_notify):
+            selected_line_notify(lambda *_args: QTimer.singleShot(0, self._apply_selected_program_line_to_any_editor))
+
+        selected_lines_channel = getattr(self._status_plugin, 'selected_program_lines', None)
+        selected_lines_notify = getattr(selected_lines_channel, 'notify', None)
+        if callable(selected_lines_notify):
+            selected_lines_notify(lambda *_args: QTimer.singleShot(0, self._apply_selected_program_line_to_any_editor))
+
+        QTimer.singleShot(0, self._publish_selected_program_line_from_any_editor)
+
+    def _publish_selected_program_line_from_editor(self, editor):
+        if self._applying_external_program_selection:
+            return
+        if not self._selected_line_sync_allowed():
+            return
+
+        line_numbers = self._selected_line_numbers_from_editor(editor)
+        if not line_numbers:
+            return
+
+        self._publishing_selected_program_selection = True
+        try:
+            self._set_selected_program_line_channels(line_numbers)
+        finally:
+            # Keep the guard up until queued notify callbacks run.
+            QTimer.singleShot(0, self._clear_selected_program_publish_guard)
+
+    def _clear_selected_program_publish_guard(self):
+        self._publishing_selected_program_selection = False
+
+    @staticmethod
+    def _normalize_selected_lines(line_numbers):
+        normalized = []
+        seen = set()
+        for raw in line_numbers:
+            try:
+                line_no = int(raw)
+            except Exception:
+                continue
+            if line_no <= 0 or line_no in seen:
+                continue
+            seen.add(line_no)
+            normalized.append(line_no)
+        normalized.sort()
+        return normalized
+
+    def _selected_line_numbers_from_editor(self, editor):
+        try:
+            cursor = editor.textCursor()
+        except Exception:
+            return []
+
+        try:
+            if not cursor.hasSelection():
+                return [int(cursor.blockNumber()) + 1]
+
+            start_pos = int(cursor.selectionStart())
+            end_pos = int(cursor.selectionEnd())
+            if end_pos < start_pos:
+                start_pos, end_pos = end_pos, start_pos
+
+            if end_pos > start_pos:
+                end_pos -= 1
+
+            document = editor.document()
+            start_line = int(document.findBlock(start_pos).blockNumber()) + 1
+            end_line = int(document.findBlock(end_pos).blockNumber()) + 1
+            if end_line < start_line:
+                start_line, end_line = end_line, start_line
+            return list(range(start_line, end_line + 1))
+        except Exception:
+            return [int(cursor.blockNumber()) + 1]
+
+    def _set_selected_program_line_channels(self, line_numbers):
+        status_plugin = getattr(self, '_status_plugin', None) or getPlugin('status')
+        normalized_lines = self._normalize_selected_lines(line_numbers)
+        if not normalized_lines:
+            return
+
+        setattr(status_plugin, '_selected_program_line_source', 'editor')
+
+        selected_lines_channel = getattr(status_plugin, 'selected_program_lines', None)
+        set_lines = getattr(selected_lines_channel, 'setValue', None)
+        if callable(set_lines):
+            set_lines(normalized_lines)
+
+        selected_line_channel = getattr(status_plugin, 'selected_program_line', None)
+        set_value = getattr(selected_line_channel, 'setValue', None)
+        if callable(set_value):
+            set_value(normalized_lines[0])
+
+    def _selected_line_sync_allowed(self):
+        status_plugin = getattr(self, '_status_plugin', None) or getPlugin('status')
+        stat_obj = getattr(status_plugin, 'stat', None)
+        if stat_obj is None:
+            return True
+
+        interp_state = getattr(stat_obj, 'interp_state', None)
+        return interp_state in (linuxcnc.INTERP_IDLE, linuxcnc.INTERP_PAUSED)
+
+    def _publish_selected_program_line_from_any_editor(self):
+        editors = list(self._iter_gcode_editors_for_line_sync())
+        if not editors:
+            return
+
+        focused_editor = next((ed for ed in editors if ed.isVisible() and self._editor_or_child_has_focus(ed)), None)
+        visible_editor = next((ed for ed in editors if ed.isVisible()), None)
+        target_editor = focused_editor or visible_editor or editors[0]
+        self._publish_selected_program_line_from_editor(target_editor)
+
+    def _selected_program_line_values_from_status(self):
+        status_plugin = getattr(self, '_status_plugin', None) or getPlugin('status')
+        selected_lines_channel = getattr(status_plugin, 'selected_program_lines', None)
+        selected_lines_raw = getattr(selected_lines_channel, 'value', None)
+        if isinstance(selected_lines_raw, (list, tuple, set)):
+            selected_lines = self._normalize_selected_lines(selected_lines_raw)
+            if selected_lines:
+                return selected_lines
+
+        selected_line_channel = getattr(status_plugin, 'selected_program_line', None)
+        selected_line_raw = getattr(selected_line_channel, 'value', None)
+        return self._normalize_selected_lines([selected_line_raw])
+
+    def _apply_selected_program_line_to_any_editor(self):
+        if self._applying_external_program_selection:
+            return
+        if self._publishing_selected_program_selection:
+            return
+        if not self._selected_line_sync_allowed():
+            return
+
+        status_plugin = getattr(self, '_status_plugin', None) or getPlugin('status')
+        if getattr(status_plugin, '_selected_program_line_source', None) != 'backplot':
+            return
+
+        selected_line_channel = getattr(status_plugin, 'selected_program_line', None)
+        selected_line_raw = getattr(selected_line_channel, 'value', None)
+        selected_lines = self._normalize_selected_lines([selected_line_raw])
+        if not selected_lines:
+            selected_lines = self._selected_program_line_values_from_status()
+        if not selected_lines:
+            return
+
+        editors = list(self._iter_gcode_editors_for_line_sync())
+        if not editors:
+            return
+
+        focused_editor = next((ed for ed in editors if ed.isVisible() and self._editor_or_child_has_focus(ed)), None)
+        visible_editor = next((ed for ed in editors if ed.isVisible()), None)
+        target_editor = focused_editor or visible_editor or editors[0]
+
+        self._apply_selected_program_lines_to_editor(target_editor, selected_lines)
+
+    def _apply_selected_program_lines_to_editor(self, editor, line_numbers):
+        normalized_lines = self._normalize_selected_lines(line_numbers)
+        if not normalized_lines:
+            return
+
+        start_line = normalized_lines[0]
+        end_line = normalized_lines[-1]
+        if start_line <= 0 or end_line < start_line:
+            return
+
+        self._applying_external_program_selection = True
+        try:
+            if self._apply_selected_program_lines_to_qsci_editor(editor, start_line, end_line):
+                return
+            self._apply_selected_program_lines_to_qtext_editor(editor, start_line, end_line)
+        finally:
+            self._applying_external_program_selection = False
+
+    @staticmethod
+    def _apply_selected_program_lines_to_qsci_editor(editor, start_line, end_line):
+        set_cursor_position = getattr(editor, 'setCursorPosition', None)
+        if not callable(set_cursor_position):
+            return False
+
+        start_zero = int(start_line) - 1
+
+        try:
+            set_cursor_position(start_zero, 0)
+            ensure_line_visible = getattr(editor, 'ensureLineVisible', None)
+            if callable(ensure_line_visible):
+                ensure_line_visible(start_zero)
+            ensure_cursor_visible = getattr(editor, 'ensureCursorVisible', None)
+            if callable(ensure_cursor_visible):
+                ensure_cursor_visible()
+            send_scintilla = getattr(editor, 'SendScintilla', None)
+            sci_vertical_center = getattr(type(editor), 'SCI_VERTICALCENTRECARET', None)
+            if callable(send_scintilla) and sci_vertical_center is not None:
+                send_scintilla(sci_vertical_center)
+            return True
+        except Exception:
+            return False
+
+    @staticmethod
+    def _apply_selected_program_lines_to_qtext_editor(editor, start_line, end_line):
+        get_cursor = getattr(editor, 'textCursor', None)
+        set_cursor = getattr(editor, 'setTextCursor', None)
+        get_document = getattr(editor, 'document', None)
+        if not callable(get_cursor) or not callable(set_cursor) or not callable(get_document):
+            return False
+
+        try:
+            document = get_document()
+            start_block = document.findBlockByNumber(int(start_line) - 1)
+            if not start_block.isValid():
+                return False
+
+            cursor = get_cursor()
+            cursor.setPosition(int(start_block.position()))
+            set_cursor(cursor)
+
+            ensure_cursor_visible = getattr(editor, 'ensureCursorVisible', None)
+            if callable(ensure_cursor_visible):
+                ensure_cursor_visible()
+            center_cursor = getattr(editor, 'centerCursor', None)
+            if callable(center_cursor):
+                center_cursor()
+            return True
+        except Exception:
+            return False
+
+    def _show_gcode_context_menu(self, editor, pos):
+        # pos arrives in viewport coordinates, which is what cursorForPosition
+        # and the popup placement both need.
+        click_cursor = editor.cursorForPosition(pos)
+        line_num = click_cursor.blockNumber() + 1
+
+        # Only move the caret when the click lands outside an existing
+        # selection. Replacing the cursor unconditionally clears the
+        # selection, which leaves Cut/Copy/Delete disabled in the standard
+        # menu built below.
+        current = editor.textCursor()
+        if not (current.hasSelection()
+                and current.selectionStart() <= click_cursor.position() <= current.selectionEnd()):
+            editor.setTextCursor(click_cursor)
+
+        menu = editor.createStandardContextMenu()
+        if menu is None:
+            return
+
+        run_action = menu.addAction(f"Run from line {line_num}")
+        run_action.setEnabled(actions.program_actions.run_from_line.ok())
+        run_action.triggered.connect(lambda checked=False, ln=line_num: actions.program_actions.run(ln))
+
+        first_action = menu.actions()[0] if menu.actions() else None
+        if first_action is not None:
+            menu.insertAction(first_action, run_action)
+            menu.insertSeparator(first_action)
+
+        menu.exec(editor.viewport().mapToGlobal(pos))

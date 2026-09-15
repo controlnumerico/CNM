@@ -1,0 +1,584 @@
+
+qtdesigner:
+  ui_file: ( windows.mainwindow.kwargs.ui_file )
+  qss_file: ( application.kwargs.stylesheet )
+
+vcp:
+  name: Probe Basic
+  version: v0.0.1
+  author: Chris Polanski
+  description: |
+    Probe Basic description ...
+
+data_plugins:
+  gcode_properties:
+    provider: qtpyvcp.plugins.gcode_properties:GCodeProperties
+
+data_plugins:
+  clock:
+    provider: qtpyvcp.plugins.clock:Clock   
+
+windows:
+  mainwindow:
+    provider: probe_basic.probe_basic:ProbeBasic
+    kwargs:
+      menu: ( menubar )
+      fullscreen: true
+      ui_file: {{ file.dir }}/probe_basic.ui
+
+application:
+  kwargs:
+    stylesheet: {{ file.dir }}/probe_basic_{{ effective_theme_color('DISPLAY', 'THEME_COLOR', 'light') }}.qss
+    custom_fonts: {{ file.dir }}/fonts
+    
+settings:
+  backplot.view:
+    default_value: 4
+    options: ["X: Front View",
+              "Y: Front View",
+              "Z: Top View",
+              "Z2: Bottom View",
+              "P: Isometric"]
+
+  spindle-rpm-display.calculated-rpm:
+    description: display calculated rpm on main page.
+    persistent: true
+
+  spindle-rpm-display.encoder-feedback-rpm:
+    description: display encoder feedback rpm on main page.
+    persistent: true
+
+  tool-setter-probe.setter-offset-direction-left:
+    description: probe tool diameter to offset direction left.
+    persistent: true
+
+  tool-setter-probe.setter-offset-direction-right:
+    description: probe tool diameter to offset direction right.
+    persistent: true
+
+  tool-setter-probe.setter-offset-direction-front:
+    description: probe tool diameter to offset direction front.
+    persistent: true
+
+  tool-setter-probe.setter-offset-direction-back:
+    description: probe tool diameter to offset direction back.
+    persistent: true
+
+  rack-atc-setup.rack-id:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: 0
+    max_value: 8
+
+  rack-atc-setup.pocket-count:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: 0
+    max_value: 24
+
+  rack-atc-setup.z-load-height:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.rack-traverse-speed:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.safe-z-height:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.pocket-1-x:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.pocket-1-y:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.pocket-2-x:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.pocket-2-y:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.pocket-1-x-clearance:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.pocket-1-y-clearance:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.user-1-param:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.user-2-param:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.user-3-param:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.user-4-param:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  rack-atc-setup.user-5-param:
+    description: rack atc.
+    default_value: 0.0
+    persistent: true
+    min_value: -10000
+    max_value: 10000
+
+  startup-settings.user-startup-tab:
+    description: startup tab preference setting.
+    default_value: "STATUS"
+    persistent: true
+    options: ["MAIN", "FILE", "ATC", "TOOL", "OFFSETS", "PROBING", "CONVERSATIONAL", "SETTINGS", "STATUS", "USER"]
+
+  startup-settings.user-startup-sb-tab:
+    description: startup sidebar tab preference setting.
+    default_value: "JOG"
+    persistent: true
+    options: ["JOG", "WCS", "PLOT", "USER"]
+
+  startup-settings.usb-hide-show:
+    description: hide or show usb file manager
+    persistent: true
+
+  # Conversational XY coordinate defaults
+
+  conv-xy-coord.tool-number:
+    description: default tool number for XY coord op
+    default_value: 0
+    persistent: true
+
+  conv-xy-coord.spindle-rpm:
+    description: default spindle RPM for XY coord op
+    default_value: 0
+    persistent: true
+
+  conv-xy-coord.xy-feed:
+    description: default XY feed rate for XY coord op
+    default_value: 0.0
+    persistent: true
+
+  conv-xy-coord.z-feed:
+    description: default Z feed rate for XY coord op
+    default_value: 0.0
+    persistent: true
+
+  conv-xy-coord.fpr:
+    description: default feed per revolution for XY coord op
+    default_value: 0.0
+    persistent: true
+
+  conv-xy-coord.drill-type:
+    description: default drill type parameter value for XY coord op
+    default_value: 0.0000
+    persistent: true
+
+  conv-xy-coord.clearance-height:
+    description: default clearance height for XY coord op
+    default_value: 0.0000
+    persistent: true
+
+  conv-xy-coord.z-start:
+    description: default z start for XY coord op
+    default_value: 0.0000
+    persistent: true
+
+  conv-xy-coord.z-end:
+    description: default z end for XY coord op
+    default_value: 0.0000
+    persistent: true
+
+  conv-xy-coord.retract:
+    description: default retract for XY coord op
+    default_value: 0.0000
+    persistent: true
+
+  # Conversational XY coordinate combo defaults
+
+  conv-xy-coord.wcs:
+    description: last used work coordinate system
+    default_value: 0   # index: G54
+    options:
+      - G54
+      - G55
+      - G56
+      - G57
+      - G58
+      - G59
+      - G59.1
+      - G59.2
+      - G59.3
+    persistent: true
+
+  conv-xy-coord.unit:
+    description: last used program unit
+    default_value: 0   # index: IN
+    options:
+      - IN
+      - MM
+    persistent: true
+
+  conv-xy-coord.drill-retract-mode:
+    description: last used drill retract mode
+    default_value: 0   # index: G98
+    options:
+      - G98
+      - G99
+    persistent: true
+
+  conv-xy-coord.coolant:
+    description: last used coolant mode
+    default_value: 0   # index: OFF
+    options:
+      - OFF
+      - MIST
+      - FLOOD
+    persistent: true
+
+  conv-xy-coord.drill-type-select:
+    description: last used drill type selection
+    default_value: 0   # index: DRILL
+    options:
+      - DRILL
+      - PECK
+      - BREAK
+      - DWELL
+      - TAP
+      - RIGID TAP
+      - MANUAL
+    persistent: true
+
+  conv-xy-coord.spindle-direction:
+    description: last used spindle direction
+    default_value: 0   # index: CW
+    options:
+      - CW
+      - CCW
+    persistent: true
+
+  # Conversational Hole Circle defaults
+
+  conv-hole.tool-number:
+    description: default tool number for hole circle op
+    default_value: 0
+    persistent: true
+
+  conv-hole.spindle-rpm:
+    description: default spindle RPM for hole circle op
+    default_value: 0
+    persistent: true
+
+  conv-hole.xy-feed:
+    description: default XY feed rate for hole circle op
+    default_value: 0.0
+    persistent: true
+
+  conv-hole.z-feed:
+    description: default Z feed rate for hole circle op
+    default_value: 0.0
+    persistent: true
+
+  conv-hole.fpr:
+    description: default feed per revolution for hole circle op
+    default_value: 0.0
+    persistent: true
+
+  conv-hole.drill-type:
+    description: default drill type parameter value for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  conv-hole.clearance-height:
+    description: default clearance height for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  conv-hole.z-start:
+    description: default z start for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  conv-hole.z-end:
+    description: default z end for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  conv-hole.x-center:
+    description: default x center for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  conv-hole.y-center:
+    description: default y center for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  conv-hole.retract:
+    description: default retract for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  conv-hole.base-diameter:
+    description: default base diameter for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  conv-hole.start-angle:
+    description: default start angle for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  conv-hole.num-holes:
+    description: default number of holes for hole circle op
+    default_value: 0.0000
+    persistent: true
+
+  # Conversational Hole Circle combo defaults
+
+  conv-hole.wcs:
+    description: last used work coordinate system for hole circle op
+    default_value: 0   # index: G54
+    options:
+      - G54
+      - G55
+      - G56
+      - G57
+      - G58
+      - G59
+      - G59.1
+      - G59.2
+      - G59.3
+    persistent: true
+
+  conv-hole.unit:
+    description: last used program unit for hole circle op
+    default_value: 0   # index: IN
+    options:
+      - IN
+      - MM
+    persistent: true
+
+  conv-hole.drill-retract-mode:
+    description: last used drill retract mode for hole circle op
+    default_value: 0   # index: G98
+    options:
+      - G98
+      - G99
+    persistent: true
+
+  conv-hole.coolant:
+    description: last used coolant mode for hole circle op
+    default_value: 0   # index: OFF
+    options:
+      - OFF
+      - MIST
+      - FLOOD
+    persistent: true
+
+  conv-hole.drill-type-select:
+    description: last used drill type selection for hole circle op
+    default_value: 0   # index: DRILL
+    options:
+      - DRILL
+      - PECK
+      - BREAK
+      - DWELL
+      - TAP
+      - RIGID TAP
+      - MANUAL
+    persistent: true
+
+  conv-hole.spindle-direction:
+    description: last used spindle direction for hole circle op
+    default_value: 0   # index: CW
+    options:
+      - CW
+      - CCW
+    persistent: true
+
+  # Conversational Facing defaults
+
+  conv-facing.tool-number:
+    description: default tool number for facing op
+    default_value: 0
+    persistent: true
+    min_value: 0
+    max_value: 10000
+
+  conv-facing.spindle-rpm:
+    description: default spindle RPM for facing op
+    default_value: 0
+    persistent: true
+
+  conv-facing.xy-feed:
+    description: default XY feed rate for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.z-feed:
+    description: default Z feed rate for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.clearance-height:
+    description: default clearance height for facing op
+    default_value: 0.0000
+    persistent: true
+
+  conv-facing.x-start:
+    description: default x start for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.y-start:
+    description: default y start for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.z-start:
+    description: default z start for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.x-end:
+    description: default x end for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.y-end:
+    description: default y end for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.z-end:
+    description: default z end for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.step-down:
+    description: default step down for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.step-over:
+    description: default step over for facing op
+    default_value: 0.0
+    persistent: true
+
+  conv-facing.retract:
+    description: default retract for facing op
+    default_value: 0.0
+    persistent: true
+
+  # Conversational Facing combo defaults
+
+  conv-facing.wcs:
+    description: last used work coordinate system for facing op
+    default_value: 0   # index: G54
+    options:
+      - G54
+      - G55
+      - G56
+      - G57
+      - G58
+      - G59
+      - G59.1
+      - G59.2
+      - G59.3
+    persistent: true
+
+  conv-facing.unit:
+    description: last used program unit for facing op
+    default_value: 0   # index: IN
+    options:
+      - IN
+      - MM
+    persistent: true
+
+  conv-facing.coolant:
+    description: last used coolant mode for facing op
+    default_value: 0   # index: OFF
+    options:
+      - OFF
+      - MIST
+      - FLOOD
+    persistent: true
+
+  conv-facing.spindle-direction:
+    description: last used spindle direction for facing op
+    default_value: 0   # index: CW
+    options:
+      - CW
+      - CCW
+    persistent: true
+
+dialogs:
+  about_probebasic:
+    provider: probe_basic.about_dialog:AboutDialog
+    kwargs:
+      ui_file: {{ file.dir }}/about.ui
+
+  toolchange:
+    provider: probe_basic.toolchange_dialog_pb:ToolChangeDialogPB
+    kwargs:
+      ui_file: {{ file.dir }}/toolchange_dialog_pb.ui
+
+  import_legacy_tbl:
+    provider: qtpyvcp.widgets.dialogs.import_tool_db_dialog_mill:ImportLegacyToolTableDialog
+
+  import_fusion_tools:
+    provider: qtpyvcp.widgets.dialogs.import_tool_db_dialog_mill:ImportFusionToolLibraryDialog
+
+  import_merged_tools:
+    provider: qtpyvcp.widgets.dialogs.import_tool_db_dialog_mill:ImportMergedToolDataDialog
