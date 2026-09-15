@@ -123,7 +123,7 @@
          <x>0</x>
          <y>0</y>
          <width>943</width>
-         <height>801</height>
+         <height>1421</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -154,9 +154,9 @@
         <property name="geometry">
          <rect>
           <x>62</x>
-          <y>230</y>
+          <y>183</y>
           <width>879</width>
-          <height>500</height>
+          <height>1238</height>
          </rect>
         </property>
         <property name="sizePolicy">
@@ -168,13 +168,13 @@
         <property name="minimumSize">
          <size>
           <width>800</width>
-          <height>500</height>
+          <height>1238</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>900</width>
-          <height>500</height>
+          <height>1238</height>
          </size>
         </property>
         <property name="palette">
@@ -11558,7 +11558,7 @@ background-color: rgb(136, 138, 133,0);</string>
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>150</y>
+          <y>148</y>
           <width>171</width>
           <height>31</height>
          </rect>
@@ -11604,7 +11604,7 @@ background-color: rgb(136, 138, 133,0);
         <property name="geometry">
          <rect>
           <x>310</x>
-          <y>150</y>
+          <y>148</y>
           <width>81</width>
           <height>31</height>
          </rect>
