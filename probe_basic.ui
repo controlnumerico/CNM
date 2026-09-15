@@ -358,6 +358,1205 @@
             <property name="frameShadow">
              <enum>QFrame::Shadow::Raised</enum>
             </property>
+            <widget class="QLabel" name="label_8">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>200</y>
+               <width>81</width>
+               <height>101</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Noto Sans Mono</family>
+               <pointsize>60</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>Z:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_3">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>120</y>
+               <width>81</width>
+               <height>101</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Noto Sans Mono</family>
+               <pointsize>60</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>Y:</string>
+             </property>
+            </widget>
+            <widget class="DROLineEdit" name="dro_entry_main_z">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>210</y>
+               <width>371</width>
+               <height>70</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>400</width>
+               <height>70</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Digital Display</family>
+               <pointsize>70</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#dro_entry_main_z {
+
+	background-color: transparent;
+                                }</string>
+             </property>
+             <property name="text">
+              <string>     0.000</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="referenceType" stdset="0">
+              <number>1</number>
+             </property>
+             <property name="axisNumber" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="inchFormat" stdset="0">
+              <string>%9.4f</string>
+             </property>
+             <property name="millimeterFormat" stdset="0">
+              <string>%10.3f</string>
+             </property>
+             <property name="degreeFormat" stdset="0">
+              <string>%10.2f</string>
+             </property>
+             <property name="latheMode" stdset="0">
+              <number>1</number>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_15">
+             <property name="geometry">
+              <rect>
+               <x>490</x>
+               <y>13</y>
+               <width>101</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>17</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>DISTANCE TO GO</string>
+             </property>
+             <property name="toolTipDuration">
+              <number>5</number>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>MACHINE</string>
+             </property>
+            </widget>
+            <widget class="DROLineEdit" name="dro_entry_main_y">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>130</y>
+               <width>371</width>
+               <height>70</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>400</width>
+               <height>70</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Digital Display</family>
+               <pointsize>70</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#dro_entry_main_y {
+
+	background-color: transparent;
+                                }</string>
+             </property>
+             <property name="text">
+              <string>     0.000</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="referenceType" stdset="0">
+              <number>1</number>
+             </property>
+             <property name="axisNumber" stdset="0">
+              <number>1</number>
+             </property>
+             <property name="inchFormat" stdset="0">
+              <string>%9.4f</string>
+             </property>
+             <property name="millimeterFormat" stdset="0">
+              <string>%10.3f</string>
+             </property>
+             <property name="degreeFormat" stdset="0">
+              <string>%10.2f</string>
+             </property>
+             <property name="latheMode" stdset="0">
+              <number>1</number>
+             </property>
+            </widget>
+            <widget class="StatusLabel" name="statuslabel_12">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>13</y>
+               <width>151</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>17</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>18</pointsize>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+
+
+</string>
+             </property>
+             <property name="text">
+              <string>G53 WORK</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0] + ' WORK'\n&quot;, &quot;name&quot;: &quot;WCS Header&quot;}]</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>40</y>
+               <width>81</width>
+               <height>91</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Noto Sans Mono</family>
+               <pointsize>60</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>X:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_4">
+             <property name="geometry">
+              <rect>
+               <x>240</x>
+               <y>13</y>
+               <width>231</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>18</pointsize>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>COORD SYSTEM</string>
+             </property>
+            </widget>
+            <widget class="DROLineEdit" name="dro_entry_main_x">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>50</y>
+               <width>371</width>
+               <height>70</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>400</width>
+               <height>70</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Digital Display</family>
+               <pointsize>70</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#dro_entry_main_x {
+
+	background-color: transparent;
+                                }</string>
+             </property>
+             <property name="text">
+              <string>     0.000</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="referenceType" stdset="0">
+              <number>1</number>
+             </property>
+             <property name="axisNumber" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="inchFormat" stdset="0">
+              <string>%9.3f</string>
+             </property>
+             <property name="millimeterFormat" stdset="0">
+              <string>%10.3f</string>
+             </property>
+             <property name="degreeFormat" stdset="0">
+              <string>%10.2f</string>
+             </property>
+             <property name="latheMode" stdset="0">
+              <number>1</number>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_14">
+             <property name="geometry">
+              <rect>
+               <x>460</x>
+               <y>130</y>
+               <width>71</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>14</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>G53 Y:</string>
+             </property>
+            </widget>
+            <widget class="DROLineEdit" name="dro_entry_main_x_14">
+             <property name="geometry">
+              <rect>
+               <x>450</x>
+               <y>250</y>
+               <width>151</width>
+               <height>38</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>70</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>LCD MONO</family>
+               <pointsize>20</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::NoFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+background-color: rgb(136, 138, 133,0);
+    border-style: transparant;
+color: rgb(56, 54, 57);
+    font: 20pt &quot;LCD MONO&quot;;
+	border-color: rgb(164, 0, 0);
+}</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="referenceType" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="axisNumber" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="inchFormat" stdset="0">
+              <string>%9.4f</string>
+             </property>
+             <property name="millimeterFormat" stdset="0">
+              <string>%10.3f</string>
+             </property>
+             <property name="degreeFormat" stdset="0">
+              <string>%10.2f</string>
+             </property>
+             <property name="latheMode" stdset="0">
+              <number>0</number>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_59">
+             <property name="geometry">
+              <rect>
+               <x>460</x>
+               <y>220</y>
+               <width>71</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>14</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>G53 Z:</string>
+             </property>
+            </widget>
+            <widget class="DROLineEdit" name="dro_entry_main_x_8">
+             <property name="geometry">
+              <rect>
+               <x>450</x>
+               <y>80</y>
+               <width>151</width>
+               <height>38</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>70</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>LCD MONO</family>
+               <pointsize>20</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::NoFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+background-color: rgb(136, 138, 133,0);
+    border-style: transparant;
+color: rgb(56, 54, 57);
+    font: 20pt &quot;LCD MONO&quot;;
+	border-color: rgb(164, 0, 0);
+}</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="referenceType" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="axisNumber" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="inchFormat" stdset="0">
+              <string>%9.4f</string>
+             </property>
+             <property name="millimeterFormat" stdset="0">
+              <string>%10.3f</string>
+             </property>
+             <property name="degreeFormat" stdset="0">
+              <string>%10.2f</string>
+             </property>
+             <property name="latheMode" stdset="0">
+              <number>0</number>
+             </property>
+            </widget>
+            <widget class="DROLineEdit" name="dro_entry_main_x_7">
+             <property name="geometry">
+              <rect>
+               <x>450</x>
+               <y>160</y>
+               <width>151</width>
+               <height>38</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>70</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>LCD MONO</family>
+               <pointsize>20</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::NoFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+background-color: rgb(136, 138, 133,0);
+    border-style: transparant;
+color: rgb(56, 54, 57);
+    font: 20pt &quot;LCD MONO&quot;;
+	border-color: rgb(164, 0, 0);
+}</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="referenceType" stdset="0">
+              <number>0</number>
+             </property>
+             <property name="axisNumber" stdset="0">
+              <number>1</number>
+             </property>
+             <property name="inchFormat" stdset="0">
+              <string>%9.4f</string>
+             </property>
+             <property name="millimeterFormat" stdset="0">
+              <string>%10.3f</string>
+             </property>
+             <property name="degreeFormat" stdset="0">
+              <string>%10.2f</string>
+             </property>
+             <property name="latheMode" stdset="0">
+              <number>0</number>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_12">
+             <property name="geometry">
+              <rect>
+               <x>460</x>
+               <y>50</y>
+               <width>71</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>14</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>G53 X:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_10">
+             <property name="geometry">
+              <rect>
+               <x>710</x>
+               <y>30</y>
+               <width>51</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>12</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(191, 64, 64);
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>PROG:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_21">
+             <property name="geometry">
+              <rect>
+               <x>720</x>
+               <y>117</y>
+               <width>51</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>12</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(191, 64, 64);
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>PROG:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_11">
+             <property name="geometry">
+              <rect>
+               <x>710</x>
+               <y>60</y>
+               <width>51</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>12</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(191, 64, 64);
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>REAL:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_24">
+             <property name="geometry">
+              <rect>
+               <x>720</x>
+               <y>147</y>
+               <width>51</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>12</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(191, 64, 64);
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>REAL:</string>
+             </property>
+            </widget>
+            <widget class="StatusLabel" name="statuslabel_13">
+             <property name="geometry">
+              <rect>
+               <x>760</x>
+               <y>50</y>
+               <width>105</width>
+               <height>45</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>105</width>
+               <height>38</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>110</width>
+               <height>45</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+background-color: rgb(136, 138, 133,0);
+    border-style: transparant;
+color: rgb(56, 54, 57);
+    font: 20pt &quot;LCD MONO&quot;;
+	border-color: rgb(164, 0, 0);
+}</string>
+             </property>
+             <property name="text">
+              <string>0.0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="format" stdset="0">
+              <string/>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{(ch[0] * 60):.1f}\&quot;&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_44">
+             <property name="geometry">
+              <rect>
+               <x>630</x>
+               <y>190</y>
+               <width>81</width>
+               <height>81</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>LCDMono</family>
+               <pointsize>55</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(56, 54, 57);
+background-color: rgb(136, 138, 133,0);
+border-style: transparant;
+ 
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>T:</string>
+             </property>
+            </widget>
+            <widget class="StatusLabel" name="statuslabel_15">
+             <property name="geometry">
+              <rect>
+               <x>760</x>
+               <y>20</y>
+               <width>105</width>
+               <height>38</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>105</width>
+               <height>38</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>110</width>
+               <height>45</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+background-color: rgb(136, 138, 133,0);
+    border-style: transparant;
+color: rgb(56, 54, 57);
+    font: 20pt &quot;LCD MONO&quot;;
+	border-color: rgb(164, 0, 0);
+}</string>
+             </property>
+             <property name="text">
+              <string>0.0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="format" stdset="0">
+              <string/>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0][1]:.1f}\&quot;&quot;, &quot;name&quot;: &quot;F Word&quot;}]</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_17">
+             <property name="geometry">
+              <rect>
+               <x>630</x>
+               <y>100</y>
+               <width>81</width>
+               <height>101</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>LCDMono</family>
+               <pointsize>55</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(56, 54, 57);
+background-color: rgb(136, 138, 133,0);
+ 
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>S:</string>
+             </property>
+            </widget>
+            <widget class="StatusLabel" name="statuslabel_14">
+             <property name="geometry">
+              <rect>
+               <x>760</x>
+               <y>143</y>
+               <width>105</width>
+               <height>38</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>105</width>
+               <height>38</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>110</width>
+               <height>45</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+background-color: rgb(136, 138, 133,0);
+    border-style: transparant;
+color: rgb(56, 54, 57);
+    font: 20pt &quot;LCD MONO&quot;;
+	border-color: rgb(164, 0, 0);
+}</string>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="format" stdset="0">
+              <string/>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.0f' % (ch[0] * 60)&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_7">
+             <property name="geometry">
+              <rect>
+               <x>630</x>
+               <y>10</y>
+               <width>81</width>
+               <height>101</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>LCDMono</family>
+               <pointsize>55</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(56, 54, 57);
+background-color: rgb(136, 138, 133,0);
+ 
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>F:</string>
+             </property>
+            </widget>
+            <widget class="StatusLabel" name="statuslabel_17">
+             <property name="geometry">
+              <rect>
+               <x>760</x>
+               <y>110</y>
+               <width>105</width>
+               <height>38</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>105</width>
+               <height>38</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>110</width>
+               <height>45</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+background-color: rgb(136, 138, 133,0);
+    border-style: transparant;
+color: rgb(56, 54, 57);
+    font: 20pt &quot;LCD MONO&quot;;
+	border-color: rgb(164, 0, 0);
+}</string>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+             <property name="format" stdset="0">
+              <string/>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.0f' % ch[0][1]&quot;, &quot;name&quot;: &quot;F Word&quot;}]</string>
+             </property>
+            </widget>
+            <widget class="VTKBackPlot" name="vtk">
+             <property name="geometry">
+              <rect>
+               <x>2</x>
+               <y>310</y>
+               <width>871</width>
+               <height>841</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>1</horstretch>
+               <verstretch>1</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>1000</width>
+               <height>1000</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="backgroundColor" stdset="0">
+              <color>
+               <red>32</red>
+               <green>36</green>
+               <blue>37</blue>
+              </color>
+             </property>
+             <widget class="QPushButton" name="iso_view_button">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>50</y>
+                <width>75</width>
+                <height>33</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>75</width>
+                <height>33</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>75</width>
+                <height>33</height>
+               </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::FocusPolicy::NoFocus</enum>
+              </property>
+              <property name="text">
+               <string>ISO VIEW</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </widget>
+            <zorder>label_8</zorder>
+            <zorder>label_3</zorder>
+            <zorder>dro_entry_main_z</zorder>
+            <zorder>label_15</zorder>
+            <zorder>dro_entry_main_y</zorder>
+            <zorder>statuslabel_12</zorder>
+            <zorder>label_4</zorder>
+            <zorder>dro_entry_main_x</zorder>
+            <zorder>label</zorder>
+            <zorder>label_14</zorder>
+            <zorder>dro_entry_main_x_14</zorder>
+            <zorder>label_59</zorder>
+            <zorder>dro_entry_main_x_8</zorder>
+            <zorder>dro_entry_main_x_7</zorder>
+            <zorder>label_12</zorder>
+            <zorder>label_10</zorder>
+            <zorder>label_21</zorder>
+            <zorder>label_11</zorder>
+            <zorder>label_24</zorder>
+            <zorder>statuslabel_13</zorder>
+            <zorder>label_44</zorder>
+            <zorder>statuslabel_15</zorder>
+            <zorder>label_17</zorder>
+            <zorder>statuslabel_14</zorder>
+            <zorder>label_7</zorder>
+            <zorder>statuslabel_17</zorder>
+            <zorder>vtk</zorder>
            </widget>
           </item>
          </layout>
@@ -5060,81 +6259,6 @@ QPushButton[style='active'][flashState='false']{
                </layout>
               </item>
              </layout>
-            </widget>
-            <widget class="VTKBackPlot" name="vtk">
-             <property name="geometry">
-              <rect>
-               <x>560</x>
-               <y>50</y>
-               <width>200</width>
-               <height>200</height>
-              </rect>
-             </property>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>1</horstretch>
-               <verstretch>1</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>200</width>
-               <height>200</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>200</width>
-               <height>200</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="backgroundColor" stdset="0">
-              <color>
-               <red>32</red>
-               <green>36</green>
-               <blue>37</blue>
-              </color>
-             </property>
-             <widget class="QPushButton" name="iso_view_button">
-              <property name="geometry">
-               <rect>
-                <x>20</x>
-                <y>160</y>
-                <width>75</width>
-                <height>33</height>
-               </rect>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>75</width>
-                <height>33</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>75</width>
-                <height>33</height>
-               </size>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::FocusPolicy::NoFocus</enum>
-              </property>
-              <property name="text">
-               <string>ISO VIEW</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-             </widget>
             </widget>
            </widget>
           </item>
@@ -11765,8 +12889,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_off_toggle.p
       <widget class="ActionButton" name="EStoper">
        <property name="geometry">
         <rect>
-         <x>885</x>
-         <y>954</y>
+         <x>903</x>
+         <y>1660</y>
          <width>160</width>
          <height>160</height>
         </rect>
@@ -11795,8 +12919,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="StatusLED" name="statusled_8">
        <property name="geometry">
         <rect>
-         <x>880</x>
-         <y>950</y>
+         <x>898</x>
+         <y>1656</y>
          <width>170</width>
          <height>170</height>
         </rect>
@@ -12986,6 +14110,11 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
    <class>HalLabel</class>
    <extends>QLabel</extends>
    <header>qtpyvcp.widgets.hal_widgets.hal_label</header>
+  </customwidget>
+  <customwidget>
+   <class>DROLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.dro_line_edit</header>
   </customwidget>
   <customwidget>
    <class>FileSystemTable</class>
