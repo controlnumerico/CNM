@@ -822,13 +822,10 @@ background-color: rgb(136, 138, 133,0);
               <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLineEdit{
-background-color: rgb(136, 138, 133,0);
-    border-style: transparant;
-color: rgb(56, 54, 57);
-    font: 20pt &quot;LCD MONO&quot;;
-	border-color: rgb(164, 0, 0);
-}</string>
+              <string notr="true">#dro_entry_main_x_14 {
+
+	background-color: transparent;
+                                }</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -916,13 +913,10 @@ background-color: rgb(136, 138, 133,0);
               <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLineEdit{
-background-color: rgb(136, 138, 133,0);
-    border-style: transparant;
-color: rgb(56, 54, 57);
-    font: 20pt &quot;LCD MONO&quot;;
-	border-color: rgb(164, 0, 0);
-}</string>
+              <string notr="true">#dro_entry_main_x_8 {
+
+	background-color: transparent;
+                                }</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -979,13 +973,10 @@ color: rgb(56, 54, 57);
               <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
-              <string notr="true">QLineEdit{
-background-color: rgb(136, 138, 133,0);
-    border-style: transparant;
-color: rgb(56, 54, 57);
-    font: 20pt &quot;LCD MONO&quot;;
-	border-color: rgb(164, 0, 0);
-}</string>
+              <string notr="true">#dro_entry_main_x_7 {
+
+	background-color: transparent;
+                                }</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
