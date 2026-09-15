@@ -350,6 +350,26 @@
           <property name="bottomMargin">
            <number>0</number>
           </property>
+          <item>
+           <widget class="QFrame" name="frame_7">
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <widget class="CustomKnob" name="widget_3" native="true">
+             <property name="geometry">
+              <rect>
+               <x>120</x>
+               <y>150</y>
+               <width>120</width>
+               <height>120</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </item>
          </layout>
         </widget>
         <widget class="QWidget" name="tab_2">
@@ -12573,6 +12593,47 @@ color: rgb(237, 51, 59);</string>
         <string>Status:</string>
        </property>
       </widget>
+      <widget class="QFrame" name="frame_10">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>1760</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+#frame_10 {
+
+
+
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
+
+
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <widget class="CustomKnob" name="Knob1" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>120</width>
+          <height>120</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -12586,6 +12647,7 @@ color: rgb(237, 51, 59);</string>
       <zorder>zero_z_button_9</zorder>
       <zorder>mdientry</zorder>
       <zorder>MyStatusBarNewLabel</zorder>
+      <zorder>frame_10</zorder>
      </widget>
     </item>
    </layout>
@@ -12837,6 +12899,12 @@ color: rgb(237, 51, 59);</string>
    <class>MillToolTable</class>
    <extends>LatheToolTable</extends>
    <header>qtpyvcp.widgets.input_widgets.mill_tool_table</header>
+  </customwidget>
+  <customwidget>
+   <class>CustomKnob</class>
+   <extends>QWidget</extends>
+   <header>custom_knob</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>

@@ -23,6 +23,12 @@ from qtpyvcp.utilities.settings import getSetting, setSetting
 
 from . import probe_basic_rc  # noqa: F401 - registers Qt resources
 
+
+
+from custom_knob import CustomKnob
+
+
+
 LOG = logger.getLogger('QtPyVCP.' + __name__)
 VCP_DIR = os.path.abspath(os.path.dirname(__file__))
 INIFILE = linuxcnc.ini(os.getenv("INI_FILE_NAME"))
@@ -363,6 +369,45 @@ class ProbeBasic(VCPMainWindow):
                 self.on_startup_sb_tab_combobox_changed)
             self.set_startup_sb_tab(self.startup_sb_tab_combobox.currentData())
         # --- End Startup Sidebar Tab Selection Logic ---
+
+##########-----------------------------------------
+## INIT ##  CUSTOM TIMISA 
+##########-----------------------------------------
+        ##########-----------------------------------------
+        ## INIT ##  CUSTOM KNOBS 
+        ##########-----------------------------------------
+        self.hola =  self.findChild(QWidget, "Knob1")
+        self.hola.setKnobColor("#3282f6")
+        self.hola.setValue(30)
+        ##########-----------------------------------------
+        ## END  ##  CUSTOM KNOBS 
+        ##########-----------------------------------------
+
+
+
+
+
+
+
+
+
+##########-----------------------------------------
+## END  ##  CUSTOM TIMISA 
+##########-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def store_original_tooltips(self):
         """Store the original tooltips for all widgets to restore later."""
