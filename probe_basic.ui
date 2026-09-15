@@ -1474,13 +1474,16 @@ color: rgb(56, 54, 57);
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">#vtk{
+
+	background-color: transparent;
+                                }</string>
              </property>
              <property name="backgroundColor" stdset="0">
               <color>
-               <red>32</red>
-               <green>36</green>
-               <blue>37</blue>
+               <red>213</red>
+               <green>228</green>
+               <blue>238</blue>
               </color>
              </property>
              <widget class="QPushButton" name="iso_view_button">
