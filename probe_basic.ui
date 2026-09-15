@@ -358,16 +358,6 @@
             <property name="frameShadow">
              <enum>QFrame::Shadow::Raised</enum>
             </property>
-            <widget class="CustomKnob" name="widget_3" native="true">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>150</y>
-               <width>120</width>
-               <height>120</height>
-              </rect>
-             </property>
-            </widget>
            </widget>
           </item>
          </layout>
@@ -12634,6 +12624,170 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
         </property>
        </widget>
       </widget>
+      <widget class="QFrame" name="frame_11">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>1730</y>
+         <width>150</width>
+         <height>150</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+#frame_11 {
+
+
+
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
+
+
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <widget class="CustomKnob" name="Knob2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>150</width>
+          <height>150</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frame_18">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>1730</y>
+         <width>150</width>
+         <height>150</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+#frame_18 {
+
+
+
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
+
+
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <widget class="CustomKnob" name="Knob3" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>150</width>
+          <height>150</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frame_19">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>1730</y>
+         <width>150</width>
+         <height>150</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+#frame_19 {
+
+
+
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
+
+
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <widget class="CustomKnob" name="Knob4" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>150</width>
+          <height>150</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frame_20">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>1730</y>
+         <width>150</width>
+         <height>150</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+#frame_20 {
+
+
+
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
+
+
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <widget class="CustomKnob" name="Knob5" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>150</width>
+          <height>150</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -12648,6 +12802,10 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
       <zorder>mdientry</zorder>
       <zorder>MyStatusBarNewLabel</zorder>
       <zorder>frame_10</zorder>
+      <zorder>frame_11</zorder>
+      <zorder>frame_18</zorder>
+      <zorder>frame_19</zorder>
+      <zorder>frame_20</zorder>
      </widget>
     </item>
    </layout>

@@ -376,9 +376,32 @@ class ProbeBasic(VCPMainWindow):
         ##########-----------------------------------------
         ## INIT ##  CUSTOM KNOBS 
         ##########-----------------------------------------
-        self.hola =  self.findChild(QWidget, "Knob1")
-        self.hola.setKnobColor("#3282f6")
-        self.hola.setValue(30)
+        self.Knob1 =  self.findChild(QWidget, "Knob1")
+        self.Knob1.setKnobColor("#3282f6")
+        self.Knob1.setValue(30)
+
+        self.Knob2 =  self.findChild(QWidget, "Knob2")
+        self.Knob2.setKnobColor("#d09320")
+        self.Knob2.setValue(30)
+
+        self.Knob3 =  self.findChild(QWidget, "Knob3")
+        self.Knob3.setKnobColor("#3282f6")
+        self.Knob3.setValue(30)
+
+        self.Knob4 =  self.findChild(QWidget, "Knob4")
+        self.Knob4.setKnobColor("#3282f6")
+        self.Knob4.setValue(30)
+
+        self.Knob5 =  self.findChild(QWidget, "Knob5")
+        self.Knob5.setKnobColor("#3282f6")
+        self.Knob5.setValue(30)
+
+
+
+
+
+
+
         ##########-----------------------------------------
         ## END  ##  CUSTOM KNOBS 
         ##########-----------------------------------------
