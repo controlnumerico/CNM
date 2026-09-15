@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1900</width>
-    <height>1960</height>
+    <height>1961</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -64,10 +64,10 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/CNC_Main.png);
 }</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Shadow::Raised</enum>
       </property>
       <property name="lineWidth">
        <number>0</number>
@@ -103,10 +103,10 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/CNC_Main.png);
         <string notr="true"/>
        </property>
        <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
+        <enum>QFrame::Shape::NoFrame</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <property name="lineWidth">
         <number>0</number>
@@ -269,7 +269,7 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/CNC_Main.png);
          <cursorShape>ArrowCursor</cursorShape>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="autoFillBackground">
          <bool>false</bool>
@@ -283,7 +283,7 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/CNC_Main.png);
 }</string>
         </property>
         <property name="tabPosition">
-         <enum>QTabWidget::South</enum>
+         <enum>QTabWidget::TabPosition::South</enum>
         </property>
         <property name="currentIndex">
          <number>0</number>
@@ -317,7 +317,7 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/CNC_Main.png);
           <item>
            <widget class="QWidget" name="widget_2" native="true">
             <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
+             <enum>Qt::LayoutDirection::RightToLeft</enum>
             </property>
             <widget class="QWidget" name="horizontalLayoutWidget">
              <property name="geometry">
@@ -347,10 +347,10 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/CNC_Main.png);
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Sunken</enum>
+                 <enum>QFrame::Shadow::Sunken</enum>
                 </property>
                 <property name="lineWidth">
                  <number>0</number>
@@ -380,13 +380,12 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/CNC_Main.png);
                   <font>
                    <family>Digital Display</family>
                    <pointsize>70</pointsize>
-                   <weight>75</weight>
                    <italic>false</italic>
                    <bold>true</bold>
                   </font>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QLineEdit{
@@ -400,7 +399,7 @@ color: rgb(56, 54, 57);
                   <string>     0.000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="referenceType" stdset="0">
                   <number>1</number>
@@ -446,13 +445,12 @@ color: rgb(56, 54, 57);
                   <font>
                    <family>Digital Display</family>
                    <pointsize>70</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QLineEdit{
@@ -466,7 +464,7 @@ color: rgb(56, 54, 57);
                   <string>     0.000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="referenceType" stdset="0">
                   <number>1</number>
@@ -500,13 +498,12 @@ color: rgb(56, 54, 57);
                   <font>
                    <family>Noto Sans Mono</family>
                    <pointsize>60</pointsize>
-                   <weight>75</weight>
                    <italic>false</italic>
                    <bold>true</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(1, 123, 206);
@@ -531,13 +528,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>Noto Sans Mono</family>
                    <pointsize>60</pointsize>
-                   <weight>75</weight>
                    <italic>false</italic>
                    <bold>true</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(1, 123, 206);
@@ -563,12 +559,11 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>18</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">
@@ -606,13 +601,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>LCD MONO</family>
                    <pointsize>20</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::NoFocus</enum>
+                  <enum>Qt::FocusPolicy::NoFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QLineEdit{
@@ -624,7 +618,7 @@ color: rgb(56, 54, 57);
 }</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="referenceType" stdset="0">
                   <number>0</number>
@@ -670,13 +664,12 @@ color: rgb(56, 54, 57);
                   <font>
                    <family>LCD MONO</family>
                    <pointsize>20</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::NoFocus</enum>
+                  <enum>Qt::FocusPolicy::NoFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QLineEdit{
@@ -688,7 +681,7 @@ color: rgb(56, 54, 57);
 }</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="referenceType" stdset="0">
                   <number>0</number>
@@ -722,13 +715,12 @@ color: rgb(56, 54, 57);
                   <font>
                    <family>LCDMono</family>
                    <pointsize>55</pointsize>
-                   <weight>75</weight>
                    <italic>false</italic>
                    <bold>true</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(56, 54, 57);
@@ -781,13 +773,13 @@ color: rgb(56, 54, 57);
                   <string>0.0</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0][1]:.1f}\&quot;&quot;, &quot;name&quot;: &quot;F Word&quot;}]</string>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="format" stdset="0">
                   <string/>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0][1]:.1f}\&quot;&quot;, &quot;name&quot;: &quot;F Word&quot;}]</string>
                  </property>
                 </widget>
                 <widget class="StatusLabel" name="statuslabel_13">
@@ -830,13 +822,13 @@ color: rgb(56, 54, 57);
                   <string>0.0</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{(ch[0] * 60):.1f}\&quot;&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="format" stdset="0">
                   <string/>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{(ch[0] * 60):.1f}\&quot;&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
                  </property>
                 </widget>
                 <widget class="QLabel" name="label_10">
@@ -852,13 +844,12 @@ color: rgb(56, 54, 57);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(191, 64, 64);
@@ -884,13 +875,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(191, 64, 64);
@@ -916,13 +906,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>14</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">
@@ -949,13 +938,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>14</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">
@@ -999,7 +987,6 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>18</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -1015,7 +1002,7 @@ background-color: rgb(136, 138, 133,0);
                   <string>G53 WORK</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                  <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0] + ' WORK'\n&quot;, &quot;name&quot;: &quot;WCS Header&quot;}]</string>
@@ -1034,7 +1021,6 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>17</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
@@ -1046,7 +1032,7 @@ background-color: rgb(136, 138, 133,0);
                   <number>5</number>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">
@@ -1072,7 +1058,6 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>BebasKai</family>
                    <pointsize>20</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
@@ -1100,7 +1085,7 @@ background-color: rgb(136, 138, 133,0);
                   <string>N/A Operation</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_mode?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0] + \&quot; Operation\&quot;&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
@@ -1144,7 +1129,6 @@ background-color: qlineargradient(spread:pad, x1:0.4, y1:0.4, x2:1, y2:1, stop:0
                   <font>
                    <family>BebasKai</family>
                    <pointsize>18</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
@@ -1173,7 +1157,7 @@ background-color: rgb(136, 138, 133,0);
                   <string>No HOME</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'- Limits -' if ch[0] else 'No HOME'&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
@@ -1192,7 +1176,6 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>17</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -1202,7 +1185,7 @@ background-color: rgb(136, 138, 133,0);
 background-color: rgb(136, 138, 133,0);</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;clock:date?string&amp;format=%H&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;clock:date?string&amp;format=%M&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;clock:date?string&amp;format=%p&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0]) + \&quot;:\&quot; + str(ch[1]) + \&quot;  \&quot; + str(ch[2])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
@@ -1218,7 +1201,7 @@ background-color: rgb(136, 138, 133,0);</string>
                   </rect>
                  </property>
                  <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                  <enum>Qt::Orientation::Horizontal</enum>
                  </property>
                 </widget>
                 <widget class="Line" name="line_2">
@@ -1231,7 +1214,7 @@ background-color: rgb(136, 138, 133,0);</string>
                   </rect>
                  </property>
                  <property name="orientation">
-                  <enum>Qt::Vertical</enum>
+                  <enum>Qt::Orientation::Vertical</enum>
                  </property>
                 </widget>
                 <widget class="Line" name="line_3">
@@ -1244,7 +1227,7 @@ background-color: rgb(136, 138, 133,0);</string>
                   </rect>
                  </property>
                  <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                  <enum>Qt::Orientation::Horizontal</enum>
                  </property>
                 </widget>
                 <widget class="Line" name="line_4">
@@ -1257,7 +1240,7 @@ background-color: rgb(136, 138, 133,0);</string>
                   </rect>
                  </property>
                  <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                  <enum>Qt::Orientation::Horizontal</enum>
                  </property>
                 </widget>
                 <widget class="QLabel" name="label_17">
@@ -1273,13 +1256,12 @@ background-color: rgb(136, 138, 133,0);</string>
                   <font>
                    <family>LCDMono</family>
                    <pointsize>55</pointsize>
-                   <weight>75</weight>
                    <italic>false</italic>
                    <bold>true</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(56, 54, 57);
@@ -1305,13 +1287,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(191, 64, 64);
@@ -1364,13 +1345,13 @@ color: rgb(56, 54, 57);
                   <string>0</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.0f' % ch[0][1]&quot;, &quot;name&quot;: &quot;F Word&quot;}]</string>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="format" stdset="0">
                   <string/>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.0f' % ch[0][1]&quot;, &quot;name&quot;: &quot;F Word&quot;}]</string>
                  </property>
                 </widget>
                 <widget class="StatusLabel" name="statuslabel_14">
@@ -1413,13 +1394,13 @@ color: rgb(56, 54, 57);
                   <string>0</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.0f' % (ch[0] * 60)&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="format" stdset="0">
                   <string/>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.0f' % (ch[0] * 60)&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
                  </property>
                 </widget>
                 <widget class="QLabel" name="label_24">
@@ -1435,13 +1416,12 @@ color: rgb(56, 54, 57);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(191, 64, 64);
@@ -1479,13 +1459,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>Digital Display</family>
                    <pointsize>70</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QLineEdit{
@@ -1499,7 +1478,7 @@ color: rgb(56, 54, 57);
                   <string>     0.000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="referenceType" stdset="0">
                   <number>1</number>
@@ -1533,13 +1512,12 @@ color: rgb(56, 54, 57);
                   <font>
                    <family>Noto Sans Mono</family>
                    <pointsize>60</pointsize>
-                   <weight>75</weight>
                    <italic>false</italic>
                    <bold>true</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(1, 123, 206);
@@ -1565,13 +1543,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>lcd phone</family>
                    <pointsize>14</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">
@@ -1594,7 +1571,7 @@ background-color: rgb(136, 138, 133,0);
                   </rect>
                  </property>
                  <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                  <enum>Qt::Orientation::Horizontal</enum>
                  </property>
                 </widget>
                 <widget class="DROLineEdit" name="dro_entry_main_x_14">
@@ -1622,13 +1599,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>LCD MONO</family>
                    <pointsize>20</pointsize>
-                   <weight>50</weight>
                    <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::NoFocus</enum>
+                  <enum>Qt::FocusPolicy::NoFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QLineEdit{
@@ -1640,7 +1616,7 @@ color: rgb(56, 54, 57);
 }</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="referenceType" stdset="0">
                   <number>0</number>
@@ -1671,7 +1647,7 @@ color: rgb(56, 54, 57);
                   </rect>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::NoFocus</enum>
+                  <enum>Qt::FocusPolicy::NoFocus</enum>
                  </property>
                  <property name="backgroundColor" stdset="0">
                   <color>
@@ -1737,7 +1713,7 @@ color: rgb(56, 54, 57);
                    </size>
                   </property>
                   <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                   <enum>Qt::FocusPolicy::NoFocus</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QComboBox {
@@ -1786,13 +1762,12 @@ QComboBox QAbstractItemView{
                   <font>
                    <family>LCDMono</family>
                    <pointsize>55</pointsize>
-                   <weight>75</weight>
                    <italic>false</italic>
                    <bold>true</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(56, 54, 57);
@@ -1828,24 +1803,24 @@ border-style: transparant;
                   </font>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::NoFocus</enum>
+                  <enum>Qt::FocusPolicy::NoFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
                  <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
+                  <enum>QFrame::Shape::NoFrame</enum>
                  </property>
                  <property name="frameShadow">
-                  <enum>QFrame::Plain</enum>
+                  <enum>QFrame::Shadow::Plain</enum>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
                  <property name="sizeAdjustPolicy">
-                  <enum>QAbstractScrollArea::AdjustIgnored</enum>
+                  <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
                  </property>
-                 <property name="tabStopWidth">
+                 <property name="tabStopWidth" stdset="0">
                   <number>100</number>
                  </property>
                  <property name="syntaxHighlighting" stdset="0">
@@ -1900,13 +1875,12 @@ border-style: transparant;
                   <font>
                    <family>lcd phone</family>
                    <pointsize>20</pointsize>
-                   <weight>75</weight>
                    <italic>false</italic>
                    <bold>true</bold>
                   </font>
                  </property>
                  <property name="layoutDirection">
-                  <enum>Qt::RightToLeft</enum>
+                  <enum>Qt::LayoutDirection::RightToLeft</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(191, 64, 64);
@@ -1950,13 +1924,12 @@ background-color: rgb(136, 138, 133,0);
                   <font>
                    <family>Sans</family>
                    <pointsize>25</pointsize>
-                   <weight>75</weight>
                    <italic>false</italic>
                    <bold>true</bold>
                   </font>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">
@@ -1982,7 +1955,6 @@ background-color: rgb(247, 124, 22);</string>
                   <font>
                    <family>lcd phone</family>
                    <pointsize>17</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -1995,7 +1967,7 @@ background-color: rgb(136, 138, 133,0);</string>
                   <string>HORA :</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -2409,7 +2381,6 @@ image: url(/home/cnc/.iMG/Btn_Subm_act.png);
               <font>
                <family>DejaVu Sans Mono</family>
                <pointsize>18</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -2433,10 +2404,10 @@ color: rgb(237, 51, 59);</string>
           <item>
            <widget class="QFrame" name="frame_4">
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::Shape::StyledPanel</enum>
             </property>
             <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
+             <enum>QFrame::Shadow::Raised</enum>
             </property>
             <property name="lineWidth">
              <number>0</number>
@@ -2472,10 +2443,10 @@ color: rgb(237, 51, 59);</string>
               <string notr="true"/>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::Shape::StyledPanel</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_37">
               <property name="spacing">
@@ -2510,7 +2481,7 @@ color: rgb(237, 51, 59);</string>
                    </size>
                   </property>
                   <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                   <enum>Qt::FocusPolicy::NoFocus</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
@@ -2553,7 +2524,7 @@ color: rgb(237, 51, 59);</string>
                    </size>
                   </property>
                   <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                   <enum>Qt::FocusPolicy::NoFocus</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">font: 12pt &quot;Bebas Kai&quot;;</string>
@@ -2581,7 +2552,7 @@ color: rgb(237, 51, 59);</string>
                    </size>
                   </property>
                   <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                   <enum>Qt::FocusPolicy::NoFocus</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
@@ -2606,7 +2577,7 @@ color: rgb(237, 51, 59);</string>
                    </sizepolicy>
                   </property>
                   <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                   <enum>Qt::FocusPolicy::NoFocus</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">FileSystemTable {
@@ -2628,7 +2599,7 @@ QHeaderView {
 }</string>
                   </property>
                   <property name="sizeAdjustPolicy">
-                   <enum>QAbstractScrollArea::AdjustIgnored</enum>
+                   <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
                   </property>
                   <property name="autoScroll">
                    <bool>true</bool>
@@ -2637,10 +2608,10 @@ QHeaderView {
                    <number>50</number>
                   </property>
                   <property name="selectionMode">
-                   <enum>QAbstractItemView::SingleSelection</enum>
+                   <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
                   </property>
                   <property name="textElideMode">
-                   <enum>Qt::ElideRight</enum>
+                   <enum>Qt::TextElideMode::ElideRight</enum>
                   </property>
                   <property name="showGrid">
                    <bool>false</bool>
@@ -2690,7 +2661,7 @@ QHeaderView {
                    </size>
                   </property>
                   <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                   <enum>Qt::FocusPolicy::NoFocus</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
@@ -2733,7 +2704,7 @@ QHeaderView {
                    </size>
                   </property>
                   <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                   <enum>Qt::FocusPolicy::NoFocus</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
@@ -2766,10 +2737,10 @@ QHeaderView {
                    </size>
                   </property>
                   <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
+                   <enum>Qt::FocusPolicy::NoFocus</enum>
                   </property>
                   <property name="layoutDirection">
-                   <enum>Qt::RightToLeft</enum>
+                   <enum>Qt::LayoutDirection::RightToLeft</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
@@ -2800,7 +2771,7 @@ QHeaderView {
               </rect>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
             </widget>
             <widget class="StatusLabel" name="statuslabel_26">
@@ -2840,7 +2811,7 @@ QHeaderView {
               <string notr="true"/>
              </property>
              <property name="alignment">
-              <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+              <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -2895,7 +2866,7 @@ QHeaderView {
               <string notr="true"/>
              </property>
              <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -2977,7 +2948,7 @@ QHeaderView {
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
@@ -3019,7 +2990,7 @@ QHeaderView {
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">#Stop{
@@ -3143,7 +3114,7 @@ background-color: transparent;
               <number>0</number>
              </property>
              <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
              <property name="indent">
               <number>0</number>
@@ -3174,7 +3145,7 @@ background-color: transparent;
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
@@ -3217,7 +3188,7 @@ background-color: transparent;
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">QSlider::groove:horizontal {
@@ -3278,7 +3249,7 @@ border-radius: 4px;
 }</string>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="actionName" stdset="0">
               <string>machine.max-velocity.set</string>
@@ -3326,13 +3297,13 @@ border-radius: 4px;
               <string>0.0</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-             <property name="rules" stdset="0">
-              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0][1]:.1f}\&quot;&quot;, &quot;name&quot;: &quot;F Word&quot;}]</string>
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
              <property name="format" stdset="0">
               <string>{:1f}</string>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0][1]:.1f}\&quot;&quot;, &quot;name&quot;: &quot;F Word&quot;}]</string>
              </property>
             </widget>
             <widget class="StatusLabel" name="current_velocity_status">
@@ -3377,13 +3348,13 @@ border-radius: 4px;
               <string>0.0</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-             <property name="rules" stdset="0">
-              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{(ch[0] * 60):.1f}\&quot;&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
              <property name="format" stdset="0">
               <string>{:.1f}</string>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{(ch[0] * 60):.1f}\&quot;&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
              </property>
             </widget>
            </widget>
@@ -3398,10 +3369,10 @@ border-radius: 4px;
           <item>
            <widget class="QFrame" name="frame_8">
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::Shape::StyledPanel</enum>
             </property>
             <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
+             <enum>QFrame::Shadow::Raised</enum>
             </property>
            </widget>
           </item>
@@ -3451,7 +3422,7 @@ border-radius: 4px;
               </font>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true"/>
@@ -3501,13 +3472,12 @@ border-radius: 4px;
               <font>
                <family>Bebas Kai</family>
                <pointsize>19</pointsize>
-               <weight>50</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">font: 19pt &quot;Bebas Kai&quot;;</string>
@@ -3556,7 +3526,7 @@ border-radius: 4px;
               <string/>
              </property>
              <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
              <property name="placeholderText">
               <string>0</string>
@@ -3584,7 +3554,7 @@ border-radius: 4px;
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">.QFrame{
@@ -3642,7 +3612,7 @@ border-radius: 4px;
                  <number>0</number>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                 <property name="margin">
                  <number>-6</number>
@@ -3683,7 +3653,7 @@ border-radius: 4px;
                  </size>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -3773,7 +3743,7 @@ border-radius: 4px;
                  <number>0</number>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                 <property name="margin">
                  <number>-6</number>
@@ -3814,7 +3784,7 @@ border-radius: 4px;
                  </size>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -3838,7 +3808,7 @@ border-radius: 4px;
                  </size>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QSlider::groove:horizontal {
@@ -3899,7 +3869,7 @@ border-radius: 4px;
 }</string>
                 </property>
                 <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                 <enum>Qt::Orientation::Horizontal</enum>
                 </property>
                 <property name="actionName" stdset="0">
                  <string>machine.rapid-override.set</string>
@@ -3943,7 +3913,7 @@ border-radius: 4px;
                  <number>0</number>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                 <property name="indent">
                  <number>0</number>
@@ -3975,7 +3945,7 @@ border-radius: 4px;
                  </size>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QSlider::groove:horizontal {
@@ -4036,7 +4006,7 @@ border-radius: 4px;
 }</string>
                 </property>
                 <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                 <enum>Qt::Orientation::Horizontal</enum>
                 </property>
                 <property name="actionName" stdset="0">
                  <string>machine.max-velocity.set</string>
@@ -4052,7 +4022,7 @@ border-radius: 4px;
                  </size>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QSlider::groove:horizontal {
@@ -4116,7 +4086,7 @@ border-radius: 4px;
                  <number>100</number>
                 </property>
                 <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                 <enum>Qt::Orientation::Horizontal</enum>
                 </property>
                 <property name="actionName" stdset="0">
                  <string>machine.feed-override.set</string>
@@ -4138,7 +4108,7 @@ border-radius: 4px;
                  </size>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -4230,7 +4200,7 @@ border-radius: 4px;
               <string>30%</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
              <property name="rules" stdset="0">
               <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;settings:machine.jog.linear-speed-percentage&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;%s%%\&quot; % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
@@ -4252,7 +4222,7 @@ border-radius: 4px;
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: rgb(136, 138, 133,0);</string>
@@ -4270,7 +4240,7 @@ border-radius: 4px;
               <number>50</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="settingName" stdset="0">
               <string>machine.jog.linear-speed-percentage</string>
@@ -4312,7 +4282,7 @@ border-radius: 4px;
               <string>30%</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
              <property name="rules" stdset="0">
               <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;settings:machine.jog.linear-speed-percentage&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]}%\&quot;&quot;, &quot;name&quot;: &quot;linear_jog_slider_dro&quot;}]</string>
@@ -4334,7 +4304,7 @@ border-radius: 4px;
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">QSlider::groove:horizontal {
@@ -4407,7 +4377,7 @@ border-radius: 4px;
               <number>50</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="settingName" stdset="0">
               <string>machine.jog.linear-speed-percentage</string>
@@ -4441,7 +4411,7 @@ border-radius: 4px;
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
@@ -4512,7 +4482,7 @@ QPushButton:checked {
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">QComboBox {
@@ -4731,7 +4701,7 @@ QComboBox QAbstractItemView{
            <cursorShape>ArrowCursor</cursorShape>
           </property>
           <property name="focusPolicy">
-           <enum>Qt::NoFocus</enum>
+           <enum>Qt::FocusPolicy::NoFocus</enum>
           </property>
           <property name="styleSheet">
            <string notr="true">QTabWidget QTabBar::tab {
@@ -4743,7 +4713,7 @@ QComboBox QAbstractItemView{
 }</string>
           </property>
           <property name="tabPosition">
-           <enum>QTabWidget::South</enum>
+           <enum>QTabWidget::TabPosition::South</enum>
           </property>
           <property name="currentIndex">
            <number>0</number>
@@ -4780,10 +4750,10 @@ background-color: transparent;
 }</string>
               </property>
               <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
+               <enum>QFrame::Shape::StyledPanel</enum>
               </property>
               <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+               <enum>QFrame::Shadow::Raised</enum>
               </property>
              </widget>
             </item>
@@ -4797,10 +4767,10 @@ background-color: transparent;
             <item>
              <widget class="QFrame" name="frame_7">
               <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
+               <enum>QFrame::Shape::StyledPanel</enum>
               </property>
               <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+               <enum>QFrame::Shadow::Raised</enum>
               </property>
               <widget class="QLineEdit" name="lineEdit_4">
                <property name="geometry">
@@ -4827,7 +4797,7 @@ background-color: transparent;
                <number>15</number>
               </property>
               <property name="sizeConstraint">
-               <enum>QLayout::SetNoConstraint</enum>
+               <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
               </property>
               <property name="leftMargin">
                <number>15</number>
@@ -4896,10 +4866,10 @@ background-color: transparent;
            </rect>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Shape::StyledPanel</enum>
           </property>
           <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
+           <enum>QFrame::Shadow::Raised</enum>
           </property>
          </widget>
         </widget>
@@ -4941,7 +4911,7 @@ background-color: transparent;
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">ActionCheckBox::indicator:checked {
@@ -4971,23 +4941,23 @@ image: url(/home/cnc/.iMG/CNC_off_toggle.png);
           <height>22</height>
          </rect>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>22</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>237</red>
           <green>212</green>
           <blue>0</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashing">
+        <property name="flashing" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashRate">
+        <property name="flashRate" stdset="0">
          <number>500</number>
         </property>
        </widget>
@@ -5000,23 +4970,23 @@ image: url(/home/cnc/.iMG/CNC_off_toggle.png);
           <height>22</height>
          </rect>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>22</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>237</red>
           <green>212</green>
           <blue>0</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashing">
+        <property name="flashing" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashRate">
+        <property name="flashRate" stdset="0">
          <number>550</number>
         </property>
        </widget>
@@ -5033,7 +5003,6 @@ image: url(/home/cnc/.iMG/CNC_off_toggle.png);
          <font>
           <family>Liberation Mono</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -5044,7 +5013,7 @@ image: url(/home/cnc/.iMG/CNC_off_toggle.png);
          <number>5</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(136, 138, 133);
@@ -5086,7 +5055,7 @@ background-color: rgb(136, 138, 133,0);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::WheelFocus</enum>
+         <enum>Qt::FocusPolicy::WheelFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#ref_all_button_6 {
@@ -5146,16 +5115,15 @@ image: url(/home/cnc/.iMG/CNC_Home_pressed.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>40</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#zero_x_button_9 {
@@ -5235,7 +5203,7 @@ image: url(/home/cnc/.iMG/CNC_Zero_pressed.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#zero_z_button_9 {
@@ -5315,10 +5283,10 @@ image: url(/home/cnc/.iMG/CNC_Zero_pressed.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#zero_all_button_3 {
@@ -5401,16 +5369,15 @@ image: url(/home/cnc/.iMG/CNC_Zero_pressed.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>40</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#ZeroXY {
@@ -5487,7 +5454,7 @@ image: url(/home/cnc/.iMG/CNC_Zero_pressed.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#x_plus_jogbutton{
@@ -5533,7 +5500,7 @@ image: url(/home/cnc/.iMG/btn_jog.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">
@@ -5590,7 +5557,7 @@ image: url(/home/cnc/.iMG/btn_jog.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#x_minus_jogbutton{
@@ -5636,7 +5603,7 @@ image: url(/home/cnc/.iMG/btn_jog.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#z_plus_jogbutton{
@@ -5688,7 +5655,7 @@ image: url(/home/cnc/.iMG/btn_jog.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#exitAppBtn {
@@ -5741,7 +5708,7 @@ image: url(/home/cnc/.iMG/BTN_5_Down.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#Feed {
@@ -5841,10 +5808,10 @@ image: url(/home/cnc/.iMG/E_Stop_Inac.png);
          <string notr="true">background-color: rgb(0, 0, 0);</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
+         <enum>QFrame::Shape::NoFrame</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Shadow::Raised</enum>
         </property>
         <property name="lineWidth">
          <number>0</number>
@@ -5973,20 +5940,20 @@ image: url(/home/cnc/.iMG/CNC_Mode_Auto_Sprite.png);
            <height>60</height>
           </size>
          </property>
-         <property name="diameter">
+         <property name="diameter" stdset="0">
           <number>84</number>
          </property>
-         <property name="color">
+         <property name="color" stdset="0">
           <color>
            <red>126</red>
            <green>219</green>
            <blue>11</blue>
           </color>
          </property>
-         <property name="state">
+         <property name="state" stdset="0">
           <bool>false</bool>
          </property>
-         <property name="flashRate">
+         <property name="flashRate" stdset="0">
           <number>500</number>
          </property>
          <property name="rules" stdset="0">
@@ -6008,20 +5975,20 @@ image: url(/home/cnc/.iMG/CNC_Mode_Auto_Sprite.png);
            <height>60</height>
           </size>
          </property>
-         <property name="diameter">
+         <property name="diameter" stdset="0">
           <number>84</number>
          </property>
-         <property name="color">
+         <property name="color" stdset="0">
           <color>
            <red>243</red>
            <green>242</green>
            <blue>0</blue>
           </color>
          </property>
-         <property name="state">
+         <property name="state" stdset="0">
           <bool>false</bool>
          </property>
-         <property name="flashRate">
+         <property name="flashRate" stdset="0">
           <number>500</number>
          </property>
          <property name="rules" stdset="0">
@@ -6043,20 +6010,20 @@ image: url(/home/cnc/.iMG/CNC_Mode_Auto_Sprite.png);
            <height>60</height>
           </size>
          </property>
-         <property name="diameter">
+         <property name="diameter" stdset="0">
           <number>84</number>
          </property>
-         <property name="color">
+         <property name="color" stdset="0">
           <color>
            <red>243</red>
            <green>242</green>
            <blue>0</blue>
           </color>
          </property>
-         <property name="state">
+         <property name="state" stdset="0">
           <bool>false</bool>
          </property>
-         <property name="flashRate">
+         <property name="flashRate" stdset="0">
           <number>500</number>
          </property>
          <property name="rules" stdset="0">
@@ -6078,20 +6045,20 @@ image: url(/home/cnc/.iMG/CNC_Mode_Auto_Sprite.png);
            <height>60</height>
           </size>
          </property>
-         <property name="diameter">
+         <property name="diameter" stdset="0">
           <number>84</number>
          </property>
-         <property name="color">
+         <property name="color" stdset="0">
           <color>
            <red>243</red>
            <green>242</green>
            <blue>0</blue>
           </color>
          </property>
-         <property name="state">
+         <property name="state" stdset="0">
           <bool>false</bool>
          </property>
-         <property name="flashRate">
+         <property name="flashRate" stdset="0">
           <number>500</number>
          </property>
          <property name="rules" stdset="0">
@@ -6111,12 +6078,11 @@ image: url(/home/cnc/.iMG/CNC_Mode_Auto_Sprite.png);
           <font>
            <family>lcd phone</family>
            <pointsize>17</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="layoutDirection">
-          <enum>Qt::RightToLeft</enum>
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">
@@ -6126,7 +6092,7 @@ color: rgb(255, 255, 255);
 background-color: rgb(136, 138, 133,0);</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
          <property name="rules" stdset="0">
           <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;clock:date?string&amp;format=%A&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;clock:date?string&amp;format=%-d&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;clock:date?string&amp;format=%b&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;clock:date?string&amp;format=%Y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0]) + \&quot; \&quot; + str(ch[1]) + \&quot; \&quot; + str(ch[2]) + \&quot; \&quot; + str(ch[3])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
@@ -6151,17 +6117,17 @@ background-color: rgb(136, 138, 133,0);</string>
           <height>15</height>
          </rect>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>15</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>246</red>
           <green>211</green>
           <blue>45</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
         <property name="rules" stdset="0">
@@ -6190,7 +6156,7 @@ background-color: rgb(136, 138, 133,0);</string>
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#mode_mdi {
@@ -6233,7 +6199,7 @@ image: url(/home/cnc/Downloads/CNC_Mode_MDI_pressed.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#mode_auto {
@@ -6260,17 +6226,17 @@ image: url(/home/cnc/Downloads/CNC_Mode_Auto_pressed.png);
           <height>15</height>
          </rect>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>15</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>246</red>
           <green>211</green>
           <blue>45</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
         <property name="rules" stdset="0">
@@ -6286,17 +6252,17 @@ image: url(/home/cnc/Downloads/CNC_Mode_Auto_pressed.png);
           <height>15</height>
          </rect>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>15</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>246</red>
           <green>211</green>
           <blue>45</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
         <property name="rules" stdset="0">
@@ -6325,7 +6291,7 @@ image: url(/home/cnc/Downloads/CNC_Mode_Auto_pressed.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#mode_manual {
@@ -6352,23 +6318,23 @@ image: url(/home/cnc/Downloads/CNC_Mode_Manual_pressed.png);
           <height>170</height>
          </rect>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>170</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>245</red>
           <green>194</green>
           <blue>17</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashing">
+        <property name="flashing" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashRate">
+        <property name="flashRate" stdset="0">
          <number>300</number>
         </property>
         <property name="rules" stdset="0">
@@ -6388,7 +6354,6 @@ image: url(/home/cnc/Downloads/CNC_Mode_Manual_pressed.png);
          <font>
           <family>Liberation Mono</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -6399,7 +6364,7 @@ image: url(/home/cnc/Downloads/CNC_Mode_Manual_pressed.png);
          <number>5</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(136, 138, 133);
@@ -6426,7 +6391,6 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>Liberation Mono</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -6437,7 +6401,7 @@ background-color: rgb(136, 138, 133,0);
          <number>5</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(136, 138, 133);
@@ -6460,23 +6424,23 @@ background-color: rgb(136, 138, 133,0);
           <height>22</height>
          </rect>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>22</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>237</red>
           <green>212</green>
           <blue>0</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashing">
+        <property name="flashing" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashRate">
+        <property name="flashRate" stdset="0">
          <number>550</number>
         </property>
        </widget>
@@ -6493,7 +6457,6 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>Liberation Mono</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -6504,7 +6467,7 @@ background-color: rgb(136, 138, 133,0);
          <number>5</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(136, 138, 133);
@@ -6562,16 +6525,15 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>Bebas Kai</family>
           <pointsize>40</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#zero_y_button {
@@ -6651,13 +6613,12 @@ image: url(/home/cnc/.iMG/CNC_Zero_pressed.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#iso_view_button {
@@ -6712,13 +6673,12 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#x_view_button {
@@ -6773,13 +6733,12 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#y_view_button {
@@ -6833,13 +6792,12 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#z_view_button {
@@ -6893,13 +6851,12 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#perspective_button {
@@ -6956,13 +6913,12 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#program_zoom_button {
@@ -7016,13 +6972,12 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#zoom_in_button {
@@ -7076,13 +7031,12 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#zoom_out_button {
@@ -7136,13 +7090,12 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#machine_zoom_button {
@@ -7196,13 +7149,12 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#ortho_button {
@@ -7259,7 +7211,7 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#program_boundary_button {
@@ -7308,7 +7260,7 @@ image: url(/home/cnc/.iMG/btn_42x42_pressed.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#machine_boundary_button {
@@ -7357,7 +7309,7 @@ image: url(/home/cnc/.iMG/btn_42x42_pressed.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#plot_grid_button {
@@ -7409,12 +7361,11 @@ image: url(/home/cnc/.iMG/btn_42x42_pressed.png);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#settings_pushbutton_3 {
@@ -7466,12 +7417,11 @@ image: url(/home/cnc/.iMG/btn_42x42_pressed.png);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#settings_pushbutton_5 {
@@ -7523,12 +7473,11 @@ image: url(/home/cnc/.iMG/btn_42x42_pressed.png);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#settings_pushbutton_4 {
@@ -7562,7 +7511,6 @@ image: url(/home/cnc/.iMG/btn_42x42_pressed.png);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <italic>false</italic>
           <bold>true</bold>
          </font>
@@ -7574,7 +7522,7 @@ image: url(/home/cnc/.iMG/btn_42x42_pressed.png);
          <number>0</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true"> 
@@ -7602,7 +7550,6 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <italic>false</italic>
           <bold>true</bold>
          </font>
@@ -7614,7 +7561,7 @@ background-color: rgb(136, 138, 133,0);
          <number>5</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(192, 191, 188);
@@ -7639,7 +7586,6 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -7650,7 +7596,7 @@ background-color: rgb(136, 138, 133,0);
          <number>5</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(192, 191, 188);
@@ -7676,7 +7622,6 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -7687,7 +7632,7 @@ background-color: rgb(136, 138, 133,0);
          <number>5</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(192, 191, 188);
@@ -7712,7 +7657,6 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -7723,7 +7667,7 @@ background-color: rgb(136, 138, 133,0);
          <number>5</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(192, 191, 188);
@@ -7765,13 +7709,12 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>Bebas Kai</family>
           <pointsize>16</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#clean {
@@ -7826,10 +7769,10 @@ image: url(/home/cnc/.iMG/BTN_3_Down.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#XY_Zero {
@@ -7908,10 +7851,10 @@ image: url(/home/cnc/.iMG/Go_Down_Front.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#XY_Zero_2 {
@@ -7991,10 +7934,10 @@ image: url(/home/cnc/.iMG/Go_Down_Back.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#XY_Zero_3 {
@@ -8074,10 +8017,10 @@ image: url(/home/cnc/.iMG/Go_Down_XY.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#XY_Zero_4 {
@@ -8154,7 +8097,7 @@ image: url(/home/cnc/.iMG/Go_Down_XYZ.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#Feed_2 {
@@ -8196,7 +8139,6 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Stop_on.png);
          <font>
           <family>BebasKai</family>
           <pointsize>17</pointsize>
-          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
@@ -8225,7 +8167,7 @@ background-color: rgb(136, 138, 133,0);
          <string>N/A Operation</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
         <property name="rules" stdset="0">
          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_mode?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0] + \&quot; Operation\&quot;&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
@@ -8240,23 +8182,23 @@ background-color: rgb(136, 138, 133,0);
           <height>20</height>
          </rect>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>20</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>246</red>
           <green>211</green>
           <blue>45</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashing">
+        <property name="flashing" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashRate">
+        <property name="flashRate" stdset="0">
          <number>300</number>
         </property>
         <property name="rules" stdset="0">
@@ -8285,7 +8227,7 @@ background-color: rgb(136, 138, 133,0);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#Step{
@@ -8325,7 +8267,7 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Step_Down.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#Coolant {
@@ -8366,7 +8308,7 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Coolant_Down.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#Mist {
@@ -8400,20 +8342,20 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Mist_Down.png);
           <height>60</height>
          </size>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>15</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>126</red>
           <green>219</green>
           <blue>11</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashRate">
+        <property name="flashRate" stdset="0">
          <number>500</number>
         </property>
         <property name="rules" stdset="0">
@@ -8435,20 +8377,20 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Mist_Down.png);
           <height>60</height>
          </size>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>15</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>126</red>
           <green>219</green>
           <blue>11</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashRate">
+        <property name="flashRate" stdset="0">
          <number>500</number>
         </property>
         <property name="rules" stdset="0">
@@ -8477,7 +8419,7 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Mist_Down.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#M01 {
@@ -8518,7 +8460,7 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Coolant_Down.png);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">#BlockDel {
@@ -8552,20 +8494,20 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Coolant_Down.png);
           <height>60</height>
          </size>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>15</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>126</red>
           <green>219</green>
           <blue>11</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashRate">
+        <property name="flashRate" stdset="0">
          <number>500</number>
         </property>
         <property name="rules" stdset="0">
@@ -8587,20 +8529,20 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Coolant_Down.png);
           <height>60</height>
          </size>
         </property>
-        <property name="diameter">
+        <property name="diameter" stdset="0">
          <number>15</number>
         </property>
-        <property name="color">
+        <property name="color" stdset="0">
          <color>
           <red>126</red>
           <green>219</green>
           <blue>11</blue>
          </color>
         </property>
-        <property name="state">
+        <property name="state" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="flashRate">
+        <property name="flashRate" stdset="0">
          <number>500</number>
         </property>
         <property name="rules" stdset="0">
@@ -8654,7 +8596,6 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Spn_m3.png);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <italic>false</italic>
           <bold>true</bold>
          </font>
@@ -8666,7 +8607,7 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Spn_m3.png);
          <number>0</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true"> 
@@ -8756,7 +8697,6 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Spn_m5.png);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <italic>false</italic>
           <bold>true</bold>
          </font>
@@ -8768,7 +8708,7 @@ image: url(/home/cnc/cnm3a/src/cnm3a/ui/rs/Spn_m5.png);
          <number>0</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true"> 
@@ -8796,7 +8736,6 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>DejaVu Sans</family>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <italic>false</italic>
           <bold>true</bold>
          </font>
@@ -8808,7 +8747,7 @@ background-color: rgb(136, 138, 133,0);
          <number>0</number>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true"> 
@@ -8854,7 +8793,6 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>Digital Display</family>
           <pointsize>37</pointsize>
-          <weight>75</weight>
           <italic>false</italic>
           <bold>true</bold>
          </font>
@@ -8879,7 +8817,7 @@ background-color: rgb(136, 138, 133,0);
          <number>0</number>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
         <property name="margin">
          <number>-6</number>
@@ -8913,7 +8851,7 @@ background-color: rgb(136, 138, 133,0);
          </size>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::FocusPolicy::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
@@ -8946,7 +8884,7 @@ background-color: rgb(136, 138, 133,0);
          <number>100</number>
         </property>
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="actionName" stdset="0">
          <string>spindle.override</string>
@@ -8965,13 +8903,12 @@ background-color: rgb(136, 138, 133,0);
          <font>
           <family>LCDMono</family>
           <pointsize>55</pointsize>
-          <weight>75</weight>
           <italic>false</italic>
           <bold>true</bold>
          </font>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
+         <enum>Qt::LayoutDirection::RightToLeft</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(56, 54, 57);
@@ -9135,68 +9072,13 @@ background-color: rgb(136, 138, 133,0);
   <customwidget>
    <class>VTKBackPlot</class>
    <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
+   <header>qtpyvcp.widgets.display_widgets.designer_plugins</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>VCPLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.line_edit</header>
-  </customwidget>
-  <customwidget>
-   <class>MDIEntry</class>
-   <extends>QLineEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
-  </customwidget>
-  <customwidget>
-   <class>GcodeTextEdit</class>
-   <extends>QPlainTextEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.gcode_text_edit</header>
-  </customwidget>
-  <customwidget>
-   <class>RecentFileComboBox</class>
-   <extends>QComboBox</extends>
-   <header>qtpyvcp.widgets.input_widgets.recent_file_combobox</header>
-  </customwidget>
-  <customwidget>
-   <class>JogIncrementWidget</class>
+   <class>HalBarIndicator</class>
    <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.input_widgets.jog_increment</header>
-  </customwidget>
-  <customwidget>
-   <class>FileSystemTable</class>
-   <extends>QTableView</extends>
-   <header>qtpyvcp.widgets.input_widgets.file_system</header>
-  </customwidget>
-  <customwidget>
-   <class>RemovableDeviceComboBox</class>
-   <extends>QComboBox</extends>
-   <header>qtpyvcp.widgets.input_widgets.file_system</header>
-  </customwidget>
-  <customwidget>
-   <class>ActionSlider</class>
-   <extends>QSlider</extends>
-   <header>qtpyvcp.widgets.input_widgets.action_slider</header>
-  </customwidget>
-  <customwidget>
-   <class>ActionDial</class>
-   <extends>QDial</extends>
-   <header>qtpyvcp.widgets.input_widgets.action_dial</header>
-  </customwidget>
-  <customwidget>
-   <class>VCPSettingsSlider</class>
-   <extends>QSlider</extends>
-   <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
-  </customwidget>
-  <customwidget>
-   <class>VCPSettingsPushButton</class>
-   <extends>QPushButton</extends>
-   <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
-  </customwidget>
-  <customwidget>
-   <class>DROLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.dro_line_edit</header>
+   <header>qtpyvcp.widgets.hal_widgets.hal_bar_indicator</header>
   </customwidget>
   <customwidget>
    <class>HalCheckBox</class>
@@ -9209,9 +9091,64 @@ background-color: rgb(136, 138, 133,0);
    <header>qtpyvcp.widgets.hal_widgets.hal_led</header>
   </customwidget>
   <customwidget>
-   <class>HalBarIndicator</class>
+   <class>ActionDial</class>
+   <extends>QDial</extends>
+   <header>qtpyvcp.widgets.input_widgets.action_dial</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionSlider</class>
+   <extends>QSlider</extends>
+   <header>qtpyvcp.widgets.input_widgets.action_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>DROLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.dro_line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>FileSystemTable</class>
+   <extends>QTableView</extends>
+   <header>qtpyvcp.widgets.input_widgets.file_system</header>
+  </customwidget>
+  <customwidget>
+   <class>RemovableDeviceComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qtpyvcp.widgets.input_widgets.file_system</header>
+  </customwidget>
+  <customwidget>
+   <class>JogIncrementWidget</class>
    <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.hal_widgets.hal_bar_indicator</header>
+   <header>qtpyvcp.widgets.input_widgets.jog_increment</header>
+  </customwidget>
+  <customwidget>
+   <class>VCPLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>MDIEntry</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>RecentFileComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qtpyvcp.widgets.input_widgets.recent_file_combobox</header>
+  </customwidget>
+  <customwidget>
+   <class>VCPSettingsSlider</class>
+   <extends>QSlider</extends>
+   <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>VCPSettingsPushButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>GcodeTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.gcode_text_edit</header>
   </customwidget>
  </customwidgets>
  <resources/>

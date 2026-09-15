@@ -120,10 +120,10 @@
       <widget class="QFrame" name="frame_4">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>30</y>
-         <width>900</width>
-         <height>800</height>
+         <x>0</x>
+         <y>0</y>
+         <width>943</width>
+         <height>801</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -134,7 +134,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>900</width>
+         <width>1000</width>
          <height>16777215</height>
         </size>
        </property>
@@ -153,9 +153,9 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>61</x>
-          <y>130</y>
-          <width>900</width>
+          <x>62</x>
+          <y>142</y>
+          <width>879</width>
           <height>500</height>
          </rect>
         </property>
@@ -167,7 +167,7 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>900</width>
+          <width>800</width>
           <height>500</height>
          </size>
         </property>
@@ -322,7 +322,7 @@
          <enum>QTabWidget::TabPosition::South</enum>
         </property>
         <property name="currentIndex">
-         <number>4</number>
+         <number>0</number>
         </property>
         <property name="usesScrollButtons">
          <bool>false</bool>
@@ -11211,9 +11211,9 @@ background-color: transparent;
        <widget class="QFrame" name="frame_6">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>42</y>
-          <width>878</width>
+          <x>62</x>
+          <y>72</y>
+          <width>879</width>
           <height>70</height>
          </rect>
         </property>
@@ -11484,16 +11484,16 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Auto_Sp
         <widget class="StatusLabel" name="statuslabel_2">
          <property name="geometry">
           <rect>
-           <x>440</x>
+           <x>447</x>
            <y>22</y>
            <width>301</width>
-           <height>21</height>
+           <height>22</height>
           </rect>
          </property>
          <property name="font">
           <font>
            <family>lcd phone</family>
-           <pointsize>17</pointsize>
+           <pointsize>19</pointsize>
            <bold>false</bold>
           </font>
          </property>
@@ -11517,16 +11517,16 @@ background-color: rgb(136, 138, 133,0);</string>
         <widget class="StatusLabel" name="statuslabel_7">
          <property name="geometry">
           <rect>
-           <x>750</x>
+           <x>770</x>
            <y>22</y>
            <width>101</width>
-           <height>21</height>
+           <height>22</height>
           </rect>
          </property>
          <property name="font">
           <font>
            <family>lcd phone</family>
-           <pointsize>17</pointsize>
+           <pointsize>19</pointsize>
            <bold>false</bold>
           </font>
          </property>
@@ -11554,6 +11554,8 @@ background-color: rgb(136, 138, 133,0);</string>
         <zorder>statuslabel_2</zorder>
         <zorder>statuslabel_7</zorder>
        </widget>
+       <zorder>frame_6</zorder>
+       <zorder>tabWidget</zorder>
       </widget>
       <widget class="QPushButton" name="exitAppBtn">
        <property name="geometry">
@@ -11691,11 +11693,507 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_state?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Flashing&quot;, &quot;expression&quot;: &quot;ch[0] == 'E-Stop'&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}, {&quot;name&quot;: &quot;New Rule&quot;, &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0] == 'E-Stop'&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_state?text&quot;, &quot;trigger&quot;: true}]}]</string>
        </property>
       </widget>
+      <widget class="MDIButton" name="zero_all_button_3">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>949</x>
+         <y>423</y>
+         <width>125</width>
+         <height>95</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#zero_all_button_3 {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(222, 221, 218);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_REF.png);
+}
+
+#zero_all_button_3:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>ALL</string>
+       </property>
+       <property name="icon">
+        <iconset resource="probe_basic.qrc">
+         <normaloff>:/images/zero.png</normaloff>:/images/zero.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[
+    {
+        &quot;channels&quot;: [
+            {
+                &quot;url&quot;: &quot;status:g5x_index&quot;,
+                &quot;trigger&quot;: true,
+                &quot;type&quot;: &quot;int&quot;
+            }
+        ],
+        &quot;expression&quot;: &quot;&quot;,
+        &quot;name&quot;: &quot;G5x Index&quot;,
+        &quot;property&quot;: &quot;None&quot;
+    }
+]</string>
+       </property>
+       <property name="MDICommand" stdset="0">
+        <string>G10 L20 P{ch[0]} X0.0 Y0.0 Z0.0</string>
+       </property>
+      </widget>
+      <widget class="MDIButton" name="zero_y_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>950</x>
+         <y>233</y>
+         <width>125</width>
+         <height>95</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bebas Kai</family>
+         <pointsize>40</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#zero_y_button {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+ color: rgb(222, 221, 218);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero.png);
+}
+
+#zero_y_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG//CNC_Zero_pressed.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>Y</string>
+       </property>
+       <property name="icon">
+        <iconset resource="probe_basic.qrc">
+         <normaloff>:/images/zero.png</normaloff>:/images/zero.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[
+    {
+        &quot;channels&quot;: [
+            {
+                &quot;url&quot;: &quot;status:g5x_index&quot;,
+                &quot;trigger&quot;: true,
+                &quot;type&quot;: &quot;int&quot;
+            }
+        ],
+        &quot;expression&quot;: &quot;&quot;,
+        &quot;name&quot;: &quot;G5x Index&quot;,
+        &quot;property&quot;: &quot;None&quot;
+    }
+]</string>
+       </property>
+       <property name="MDICommand" stdset="0">
+        <string>G10 L20 P{ch[0]} Y0.0</string>
+       </property>
+      </widget>
+      <widget class="MDIButton" name="zero_x_button_9">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>950</x>
+         <y>138</y>
+         <width>125</width>
+         <height>95</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bebas Kai</family>
+         <pointsize>40</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#zero_x_button_9 {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(222, 221, 218);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG//CNC_Zero.png);
+}
+
+#zero_x_button_9:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>X</string>
+       </property>
+       <property name="icon">
+        <iconset resource="probe_basic.qrc">
+         <normaloff>:/images/zero.png</normaloff>:/images/zero.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[
+    {
+        &quot;channels&quot;: [
+            {
+                &quot;url&quot;: &quot;status:g5x_index&quot;,
+                &quot;trigger&quot;: true,
+                &quot;type&quot;: &quot;int&quot;
+            }
+        ],
+        &quot;expression&quot;: &quot;&quot;,
+        &quot;name&quot;: &quot;G5x Index&quot;,
+        &quot;property&quot;: &quot;None&quot;
+    }
+]</string>
+       </property>
+       <property name="MDICommand" stdset="0">
+        <string>G10 L20 P{ch[0]} X0.0</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="ref_all_button_6">
+       <property name="geometry">
+        <rect>
+         <x>950</x>
+         <y>10</y>
+         <width>125</width>
+         <height>125</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>125</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>125</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::WheelFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#ref_all_button_6 {
+font: 25pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+	color: rgb(246, 211, 45);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Home.png);
+}
+
+#ref_all_button_6:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Home_pressed.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>HOME</string>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'HOMED' if ch[0] else 'HOME'&quot;, &quot;name&quot;: &quot;reference_all&quot;}]</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>machine.home.all</string>
+       </property>
+      </widget>
+      <widget class="MDIButton" name="ZeroXY">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>950</x>
+         <y>515</y>
+         <width>125</width>
+         <height>95</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bebas Kai</family>
+         <pointsize>40</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#ZeroXY {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(222, 221, 218);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero.png);
+}
+
+#ZeroXY :pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>X &amp; Y</string>
+       </property>
+       <property name="icon">
+        <iconset resource="probe_basic.qrc">
+         <normaloff>:/images/zero.png</normaloff>:/images/zero.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[
+    {
+        &quot;channels&quot;: [
+            {
+                &quot;url&quot;: &quot;status:g5x_index&quot;,
+                &quot;trigger&quot;: true,
+                &quot;type&quot;: &quot;int&quot;
+            }
+        ],
+        &quot;expression&quot;: &quot;&quot;,
+        &quot;name&quot;: &quot;G5x Index&quot;,
+        &quot;property&quot;: &quot;None&quot;
+    }
+]</string>
+       </property>
+       <property name="MDICommand" stdset="0">
+        <string>G10 L20 P{ch[0]} X0.0 Y0.0</string>
+       </property>
+      </widget>
+      <widget class="MDIButton" name="zero_z_button_9">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>950</x>
+         <y>328</y>
+         <width>125</width>
+         <height>95</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>95</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#zero_z_button_9 {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(222, 221, 218);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG//CNC_Zero.png);
+}
+
+#zero_z_button_9:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>Z</string>
+       </property>
+       <property name="icon">
+        <iconset resource="probe_basic.qrc">
+         <normaloff>:/images/zero.png</normaloff>:/images/zero.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[
+    {
+        &quot;channels&quot;: [
+            {
+                &quot;url&quot;: &quot;status:g5x_index&quot;,
+                &quot;trigger&quot;: true,
+                &quot;type&quot;: &quot;int&quot;
+            }
+        ],
+        &quot;expression&quot;: &quot;&quot;,
+        &quot;name&quot;: &quot;G5x Index&quot;,
+        &quot;property&quot;: &quot;None&quot;
+    }
+]</string>
+       </property>
+       <property name="MDICommand" stdset="0">
+        <string>G10 L20 P{ch[0]} Z0.0</string>
+       </property>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
       <zorder>statusled_8</zorder>
       <zorder>EStoper</zorder>
+      <zorder>zero_all_button_3</zorder>
+      <zorder>zero_y_button</zorder>
+      <zorder>zero_x_button_9</zorder>
+      <zorder>ref_all_button_6</zorder>
+      <zorder>ZeroXY</zorder>
+      <zorder>zero_z_button_9</zorder>
      </widget>
     </item>
    </layout>
