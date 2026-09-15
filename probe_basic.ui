@@ -12588,8 +12588,8 @@ color: rgb(237, 51, 59);</string>
         <rect>
          <x>50</x>
          <y>1730</y>
-         <width>150</width>
-         <height>150</height>
+         <width>140</width>
+         <height>140</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -12618,8 +12618,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>150</width>
-          <height>150</height>
+          <width>140</width>
+          <height>140</height>
          </rect>
         </property>
        </widget>
@@ -12629,8 +12629,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
         <rect>
          <x>210</x>
          <y>1730</y>
-         <width>150</width>
-         <height>150</height>
+         <width>140</width>
+         <height>140</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -12659,8 +12659,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>150</width>
-          <height>150</height>
+          <width>140</width>
+          <height>140</height>
          </rect>
         </property>
        </widget>
@@ -12670,8 +12670,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
         <rect>
          <x>370</x>
          <y>1730</y>
-         <width>150</width>
-         <height>150</height>
+         <width>140</width>
+         <height>140</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -12700,8 +12700,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>150</width>
-          <height>150</height>
+          <width>140</width>
+          <height>140</height>
          </rect>
         </property>
        </widget>
@@ -12711,8 +12711,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
         <rect>
          <x>530</x>
          <y>1730</y>
-         <width>150</width>
-         <height>150</height>
+         <width>140</width>
+         <height>140</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -12741,8 +12741,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>150</width>
-          <height>150</height>
+          <width>140</width>
+          <height>140</height>
          </rect>
         </property>
        </widget>
@@ -12752,8 +12752,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
         <rect>
          <x>690</x>
          <y>1730</y>
-         <width>150</width>
-         <height>150</height>
+         <width>140</width>
+         <height>140</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -12782,8 +12782,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>150</width>
-          <height>150</height>
+          <width>140</width>
+          <height>140</height>
          </rect>
         </property>
        </widget>

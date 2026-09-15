@@ -385,15 +385,15 @@ class ProbeBasic(VCPMainWindow):
         self.Knob2.setValue(30)
 
         self.Knob3 =  self.findChild(QWidget, "Knob3")
-        self.Knob3.setKnobColor("#3282f6")
+        self.Knob3.setKnobColor("#9ef96c")
         self.Knob3.setValue(30)
 
         self.Knob4 =  self.findChild(QWidget, "Knob4")
-        self.Knob4.setKnobColor("#3282f6")
+        self.Knob4.setKnobColor("#f8e42e")
         self.Knob4.setValue(30)
 
         self.Knob5 =  self.findChild(QWidget, "Knob5")
-        self.Knob5.setKnobColor("#3282f6")
+        self.Knob5.setKnobColor("#c10a00")
         self.Knob5.setValue(30)
 
 
