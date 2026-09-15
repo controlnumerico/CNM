@@ -1446,7 +1446,7 @@ color: rgb(56, 54, 57);
               <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.0f' % ch[0][1]&quot;, &quot;name&quot;: &quot;F Word&quot;}]</string>
              </property>
             </widget>
-            <widget class="VTKBackPlot" name="vtk">
+            <widget class="VTKBackPlot" name="VTKBackPlot">
              <property name="geometry">
               <rect>
                <x>2</x>
@@ -1481,9 +1481,9 @@ color: rgb(56, 54, 57);
              </property>
              <property name="backgroundColor" stdset="0">
               <color>
-               <red>213</red>
-               <green>228</green>
-               <blue>238</blue>
+               <red>153</red>
+               <green>193</green>
+               <blue>241</blue>
               </color>
              </property>
              <widget class="QPushButton" name="iso_view_button">
@@ -1550,7 +1550,7 @@ color: rgb(56, 54, 57);
             <zorder>statuslabel_14</zorder>
             <zorder>label_7</zorder>
             <zorder>statuslabel_17</zorder>
-            <zorder>vtk</zorder>
+            <zorder>VTKBackPlot</zorder>
            </widget>
           </item>
          </layout>
@@ -13451,7 +13451,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed
 background-color: rgb(247, 124, 22);</string>
        </property>
       </widget>
-      <widget class="QLabel" name="MyStatusBarNewLabel">
+      <widget class="QLabel" name="MyStatusLabel">
        <property name="geometry">
         <rect>
          <x>63</x>
@@ -13918,7 +13918,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
       <zorder>ZeroXY</zorder>
       <zorder>zero_z_button_9</zorder>
       <zorder>mdientry</zorder>
-      <zorder>MyStatusBarNewLabel</zorder>
+      <zorder>MyStatusLabel</zorder>
       <zorder>frame_10</zorder>
       <zorder>frame_11</zorder>
       <zorder>frame_18</zorder>

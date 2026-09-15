@@ -11,8 +11,8 @@ import linuxcnc
 from qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot import VTKBackPlot
 from PySide6.QtCore import Slot, QRegularExpression, Qt, QObject, QTimer, QFile
 from PySide6.QtGui import QFontDatabase, QRegularExpressionValidator, QTextCursor, QPalette, QAction
-from PySide6.QtWidgets import QAbstractButton, QApplication, QButtonGroup
-from PySide6.QtWidgets import QWidget
+from PySide6.QtWidgets import QAbstractButton, QApplication, QButtonGroup , QStatusBar
+from PySide6.QtWidgets import QWidget, QLabel
 
 from qtpyvcp import actions
 from qtpyvcp.plugins import getPlugin
@@ -207,8 +207,8 @@ class ProbeBasic(VCPMainWindow):
         # Prefer an existing VTKBackPlot; fall back to any widget named "vtk".
         self.vtk = (
             getattr(self, "vtk", None)
-            or self.findChild(VTKBackPlot)
-            or self.findChild(QWidget, "vtk")
+            #or self.findChild(VTKBackPlot)
+            #or self.findChild(QWidget, "vtk")
         )
 
         if self.vtk is not None:
@@ -398,6 +398,11 @@ class ProbeBasic(VCPMainWindow):
 
 
 
+        self.label = self.findChild(QLabel, "MyStatusLabel")
+        self.edit = self.findChild(QStatusBar, "statusBar")
+        #self.edit.showMessage("Hola")
+        self.edit.hide()
+        self.edit.messageChanged.connect(self.changeText)
 
 
 
@@ -408,7 +413,8 @@ class ProbeBasic(VCPMainWindow):
 
 
 
-
+    def changeText(self):
+        self.label.setText(self.edit.currentMessage())
 
 
 
