@@ -154,7 +154,7 @@
         <property name="geometry">
          <rect>
           <x>62</x>
-          <y>142</y>
+          <y>230</y>
           <width>879</width>
           <height>500</height>
          </rect>
@@ -11554,8 +11554,129 @@ background-color: rgb(136, 138, 133,0);</string>
         <zorder>statuslabel_2</zorder>
         <zorder>statuslabel_7</zorder>
        </widget>
+       <widget class="StatusLabel" name="Modee_label">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>150</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>BebasKai</family>
+          <pointsize>20</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+
+#Modee_label {
+
+text-transform: uppercase ;
+
+
+background-color: rgb(136, 138, 133,0);
+
+	color: rgb(255, 255, 255);
+
+    font: 20pt &quot;BebasKai&quot;;
+
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>N/A Operation</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_mode?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0] + \&quot; Operation\&quot;&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+        </property>
+       </widget>
+       <widget class="StatusLabel" name="Homed_label">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>150</y>
+          <width>81</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>BebasKai</family>
+          <pointsize>18</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+
+#Homed_label {
+
+text-transform: uppercase ;
+
+
+background-color: rgb(136, 138, 133,0);
+
+
+	color: rgb(255, 255, 255);
+
+    font: 18pt &quot;BebasKai&quot;;
+
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>No HOME</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="rules" stdset="0">
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'- Limits -' if ch[0] else 'No HOME'&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_25">
+        <property name="geometry">
+         <rect>
+          <x>62</x>
+          <y>142</y>
+          <width>879</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+background-color: qlineargradient(spread:pad, x1:0.4, y1:0.4, x2:1, y2:1, stop:0 rgba(0, 102, 221, 255), stop:1 rgba(255, 255, 255, 255));
+
+
+ 
+
+</string>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
        <zorder>frame_6</zorder>
        <zorder>tabWidget</zorder>
+       <zorder>label_25</zorder>
+       <zorder>Modee_label</zorder>
+       <zorder>Homed_label</zorder>
       </widget>
       <widget class="QPushButton" name="exitAppBtn">
        <property name="geometry">
@@ -12183,6 +12304,275 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed
         <string>G10 L20 P{ch[0]} Z0.0</string>
        </property>
       </widget>
+      <widget class="MDIEntry" name="mdientry">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>1422</y>
+         <width>879</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>25</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+background-color: rgb(247, 124, 22);</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="MyStatusBarNewLabel">
+       <property name="geometry">
+        <rect>
+         <x>63</x>
+         <y>1473</y>
+         <width>878</width>
+         <height>55</height>
+        </rect>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>248</red>
+             <green>228</green>
+             <blue>92</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>248</red>
+             <green>228</green>
+             <blue>92</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>248</red>
+             <green>228</green>
+             <blue>92</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Link">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>26</red>
+             <green>95</green>
+             <blue>180</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>248</red>
+             <green>228</green>
+             <blue>92</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>248</red>
+             <green>228</green>
+             <blue>92</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>248</red>
+             <green>228</green>
+             <blue>92</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Link">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>26</red>
+             <green>95</green>
+             <blue>180</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Button">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>248</red>
+             <green>228</green>
+             <blue>92</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Text">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>248</red>
+             <green>228</green>
+             <blue>92</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>248</red>
+             <green>228</green>
+             <blue>92</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Link">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>26</red>
+             <green>95</green>
+             <blue>180</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="PlaceholderText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>237</red>
+             <green>51</green>
+             <blue>59</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="font">
+        <font>
+         <family>DejaVu Sans Mono</family>
+         <pointsize>18</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(248, 228, 92);
+color: rgb(237, 51, 59);</string>
+       </property>
+       <property name="text">
+        <string>Status:</string>
+       </property>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -12194,6 +12584,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed
       <zorder>ref_all_button_6</zorder>
       <zorder>ZeroXY</zorder>
       <zorder>zero_z_button_9</zorder>
+      <zorder>mdientry</zorder>
+      <zorder>MyStatusBarNewLabel</zorder>
      </widget>
     </item>
    </layout>
