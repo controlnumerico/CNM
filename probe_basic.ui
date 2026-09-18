@@ -1474,16 +1474,20 @@ color: rgb(56, 54, 57);
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">#vtk{
+              <string notr="true">#VTKBackPlot{
 
-	background-color: transparent;
+ 
+	 
+	background-image: url(:/images/50mm_facemill_gray.png);
+
+
                                 }</string>
              </property>
              <property name="backgroundColor" stdset="0">
               <color>
-               <red>153</red>
-               <green>193</green>
-               <blue>241</blue>
+               <red>143</red>
+               <green>240</green>
+               <blue>164</blue>
               </color>
              </property>
              <widget class="QPushButton" name="iso_view_button">

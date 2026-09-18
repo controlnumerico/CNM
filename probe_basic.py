@@ -405,7 +405,16 @@ class ProbeBasic(VCPMainWindow):
         self.edit.messageChanged.connect(self.changeText)
 
 
+        self.vtk = self.findChild(VTKBackPlot, "VTKBackPlot")
+        #self.vtk.userColor(26, 51, 102, 255)
 
+
+        render_window = self.vtk.GetRenderWindow()
+        renderer = render_window.GetRenderers().GetFirstRenderer()
+        renderer.SetBackground(0,0,0)
+        renderer.SetBackground2(1,1,1) # Color superior
+        renderer.GradientBackgroundOn()           # Activar el degradado
+        render_window.Render()
 
         ##########-----------------------------------------
         ## END  ##  CUSTOM KNOBS 
