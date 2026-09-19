@@ -9,10 +9,10 @@ import importlib.util
 import linuxcnc
 
 from qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot import VTKBackPlot
-from PySide6.QtCore import Slot, QRegularExpression, Qt, QObject, QTimer, QFile
+from PySide6.QtCore import Slot, QRegularExpression, Qt, QObject, QTimer, QFile, QPropertyAnimation, QEasingCurve, QEvent, QTimer
 from PySide6.QtGui import QFontDatabase, QRegularExpressionValidator, QTextCursor, QPalette, QAction
 from PySide6.QtWidgets import QAbstractButton, QApplication, QButtonGroup , QStatusBar
-from PySide6.QtWidgets import QWidget, QLabel
+from PySide6.QtWidgets import QWidget, QLabel, QFrame, QPushButton
 
 from qtpyvcp import actions
 from qtpyvcp.plugins import getPlugin
@@ -415,6 +415,126 @@ class ProbeBasic(VCPMainWindow):
         renderer.SetBackground2(1,1,1) # Color superior
         renderer.GradientBackgroundOn()           # Activar el degradado
         render_window.Render()
+
+        self.sidebarVTK = self.findChild(QFrame, "sidebarVTK")
+        self.btnMenuVTK = self.findChild( QPushButton, "btnMenuVTK_2")
+
+
+        # -----------------------------------------
+        # Configuración del menú
+        # -----------------------------------------
+        self.ancho_cerrado = 1
+        self.ancho_abierto = 100
+        self.menu_abierto = False
+        self.mouse_sobre_menu = False
+        self.sidebarVTK.setMaximumWidth( self.ancho_cerrado)
+        # -----------------------------------------
+        # Animación
+        # -----------------------------------------
+        #self.animacion = QPropertyAnimation(self.sidebarVTK, b"maximumWidth")
+        #self.animacion.setDuration(100)
+        #self.animacion.setEasingCurve(QEasingCurve.Type.InOutCubic)
+        # -----------------------------------------
+        # Temporizador de 7 segundos
+        # -----------------------------------------
+        self.temporizador_menu = QTimer()
+        self.temporizador_menu.setSingleShot(True)
+        self.temporizador_menu.setInterval(2000)
+        self.temporizador_menu.timeout.connect(self.cerrar_menu)
+        # -----------------------------------------
+        # Filtro de eventos del mouse
+        # -----------------------------------------
+        self.sidebarVTK.installEventFilter(self)
+        for widget in self.sidebarVTK.findChildren(QObject):
+            widget.installEventFilter(self)
+        # -----------------------------------------
+        # Eventos de botones
+        # -----------------------------------------
+        self.btnMenuVTK.clicked.connect(self.alternar_menu)
+
+    # =================================================
+    # FILTRO DE EVENTOS
+    # =================================================
+
+    def eventFilter(self, objeto, evento):
+
+        if evento.type() == QEvent.Type.Enter:
+            if self.menu_abierto:
+                self.mouse_sobre_menu = True
+                # Pausar el temporizador
+                self.temporizador_menu.stop()
+        elif evento.type() == QEvent.Type.Leave:
+            if self.menu_abierto:
+                # Obtener posición del mouse
+                posicion = self.sidebarVTK.mapFromGlobal(
+                    self.sidebarVTK.cursor().pos()
+                )
+                # Solo reiniciar el temporizador si
+                # realmente salió del sidebar
+                if not self.sidebarVTK.rect().contains(
+                    posicion
+                ):
+                    self.mouse_sobre_menu = False
+                    # Reiniciar los 7 segundos
+                    self.temporizador_menu.start()
+        return super().eventFilter(
+            objeto,
+            evento
+        )
+
+    # =================================================
+    # ALTERNAR MENÚ
+    # =================================================
+
+    def alternar_menu(self):
+
+        if self.menu_abierto:
+            self.cerrar_menu()
+        else:
+            self.abrir_menu()
+
+    # =================================================
+    # ABRIR MENÚ
+    # =================================================
+
+    def abrir_menu(self):
+
+        self.menu_abierto = True
+        #self.animacion.stop()
+        #self.animacion.setStartValue(self.sidebarVTK.width())
+        #self.animacion.setEndValue(self.ancho_abierto)
+        #self.animacion.start()
+
+        self.sidebarVTK.setFixedWidth(100)
+
+        # Si el mouse no está sobre el menú,
+        # comenzar los 7 segundos
+        if not self.mouse_sobre_menu:
+            self.temporizador_menu.start()
+
+    # =================================================
+    # CERRAR MENÚ
+    # =================================================
+
+    def cerrar_menu(self):
+
+        self.menu_abierto = False
+        self.mouse_sobre_menu = False
+        self.temporizador_menu.stop()
+        #self.animacion.stop()
+        #self.animacion.setStartValue(self.sidebarVTK.width())
+        #self.animacion.setEndValue(self.ancho_cerrado)
+        #self.animacion.start()
+
+
+        self.sidebarVTK.setFixedWidth(self.ancho_cerrado)
+
+
+
+
+
+
+
 
         ##########-----------------------------------------
         ## END  ##  CUSTOM KNOBS 
