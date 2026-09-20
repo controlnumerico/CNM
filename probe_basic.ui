@@ -312,8 +312,8 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QTabWidget QTabBar::tab {
-	color: rgb(255, 255, 255);
-    min-width: 120px;
+	color: rgb(25, 255, 255);
+    min-width: 126px;
     min-height: 80px;
     font: 15pt &quot;bebas kai&quot;;
 }</string>
@@ -1514,451 +1514,620 @@ color: rgb(56, 54, 57);
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QPushButton" name="iso_view_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="text">
-                     <string>ISO VIEW</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="x_view_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
+                   <widget class="QFrame" name="frame_22">
                     <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>X View</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="y_view_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>Y View</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="z_view_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>Z View</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pan_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>PAN</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="zoom_in_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>ZOOM +</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="machine_zoom_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>MCH EXT</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="path_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string/>
-                    </property>
-                    <property name="text">
-                     <string>PATH</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="program_zoom_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>PGM EXT</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="clear_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>CLEAR</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="ortho_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>ORTHO</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="zoom_out_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>ZOOM -</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="perspective_button">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>75</width>
-                      <height>33</height>
-                     </size>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>PSPECT</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
+                     <string notr="true">background-color: rgb(71, 87, 94);</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::Shape::NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Shadow::Raised</enum>
+                    </property>
+                    <property name="lineWidth">
+                     <number>0</number>
+                    </property>
+                    <widget class="QPushButton" name="iso_view_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#iso_view_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#iso_view_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(222, 221, 218);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>ISO VIEW</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="x_view_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>70</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#x_view_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#x_view_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(222, 221, 218);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>X View</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="y_view_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>140</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#y_view_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#y_view_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(222, 221, 218);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Y View</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="z_view_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>210</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#z_view_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#z_view_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(222, 221, 218);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Z View</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="pan_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>280</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#pan_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#pan_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(222, 221, 218);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>PAN</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="zoom_in_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>350</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#zoom_in_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#zoom_in_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(222, 221, 218);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>ZOOM +</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="machine_zoom_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>10</x>
+                       <y>440</y>
+                       <width>75</width>
+                       <height>33</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>MCH EXT</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="path_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>10</x>
+                       <y>480</y>
+                       <width>75</width>
+                       <height>33</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string/>
+                     </property>
+                     <property name="text">
+                      <string>PATH</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="program_zoom_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>10</x>
+                       <y>520</y>
+                       <width>75</width>
+                       <height>33</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>PGM EXT</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="clear_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>10</x>
+                       <y>560</y>
+                       <width>75</width>
+                       <height>33</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>CLEAR</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="ortho_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>10</x>
+                       <y>600</y>
+                       <width>75</width>
+                       <height>33</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>ORTHO</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
+                     </property>
+                     <property name="autoExclusive">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="zoom_out_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>10</x>
+                       <y>640</y>
+                       <width>75</width>
+                       <height>33</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>ZOOM -</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="perspective_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>10</x>
+                       <y>680</y>
+                       <width>75</width>
+                       <height>33</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>75</width>
+                       <height>33</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>PSPECT</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="autoExclusive">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
                    </widget>
                   </item>
                  </layout>
@@ -1980,12 +2149,25 @@ color: rgb(56, 54, 57);
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>71</width>
-                    <height>61</height>
+                    <width>100</width>
+                    <height>57</height>
                    </rect>
                   </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>57</height>
+                   </size>
+                  </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 190, 111);</string>
+                   <string notr="true">#btnMenuVTK_2 {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}</string>
                   </property>
                   <property name="text">
                    <string>Menu</string>
@@ -13278,7 +13460,7 @@ background-color: rgb(136, 138, 133,0);</string>
         <widget class="StatusLabel" name="statuslabel_7">
          <property name="geometry">
           <rect>
-           <x>770</x>
+           <x>772</x>
            <y>22</y>
            <width>101</width>
            <height>22</height>
