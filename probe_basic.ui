@@ -1531,7 +1531,7 @@ color: rgb(56, 54, 57);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>0</y>
+                       <y>20</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1569,7 +1569,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
 
 #iso_view_button:pressed {
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(222, 221, 218);
+color: rgb(246, 211, 45);
 }</string>
                      </property>
                      <property name="text">
@@ -1583,7 +1583,7 @@ color: rgb(222, 221, 218);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>70</y>
+                       <y>90</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1621,7 +1621,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
 
 #x_view_button:pressed {
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(222, 221, 218);
+color: rgb(246, 211, 45);
 }</string>
                      </property>
                      <property name="text">
@@ -1635,7 +1635,7 @@ color: rgb(222, 221, 218);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>140</y>
+                       <y>160</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1673,7 +1673,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
 
 #y_view_button:pressed {
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(222, 221, 218);
+color: rgb(246, 211, 45);
 }</string>
                      </property>
                      <property name="text">
@@ -1687,7 +1687,7 @@ color: rgb(222, 221, 218);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>210</y>
+                       <y>230</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1725,7 +1725,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
 
 #z_view_button:pressed {
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(222, 221, 218);
+color: rgb(246, 211, 45);
 }</string>
                      </property>
                      <property name="text">
@@ -1739,7 +1739,7 @@ color: rgb(222, 221, 218);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>280</y>
+                       <y>300</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1777,7 +1777,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
 
 #pan_button:pressed {
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(222, 221, 218);
+color: rgb(246, 211, 45);
 }</string>
                      </property>
                      <property name="text">
@@ -1791,7 +1791,7 @@ color: rgb(222, 221, 218);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>350</y>
+                       <y>370</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1829,7 +1829,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
 
 #zoom_in_button:pressed {
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(222, 221, 218);
+color: rgb(246, 211, 45);
 }</string>
                      </property>
                      <property name="text">
@@ -1839,53 +1839,13 @@ color: rgb(222, 221, 218);
                       <bool>false</bool>
                      </property>
                     </widget>
-                    <widget class="QPushButton" name="machine_zoom_button">
-                     <property name="geometry">
-                      <rect>
-                       <x>10</x>
-                       <y>440</y>
-                       <width>75</width>
-                       <height>33</height>
-                      </rect>
-                     </property>
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>75</width>
-                       <height>33</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>75</width>
-                       <height>33</height>
-                      </size>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::FocusPolicy::NoFocus</enum>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="text">
-                      <string>MCH EXT</string>
-                     </property>
-                     <property name="checkable">
-                      <bool>false</bool>
-                     </property>
-                    </widget>
                     <widget class="QPushButton" name="path_button">
                      <property name="geometry">
                       <rect>
-                       <x>10</x>
-                       <y>480</y>
-                       <width>75</width>
-                       <height>33</height>
+                       <x>0</x>
+                       <y>510</y>
+                       <width>100</width>
+                       <height>57</height>
                       </rect>
                      </property>
                      <property name="sizePolicy">
@@ -1896,21 +1856,33 @@ color: rgb(222, 221, 218);
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>75</width>
-                       <height>33</height>
+                       <width>100</width>
+                       <height>57</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>75</width>
-                       <height>33</height>
+                       <width>100</width>
+                       <height>57</height>
                       </size>
                      </property>
                      <property name="focusPolicy">
                       <enum>Qt::FocusPolicy::NoFocus</enum>
                      </property>
                      <property name="styleSheet">
-                      <string/>
+                      <string notr="true">#path_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#path_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
                      </property>
                      <property name="text">
                       <string>PATH</string>
@@ -1919,93 +1891,13 @@ color: rgb(222, 221, 218);
                       <bool>false</bool>
                      </property>
                     </widget>
-                    <widget class="QPushButton" name="program_zoom_button">
-                     <property name="geometry">
-                      <rect>
-                       <x>10</x>
-                       <y>520</y>
-                       <width>75</width>
-                       <height>33</height>
-                      </rect>
-                     </property>
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>75</width>
-                       <height>33</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>75</width>
-                       <height>33</height>
-                      </size>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::FocusPolicy::NoFocus</enum>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="text">
-                      <string>PGM EXT</string>
-                     </property>
-                     <property name="checkable">
-                      <bool>false</bool>
-                     </property>
-                    </widget>
-                    <widget class="QPushButton" name="clear_button">
-                     <property name="geometry">
-                      <rect>
-                       <x>10</x>
-                       <y>560</y>
-                       <width>75</width>
-                       <height>33</height>
-                      </rect>
-                     </property>
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>75</width>
-                       <height>33</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>75</width>
-                       <height>33</height>
-                      </size>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::FocusPolicy::NoFocus</enum>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="text">
-                      <string>CLEAR</string>
-                     </property>
-                     <property name="checkable">
-                      <bool>false</bool>
-                     </property>
-                    </widget>
                     <widget class="QPushButton" name="ortho_button">
                      <property name="geometry">
                       <rect>
-                       <x>10</x>
-                       <y>600</y>
-                       <width>75</width>
-                       <height>33</height>
+                       <x>0</x>
+                       <y>580</y>
+                       <width>100</width>
+                       <height>57</height>
                       </rect>
                      </property>
                      <property name="sizePolicy">
@@ -2016,21 +1908,33 @@ color: rgb(222, 221, 218);
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>75</width>
-                       <height>33</height>
+                       <width>100</width>
+                       <height>57</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>75</width>
-                       <height>33</height>
+                       <width>100</width>
+                       <height>57</height>
                       </size>
                      </property>
                      <property name="focusPolicy">
                       <enum>Qt::FocusPolicy::NoFocus</enum>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true"/>
+                      <string notr="true">#ortho_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#ortho_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
                      </property>
                      <property name="text">
                       <string>ORTHO</string>
@@ -2048,10 +1952,10 @@ color: rgb(222, 221, 218);
                     <widget class="QPushButton" name="zoom_out_button">
                      <property name="geometry">
                       <rect>
-                       <x>10</x>
-                       <y>640</y>
-                       <width>75</width>
-                       <height>33</height>
+                       <x>0</x>
+                       <y>440</y>
+                       <width>100</width>
+                       <height>57</height>
                       </rect>
                      </property>
                      <property name="sizePolicy">
@@ -2062,21 +1966,33 @@ color: rgb(222, 221, 218);
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>75</width>
-                       <height>33</height>
+                       <width>100</width>
+                       <height>57</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>75</width>
-                       <height>33</height>
+                       <width>100</width>
+                       <height>57</height>
                       </size>
                      </property>
                      <property name="focusPolicy">
                       <enum>Qt::FocusPolicy::NoFocus</enum>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true"/>
+                      <string notr="true">#zoom_out_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#zoom_out_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
                      </property>
                      <property name="text">
                       <string>ZOOM -</string>
@@ -2088,10 +2004,10 @@ color: rgb(222, 221, 218);
                     <widget class="QPushButton" name="perspective_button">
                      <property name="geometry">
                       <rect>
-                       <x>10</x>
-                       <y>680</y>
-                       <width>75</width>
-                       <height>33</height>
+                       <x>0</x>
+                       <y>650</y>
+                       <width>100</width>
+                       <height>57</height>
                       </rect>
                      </property>
                      <property name="sizePolicy">
@@ -2102,21 +2018,33 @@ color: rgb(222, 221, 218);
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>75</width>
-                       <height>33</height>
+                       <width>100</width>
+                       <height>57</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>75</width>
-                       <height>33</height>
+                       <width>100</width>
+                       <height>57</height>
                       </size>
                      </property>
                      <property name="focusPolicy">
                       <enum>Qt::FocusPolicy::NoFocus</enum>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true"/>
+                      <string notr="true">#perspective_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#perspective_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
                      </property>
                      <property name="text">
                       <string>PSPECT</string>
@@ -2126,6 +2054,58 @@ color: rgb(222, 221, 218);
                      </property>
                      <property name="autoExclusive">
                       <bool>true</bool>
+                     </property>
+                    </widget>
+                    <widget class="VCPSettingsPushButton" name="plot_grid_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>720</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#plot_grid_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#plot_grid_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>PLOT GRID</string>
+                     </property>
+                     <property name="settingName" stdset="0">
+                      <string>backplot.show-grid</string>
                      </property>
                     </widget>
                    </widget>
@@ -2147,8 +2127,8 @@ color: rgb(222, 221, 218);
                  <widget class="QPushButton" name="btnMenuVTK_2">
                   <property name="geometry">
                    <rect>
-                    <x>0</x>
-                    <y>0</y>
+                    <x>10</x>
+                    <y>20</y>
                     <width>100</width>
                     <height>57</height>
                    </rect>
@@ -2299,41 +2279,124 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
               <string>backplot.show-machine-bounds</string>
              </property>
             </widget>
-            <widget class="VCPSettingsPushButton" name="plot_grid_button">
+            <widget class="QPushButton" name="clear_button">
              <property name="geometry">
               <rect>
-               <x>650</x>
-               <y>1100</y>
-               <width>169</width>
-               <height>40</height>
+               <x>170</x>
+               <y>1110</y>
+               <width>75</width>
+               <height>33</height>
               </rect>
              </property>
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>40</height>
+               <width>75</width>
+               <height>33</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>16777215</width>
-               <height>30</height>
+               <width>75</width>
+               <height>33</height>
               </size>
              </property>
              <property name="focusPolicy">
               <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
-             <property name="text">
-              <string>PLOT GRID</string>
+             <property name="styleSheet">
+              <string notr="true"/>
              </property>
-             <property name="settingName" stdset="0">
-              <string>backplot.show-grid</string>
+             <property name="text">
+              <string>CLEAR</string>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="program_zoom_button">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>1110</y>
+               <width>75</width>
+               <height>33</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>75</width>
+               <height>33</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>33</height>
+              </size>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::NoFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>PGM EXT</string>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="machine_zoom_button">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>1110</y>
+               <width>75</width>
+               <height>33</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>75</width>
+               <height>33</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>33</height>
+              </size>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::NoFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>MCH EXT</string>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
              </property>
             </widget>
             <zorder>label_8</zorder>
@@ -2365,7 +2428,9 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
             <zorder>frame_21</zorder>
             <zorder>program_boundary_button</zorder>
             <zorder>machine_boundary_button</zorder>
-            <zorder>plot_grid_button</zorder>
+            <zorder>clear_button</zorder>
+            <zorder>program_zoom_button</zorder>
+            <zorder>machine_zoom_button</zorder>
            </widget>
           </item>
          </layout>
