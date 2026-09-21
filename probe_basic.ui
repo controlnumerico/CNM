@@ -2399,6 +2399,40 @@ color: rgb(246, 211, 45);
               <string>backplot.show-grid</string>
              </property>
             </widget>
+            <widget class="RecentFileComboBox" name="recentfilecombobox_3">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>1060</y>
+               <width>861</width>
+               <height>32</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>149</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::NoFocus</enum>
+             </property>
+             <property name="resource" stdset="0">
+              <string/>
+             </property>
+            </widget>
             <zorder>label_8</zorder>
             <zorder>label_3</zorder>
             <zorder>dro_entry_main_z</zorder>
@@ -2431,6 +2465,7 @@ color: rgb(246, 211, 45);
             <zorder>program_zoom_button</zorder>
             <zorder>machine_zoom_button</zorder>
             <zorder>plot_grid_button</zorder>
+            <zorder>recentfilecombobox_3</zorder>
            </widget>
           </item>
          </layout>
