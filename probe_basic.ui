@@ -2351,7 +2351,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
              <property name="geometry">
               <rect>
                <x>300</x>
-               <y>1094</y>
+               <y>1097</y>
                <width>100</width>
                <height>57</height>
               </rect>
@@ -2403,9 +2403,9 @@ color: rgb(246, 211, 45);
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>1060</y>
-               <width>861</width>
-               <height>32</height>
+               <y>1056</y>
+               <width>831</width>
+               <height>40</height>
               </rect>
              </property>
              <property name="sizePolicy">
@@ -2417,17 +2417,29 @@ color: rgb(246, 211, 45);
              <property name="minimumSize">
               <size>
                <width>149</width>
-               <height>32</height>
+               <height>40</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>32</height>
+               <height>40</height>
               </size>
              </property>
              <property name="focusPolicy">
               <enum>Qt::FocusPolicy::NoFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#recentfilecombobox_3{
+
+
+	background-color: rgb(45, 77, 126);
+
+	color: rgb(246, 245, 244);
+                                
+
+
+                      }</string>
              </property>
              <property name="resource" stdset="0">
               <string/>
