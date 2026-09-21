@@ -1452,7 +1452,7 @@ color: rgb(56, 54, 57);
                <x>1</x>
                <y>290</y>
                <width>878</width>
-               <height>801</height>
+               <height>766</height>
               </rect>
              </property>
              <property name="frameShape">
@@ -2056,58 +2056,6 @@ color: rgb(246, 211, 45);
                       <bool>true</bool>
                      </property>
                     </widget>
-                    <widget class="VCPSettingsPushButton" name="plot_grid_button">
-                     <property name="geometry">
-                      <rect>
-                       <x>0</x>
-                       <y>720</y>
-                       <width>100</width>
-                       <height>57</height>
-                      </rect>
-                     </property>
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>100</width>
-                       <height>57</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>100</width>
-                       <height>57</height>
-                      </size>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::FocusPolicy::NoFocus</enum>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">#plot_grid_button {
-font: 15pt &quot;Bebas Kai&quot;;
-background-color: transparent;
-background: none;
-border:none;
-color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
-}
-
-#plot_grid_button:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(246, 211, 45);
-}</string>
-                     </property>
-                     <property name="text">
-                      <string>PLOT GRID</string>
-                     </property>
-                     <property name="settingName" stdset="0">
-                      <string>backplot.show-grid</string>
-                     </property>
-                    </widget>
                    </widget>
                   </item>
                  </layout>
@@ -2159,7 +2107,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
                     <x>0</x>
                     <y>0</y>
                     <width>873</width>
-                    <height>801</height>
+                    <height>762</height>
                    </rect>
                   </property>
                   <property name="sizePolicy">
@@ -2197,6 +2145,46 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
                     <blue>164</blue>
                    </color>
                   </property>
+                  <widget class="QPushButton" name="clear_button">
+                   <property name="geometry">
+                    <rect>
+                     <x>120</x>
+                     <y>20</y>
+                     <width>75</width>
+                     <height>33</height>
+                    </rect>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>75</width>
+                     <height>33</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>75</width>
+                     <height>33</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <property name="text">
+                    <string>CLEAR</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
                  </widget>
                  <zorder>VTKBackPlot</zorder>
                  <zorder>btnMenuVTK_2</zorder>
@@ -2208,7 +2196,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
             <widget class="VCPSettingsPushButton" name="program_boundary_button">
              <property name="geometry">
               <rect>
-               <x>250</x>
+               <x>440</x>
                <y>1110</y>
                <width>169</width>
                <height>40</height>
@@ -2245,7 +2233,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
             <widget class="VCPSettingsPushButton" name="machine_boundary_button">
              <property name="geometry">
               <rect>
-               <x>450</x>
+               <x>690</x>
                <y>1110</y>
                <width>169</width>
                <height>40</height>
@@ -2277,46 +2265,6 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
              </property>
              <property name="settingName" stdset="0">
               <string>backplot.show-machine-bounds</string>
-             </property>
-            </widget>
-            <widget class="QPushButton" name="clear_button">
-             <property name="geometry">
-              <rect>
-               <x>170</x>
-               <y>1110</y>
-               <width>75</width>
-               <height>33</height>
-              </rect>
-             </property>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>75</width>
-               <height>33</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>75</width>
-               <height>33</height>
-              </size>
-             </property>
-             <property name="focusPolicy">
-              <enum>Qt::FocusPolicy::NoFocus</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>CLEAR</string>
-             </property>
-             <property name="checkable">
-              <bool>false</bool>
              </property>
             </widget>
             <widget class="QPushButton" name="program_zoom_button">
@@ -2399,6 +2347,58 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
               <bool>false</bool>
              </property>
             </widget>
+            <widget class="VCPSettingsPushButton" name="plot_grid_button">
+             <property name="geometry">
+              <rect>
+               <x>300</x>
+               <y>1094</y>
+               <width>100</width>
+               <height>57</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>57</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>57</height>
+              </size>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::NoFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#plot_grid_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#plot_grid_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+             </property>
+             <property name="text">
+              <string>PLOT GRID</string>
+             </property>
+             <property name="settingName" stdset="0">
+              <string>backplot.show-grid</string>
+             </property>
+            </widget>
             <zorder>label_8</zorder>
             <zorder>label_3</zorder>
             <zorder>dro_entry_main_z</zorder>
@@ -2428,9 +2428,9 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
             <zorder>frame_21</zorder>
             <zorder>program_boundary_button</zorder>
             <zorder>machine_boundary_button</zorder>
-            <zorder>clear_button</zorder>
             <zorder>program_zoom_button</zorder>
             <zorder>machine_zoom_button</zorder>
+            <zorder>plot_grid_button</zorder>
            </widget>
           </item>
          </layout>
@@ -15071,7 +15071,216 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
  <resources>
   <include location="probe_basic.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>iso_view_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>setViewP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>524</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x_view_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>setViewX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>594</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>y_view_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>setViewY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>664</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>z_view_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>setViewZ()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>734</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pan_button</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>enable_panning(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>804</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoom_out_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>944</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoom_in_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>874</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>perspective_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>setViewPersp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>1154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ortho_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>setViewOrtho()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>1084</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>clearLivePlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>1311</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>setViewPath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>1014</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>machine_zoom_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>setViewMachine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>1311</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>program_zoom_button</sender>
+   <signal>clicked()</signal>
+   <receiver>VTKBackPlot</receiver>
+   <slot>setViewProgram()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>1311</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>876</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <designerdata>
   <property name="gridDeltaX">
    <number>10</number>
