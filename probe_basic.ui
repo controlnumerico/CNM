@@ -2183,6 +2183,11 @@ background: none;
 border:none;
 color: rgb(71, 87, 94);
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Clean.png);
+}
+
+#clear_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Clean2.png);
+	color: rgb(28, 113, 216);
 }</string>
                    </property>
                    <property name="text">
