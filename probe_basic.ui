@@ -13868,7 +13868,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/timer.png);
        <property name="geometry">
         <rect>
          <x>960</x>
-         <y>710</y>
+         <y>700</y>
          <width>101</width>
          <height>81</height>
         </rect>
