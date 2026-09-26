@@ -14856,9 +14856,9 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed
       <widget class="MDIEntry" name="mdientry">
        <property name="geometry">
         <rect>
-         <x>62</x>
+         <x>160</x>
          <y>1422</y>
-         <width>879</width>
+         <width>771</width>
          <height>50</height>
         </rect>
        </property>
@@ -15109,7 +15109,7 @@ background-color: rgb(247, 124, 22);</string>
        </property>
        <property name="font">
         <font>
-         <family>DejaVu Sans Mono</family>
+         <family>lcd phone</family>
          <pointsize>18</pointsize>
          <bold>true</bold>
         </font>
@@ -15119,7 +15119,7 @@ background-color: rgb(247, 124, 22);</string>
 color: rgb(237, 51, 59);</string>
        </property>
        <property name="text">
-        <string>Status:</string>
+        <string> Status:</string>
        </property>
       </widget>
       <widget class="QFrame" name="frame_10">
@@ -15327,6 +15327,45 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
         </property>
        </widget>
       </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>1422</y>
+         <width>98</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>lcd phone</family>
+         <pointsize>17</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>DISTANCE TO GO</string>
+       </property>
+       <property name="toolTipDuration">
+        <number>5</number>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::RightToLeft</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+background-color: rgb(247, 124, 22);
+ 
+ </string>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="text">
+        <string> M D I :</string>
+       </property>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -15345,6 +15384,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.jpeg);
       <zorder>frame_18</zorder>
       <zorder>frame_19</zorder>
       <zorder>frame_20</zorder>
+      <zorder>label_16</zorder>
      </widget>
     </item>
    </layout>
