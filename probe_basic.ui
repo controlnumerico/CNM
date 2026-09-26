@@ -2418,16 +2418,16 @@ color: rgb(246, 211, 45);
                    </property>
                    <property name="marginCurrentLineBackground" stdset="0">
                     <color>
-                     <red>110</red>
-                     <green>110</green>
-                     <blue>110</blue>
+                     <red>192</red>
+                     <green>191</green>
+                     <blue>188</blue>
                     </color>
                    </property>
                    <property name="marginColor" stdset="0">
                     <color>
-                     <red>49</red>
-                     <green>49</green>
-                     <blue>49</blue>
+                     <red>222</red>
+                     <green>221</green>
+                     <blue>218</blue>
                     </color>
                    </property>
                    <property name="marginCurrentLineColor" stdset="0">
