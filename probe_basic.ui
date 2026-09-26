@@ -1531,7 +1531,7 @@ color: rgb(56, 54, 57);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>20</y>
+                       <y>10</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1583,7 +1583,7 @@ color: rgb(246, 211, 45);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>90</y>
+                       <y>80</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1635,7 +1635,7 @@ color: rgb(246, 211, 45);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>160</y>
+                       <y>150</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1687,7 +1687,7 @@ color: rgb(246, 211, 45);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>230</y>
+                       <y>220</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1739,7 +1739,7 @@ color: rgb(246, 211, 45);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>300</y>
+                       <y>290</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1791,7 +1791,7 @@ color: rgb(246, 211, 45);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>510</y>
+                       <y>360</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1843,7 +1843,7 @@ color: rgb(246, 211, 45);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>580</y>
+                       <y>430</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1901,7 +1901,7 @@ color: rgb(246, 211, 45);
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>650</y>
+                       <y>500</y>
                        <width>100</width>
                        <height>57</height>
                       </rect>
@@ -1950,6 +1950,162 @@ color: rgb(246, 211, 45);
                      </property>
                      <property name="autoExclusive">
                       <bool>true</bool>
+                     </property>
+                    </widget>
+                    <widget class="VCPSettingsPushButton" name="program_boundary_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>570</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#program_boundary_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#program_boundary_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>PGM BDRY</string>
+                     </property>
+                     <property name="settingName" stdset="0">
+                      <string>backplot.show-program-bounds</string>
+                     </property>
+                    </widget>
+                    <widget class="VCPSettingsPushButton" name="machine_boundary_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>640</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#machine_boundary_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#machine_boundary_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>MCH BDRY</string>
+                     </property>
+                     <property name="settingName" stdset="0">
+                      <string>backplot.show-machine-bounds</string>
+                     </property>
+                    </widget>
+                    <widget class="VCPSettingsPushButton" name="plot_grid_button">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>710</y>
+                       <width>100</width>
+                       <height>57</height>
+                      </rect>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>57</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::FocusPolicy::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">#plot_grid_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#plot_grid_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>PLOT GRID</string>
+                     </property>
+                     <property name="settingName" stdset="0">
+                      <string>backplot.show-grid</string>
                      </property>
                     </widget>
                    </widget>
@@ -2286,37 +2442,6 @@ font: 20pt &quot;Bebas Kai&quot;;
               <string/>
              </property>
             </widget>
-            <widget class="QLabel" name="label_27">
-             <property name="geometry">
-              <rect>
-               <x>830</x>
-               <y>1054</y>
-               <width>42</width>
-               <height>42</height>
-              </rect>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>42</width>
-               <height>42</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">#label_27 {
-background-color: transparent;
-background: none;
-border:none;
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/folder.png);
-
-}
-
-
-</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
             <widget class="QFrame" name="frame_23">
              <property name="geometry">
               <rect>
@@ -2338,166 +2463,10 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/folder.png);
              <property name="lineWidth">
               <number>0</number>
              </property>
-             <widget class="VCPSettingsPushButton" name="machine_boundary_button">
-              <property name="geometry">
-               <rect>
-                <x>770</x>
-                <y>1</y>
-                <width>100</width>
-                <height>57</height>
-               </rect>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::FocusPolicy::NoFocus</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">#machine_boundary_button {
-font: 15pt &quot;Bebas Kai&quot;;
-background-color: transparent;
-background: none;
-border:none;
-color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
-}
-
-#machine_boundary_button:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(246, 211, 45);
-}</string>
-              </property>
-              <property name="text">
-               <string>MCH BDRY</string>
-              </property>
-              <property name="settingName" stdset="0">
-               <string>backplot.show-machine-bounds</string>
-              </property>
-             </widget>
-             <widget class="VCPSettingsPushButton" name="plot_grid_button">
-              <property name="geometry">
-               <rect>
-                <x>550</x>
-                <y>1</y>
-                <width>100</width>
-                <height>57</height>
-               </rect>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::FocusPolicy::NoFocus</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">#plot_grid_button {
-font: 15pt &quot;Bebas Kai&quot;;
-background-color: transparent;
-background: none;
-border:none;
-color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
-}
-
-#plot_grid_button:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(246, 211, 45);
-}</string>
-              </property>
-              <property name="text">
-               <string>PLOT GRID</string>
-              </property>
-              <property name="settingName" stdset="0">
-               <string>backplot.show-grid</string>
-              </property>
-             </widget>
-             <widget class="VCPSettingsPushButton" name="program_boundary_button">
-              <property name="geometry">
-               <rect>
-                <x>660</x>
-                <y>1</y>
-                <width>100</width>
-                <height>57</height>
-               </rect>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::FocusPolicy::NoFocus</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">#program_boundary_button {
-font: 15pt &quot;Bebas Kai&quot;;
-background-color: transparent;
-background: none;
-border:none;
-color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
-}
-
-#program_boundary_button:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(246, 211, 45);
-}</string>
-              </property>
-              <property name="text">
-               <string>PGM BDRY</string>
-              </property>
-              <property name="settingName" stdset="0">
-               <string>backplot.show-program-bounds</string>
-              </property>
-             </widget>
              <widget class="QPushButton" name="machine_zoom_button">
               <property name="geometry">
                <rect>
-                <x>330</x>
+                <x>660</x>
                 <y>1</y>
                 <width>100</width>
                 <height>57</height>
@@ -2549,7 +2518,7 @@ color: rgb(246, 211, 45);
              <widget class="QPushButton" name="program_zoom_button">
               <property name="geometry">
                <rect>
-                <x>440</x>
+                <x>770</x>
                 <y>1</y>
                 <width>100</width>
                 <height>57</height>
@@ -2641,6 +2610,265 @@ color: rgb(246, 211, 45);
                <string>open_file</string>
               </property>
              </widget>
+             <widget class="DialogButton" name="dialogbutton_3">
+              <property name="geometry">
+               <rect>
+                <x>110</x>
+                <y>0</y>
+                <width>100</width>
+                <height>57</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">#dialogbutton_3{
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#dialogbutton_3:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+              </property>
+              <property name="text">
+               <string>OPEN 1001</string>
+              </property>
+              <property name="rules" stdset="0">
+               <string>[]</string>
+              </property>
+              <property name="dialogName" stdset="0">
+               <string>open_file</string>
+              </property>
+             </widget>
+             <widget class="DialogButton" name="dialogbutton_4">
+              <property name="geometry">
+               <rect>
+                <x>220</x>
+                <y>0</y>
+                <width>100</width>
+                <height>57</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">#dialogbutton_4{
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#dialogbutton_4:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+              </property>
+              <property name="text">
+               <string>OPEN 1002</string>
+              </property>
+              <property name="dialogName" stdset="0">
+               <string>open_file</string>
+              </property>
+             </widget>
+             <widget class="DialogButton" name="dialogbutton_5">
+              <property name="geometry">
+               <rect>
+                <x>330</x>
+                <y>0</y>
+                <width>100</width>
+                <height>57</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">#dialogbutton_5{
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#dialogbutton_5:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+              </property>
+              <property name="text">
+               <string>OPEN 1003</string>
+              </property>
+              <property name="dialogName" stdset="0">
+               <string>open_file</string>
+              </property>
+             </widget>
+             <widget class="DialogButton" name="dialogbutton_6">
+              <property name="geometry">
+               <rect>
+                <x>440</x>
+                <y>0</y>
+                <width>100</width>
+                <height>57</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">#dialogbutton_6{
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#dialogbutton_6:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+              </property>
+              <property name="text">
+               <string>OPEN 1004</string>
+              </property>
+              <property name="dialogName" stdset="0">
+               <string>open_file</string>
+              </property>
+             </widget>
+             <widget class="DialogButton" name="dialogbutton_7">
+              <property name="geometry">
+               <rect>
+                <x>550</x>
+                <y>0</y>
+                <width>100</width>
+                <height>57</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">#dialogbutton_7{
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#dialogbutton_7:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+              </property>
+              <property name="text">
+               <string>OPEN 1005</string>
+              </property>
+              <property name="dialogName" stdset="0">
+               <string>open_file</string>
+              </property>
+             </widget>
+            </widget>
+            <widget class="DialogButton" name="dialogbutton_2">
+             <property name="geometry">
+              <rect>
+               <x>830</x>
+               <y>1052</y>
+               <width>42</width>
+               <height>42</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>42</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>42</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#dialogbutton_2 {
+
+background-color: transparent;
+background: none;
+border:none;
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/folder.png);
+
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[]</string>
+             </property>
+             <property name="dialogName" stdset="0">
+              <string>open_file</string>
+             </property>
             </widget>
             <zorder>label_8</zorder>
             <zorder>label_3</zorder>
@@ -2670,8 +2898,8 @@ color: rgb(246, 211, 45);
             <zorder>statuslabel_17</zorder>
             <zorder>frame_21</zorder>
             <zorder>recentfilecombobox_3</zorder>
-            <zorder>label_27</zorder>
             <zorder>frame_23</zorder>
+            <zorder>dialogbutton_2</zorder>
            </widget>
           </item>
          </layout>
