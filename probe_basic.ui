@@ -2393,7 +2393,7 @@ color: rgb(246, 211, 45);
                      <x>420</x>
                      <y>0</y>
                      <width>451</width>
-                     <height>211</height>
+                     <height>151</height>
                     </rect>
                    </property>
                    <property name="sizePolicy">
