@@ -313,10 +313,9 @@
         <property name="styleSheet">
          <string notr="true">QTabWidget QTabBar::tab {
 
-	background-color: rgb(45, 77, 126);
 
-	color: rgb(246, 245, 244);
-
+    background-color: #ffffff;
+    color: #000000;
 
     min-width: 126px;
     min-height: 80px;
@@ -334,13 +333,25 @@
 }
 
 
+
+/* Color de la pestaña cuando está seleccionada (activa) */
+QTabBar::tab:selected {
+
+
+	background-color: rgb(45, 77, 126);
+	color: rgb(246, 245, 244);
+
+
+}
+
+
 </string>
         </property>
         <property name="tabPosition">
          <enum>QTabWidget::TabPosition::South</enum>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <property name="usesScrollButtons">
          <bool>false</bool>
