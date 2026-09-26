@@ -312,17 +312,35 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QTabWidget QTabBar::tab {
-	color: rgb(25, 255, 255);
+
+	background-color: rgb(45, 77, 126);
+
+	color: rgb(246, 245, 244);
+
+
     min-width: 126px;
     min-height: 80px;
     font: 15pt &quot;bebas kai&quot;;
-}</string>
+
+
+
+
+    border: 1px solid #C4C4C3;
+    border-bottom-color: none; /* Une la pestaña al panel inferior */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+
+}
+
+
+</string>
         </property>
         <property name="tabPosition">
          <enum>QTabWidget::TabPosition::South</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <property name="usesScrollButtons">
          <bool>false</bool>
