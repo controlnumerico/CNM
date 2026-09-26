@@ -2358,43 +2358,13 @@ color: rgb(246, 211, 45);
                     <bool>false</bool>
                    </property>
                   </widget>
-                  <widget class="QLabel" name="label_13">
-                   <property name="geometry">
-                    <rect>
-                     <x>770</x>
-                     <y>0</y>
-                     <width>101</width>
-                     <height>31</height>
-                    </rect>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>lcd phone</family>
-                     <pointsize>18</pointsize>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="layoutDirection">
-                    <enum>Qt::LayoutDirection::RightToLeft</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(1, 123, 206);
-background-color: rgb(136, 138, 133,0);
- 
- </string>
-                   </property>
-                   <property name="text">
-                    <string>G-Code</string>
-                   </property>
-                  </widget>
                   <widget class="GcodeTextEdit" name="gcodeEditor">
                    <property name="geometry">
                     <rect>
-                     <x>470</x>
+                     <x>420</x>
                      <y>0</y>
-                     <width>401</width>
-                     <height>191</height>
+                     <width>451</width>
+                     <height>211</height>
                     </rect>
                    </property>
                    <property name="sizePolicy">
@@ -2405,8 +2375,7 @@ background-color: rgb(136, 138, 133,0);
                    </property>
                    <property name="font">
                     <font>
-                     <family>DejaVu Sans</family>
-                     <pointsize>14</pointsize>
+                     <pointsize>12</pointsize>
                     </font>
                    </property>
                    <property name="focusPolicy">
@@ -2469,11 +2438,6 @@ background-color: rgb(136, 138, 133,0);
                     </color>
                    </property>
                   </widget>
-                  <zorder>clear_button</zorder>
-                  <zorder>zoom_in_button</zorder>
-                  <zorder>zoom_out_button</zorder>
-                  <zorder>gcodeEditor</zorder>
-                  <zorder>label_13</zorder>
                  </widget>
                  <zorder>VTKBackPlot</zorder>
                  <zorder>btnMenuVTK_2</zorder>
@@ -2986,6 +2950,36 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/folder.png);
               <string>open_file</string>
              </property>
             </widget>
+            <widget class="QLabel" name="label_13">
+             <property name="geometry">
+              <rect>
+               <x>770</x>
+               <y>260</y>
+               <width>101</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>lcd phone</family>
+               <pointsize>18</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+             </property>
+             <property name="text">
+              <string>G-Code</string>
+             </property>
+            </widget>
             <zorder>label_8</zorder>
             <zorder>label_3</zorder>
             <zorder>dro_entry_main_z</zorder>
@@ -3016,6 +3010,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/folder.png);
             <zorder>recentfilecombobox_3</zorder>
             <zorder>frame_23</zorder>
             <zorder>dialogbutton_2</zorder>
+            <zorder>label_13</zorder>
            </widget>
           </item>
          </layout>
