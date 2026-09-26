@@ -2358,13 +2358,43 @@ color: rgb(246, 211, 45);
                     <bool>false</bool>
                    </property>
                   </widget>
+                  <widget class="QLabel" name="label_13">
+                   <property name="geometry">
+                    <rect>
+                     <x>770</x>
+                     <y>0</y>
+                     <width>101</width>
+                     <height>31</height>
+                    </rect>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>lcd phone</family>
+                     <pointsize>18</pointsize>
+                     <italic>false</italic>
+                     <bold>false</bold>
+                    </font>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LayoutDirection::RightToLeft</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+ 
+ </string>
+                   </property>
+                   <property name="text">
+                    <string>G-Code</string>
+                   </property>
+                  </widget>
                   <widget class="GcodeTextEdit" name="gcodeEditor">
                    <property name="geometry">
                     <rect>
-                     <x>431</x>
+                     <x>470</x>
                      <y>0</y>
-                     <width>441</width>
-                     <height>261</height>
+                     <width>401</width>
+                     <height>191</height>
                     </rect>
                    </property>
                    <property name="sizePolicy">
@@ -2439,36 +2469,11 @@ color: rgb(246, 211, 45);
                     </color>
                    </property>
                   </widget>
-                  <widget class="QLabel" name="label_13">
-                   <property name="geometry">
-                    <rect>
-                     <x>770</x>
-                     <y>0</y>
-                     <width>101</width>
-                     <height>31</height>
-                    </rect>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>lcd phone</family>
-                     <pointsize>18</pointsize>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="layoutDirection">
-                    <enum>Qt::LayoutDirection::RightToLeft</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(1, 123, 206);
-background-color: rgb(136, 138, 133,0);
- 
- </string>
-                   </property>
-                   <property name="text">
-                    <string>G-Code</string>
-                   </property>
-                  </widget>
+                  <zorder>clear_button</zorder>
+                  <zorder>zoom_in_button</zorder>
+                  <zorder>zoom_out_button</zorder>
+                  <zorder>gcodeEditor</zorder>
+                  <zorder>label_13</zorder>
                  </widget>
                  <zorder>VTKBackPlot</zorder>
                  <zorder>btnMenuVTK_2</zorder>
