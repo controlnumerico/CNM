@@ -297,8 +297,8 @@
         </property>
         <property name="font">
          <font>
-          <family>Bebas Kai</family>
-          <pointsize>15</pointsize>
+          <family>Sans</family>
+          <pointsize>20</pointsize>
          </font>
         </property>
         <property name="cursor">
@@ -317,9 +317,9 @@
     background-color: #ffffff;
     color: #000000;
 
-    min-width: 126px;
+    min-width: 123px;
     min-height: 80px;
-    font: 15pt &quot;bebas kai&quot;;
+    font: 18pt &quot;bebas kai&quot;;
 
 
 
@@ -14988,7 +14988,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed
         <rect>
          <x>160</x>
          <y>1422</y>
-         <width>771</width>
+         <width>781</width>
          <height>50</height>
         </rect>
        </property>
