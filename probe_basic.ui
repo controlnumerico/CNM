@@ -351,7 +351,7 @@ QTabBar::tab:selected {
          <enum>QTabWidget::TabPosition::South</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <property name="usesScrollButtons">
          <bool>false</bool>
@@ -2156,7 +2156,7 @@ color: rgb(246, 211, 45);
                  <widget class="QPushButton" name="btnMenuVTK_2">
                   <property name="geometry">
                    <rect>
-                    <x>10</x>
+                    <x>0</x>
                     <y>20</y>
                     <width>63</width>
                     <height>63</height>
@@ -7129,6 +7129,39 @@ QPushButton[style='active'][flashState='false']{
              </property>
              <property name="filename" stdset="0">
               <string>probe_front_right_top_corner.ngc</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="exitAppBtn2">
+             <property name="geometry">
+              <rect>
+               <x>470</x>
+               <y>550</y>
+               <width>331</width>
+               <height>24</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Sans</family>
+               <pointsize>12</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+#exitAppBtn2 {
+
+color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+border: none;
+
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>www.controlnumericomexico.com</string>
              </property>
             </widget>
            </widget>
@@ -14344,34 +14377,6 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/timer.png);
          <string/>
         </property>
        </widget>
-       <widget class="QPushButton" name="exitAppBtn2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>331</width>
-          <height>24</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Sans</family>
-          <pointsize>12</pointsize>
-          <italic>false</italic>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(1, 123, 206);
-background-color: rgb(136, 138, 133,0);
-border: none;
-
-</string>
-        </property>
-        <property name="text">
-         <string>www.controlnumericomexico.com</string>
-        </property>
-       </widget>
        <zorder>frame_6</zorder>
        <zorder>tabWidget</zorder>
        <zorder>label_25</zorder>
@@ -14381,7 +14386,6 @@ border: none;
        <zorder>timerminutes</zorder>
        <zorder>timerseconds</zorder>
        <zorder>label_28</zorder>
-       <zorder>exitAppBtn2</zorder>
       </widget>
       <widget class="QPushButton" name="exitAppBtn">
        <property name="geometry">
