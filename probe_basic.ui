@@ -14347,16 +14347,16 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/timer.png);
        <widget class="QPushButton" name="exitAppBtn2">
         <property name="geometry">
          <rect>
-          <x>50</x>
-          <y>10</y>
-          <width>331</width>
+          <x>22</x>
+          <y>16</y>
+          <width>401</width>
           <height>24</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Sans</family>
-          <pointsize>12</pointsize>
+          <pointsize>15</pointsize>
           <italic>false</italic>
           <bold>true</bold>
          </font>
