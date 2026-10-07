@@ -152,6 +152,7 @@ class ProbeBasic(VCPMainWindow):
 
 
         self.exitAppBtn.clicked.connect(self.close)
+        self.exitAppBtn2.clicked.connect(self.close)
 
 
 

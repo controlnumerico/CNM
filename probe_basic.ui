@@ -2467,6 +2467,110 @@ color: rgb(246, 211, 45);
                     </color>
                    </property>
                   </widget>
+                  <widget class="QPushButton" name="machine_zoom_button">
+                   <property name="geometry">
+                    <rect>
+                     <x>100</x>
+                     <y>20</y>
+                     <width>100</width>
+                     <height>57</height>
+                    </rect>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>57</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>57</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">#machine_zoom_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#machine_zoom_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>MCH EXT</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                  <widget class="QPushButton" name="program_zoom_button">
+                   <property name="geometry">
+                    <rect>
+                     <x>100</x>
+                     <y>100</y>
+                     <width>100</width>
+                     <height>57</height>
+                    </rect>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>57</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>57</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">#program_zoom_button {
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+}
+
+#program_zoom_button:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>PGM EXT</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
                  </widget>
                  <zorder>VTKBackPlot</zorder>
                  <zorder>btnMenuVTK_2</zorder>
@@ -2572,110 +2676,6 @@ font: 20pt &quot;Bebas Kai&quot;;
              <property name="lineWidth">
               <number>0</number>
              </property>
-             <widget class="QPushButton" name="machine_zoom_button">
-              <property name="geometry">
-               <rect>
-                <x>660</x>
-                <y>1</y>
-                <width>100</width>
-                <height>57</height>
-               </rect>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::FocusPolicy::NoFocus</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">#machine_zoom_button {
-font: 15pt &quot;Bebas Kai&quot;;
-background-color: transparent;
-background: none;
-border:none;
-color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
-}
-
-#machine_zoom_button:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(246, 211, 45);
-}</string>
-              </property>
-              <property name="text">
-               <string>MCH EXT</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="program_zoom_button">
-              <property name="geometry">
-               <rect>
-                <x>770</x>
-                <y>1</y>
-                <width>100</width>
-                <height>57</height>
-               </rect>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>57</height>
-               </size>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::FocusPolicy::NoFocus</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">#program_zoom_button {
-font: 15pt &quot;Bebas Kai&quot;;
-background-color: transparent;
-background: none;
-border:none;
-color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
-}
-
-#program_zoom_button:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
-color: rgb(246, 211, 45);
-}</string>
-              </property>
-              <property name="text">
-               <string>PGM EXT</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-             </widget>
              <widget class="DialogButton" name="dialogbutton">
               <property name="geometry">
                <rect>
@@ -14344,6 +14344,34 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/timer.png);
          <string/>
         </property>
        </widget>
+       <widget class="QPushButton" name="exitAppBtn2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>331</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(1, 123, 206);
+background-color: rgb(136, 138, 133,0);
+border: none;
+
+</string>
+        </property>
+        <property name="text">
+         <string>www.controlnumericomexico.com</string>
+        </property>
+       </widget>
        <zorder>frame_6</zorder>
        <zorder>tabWidget</zorder>
        <zorder>label_25</zorder>
@@ -14353,6 +14381,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/timer.png);
        <zorder>timerminutes</zorder>
        <zorder>timerseconds</zorder>
        <zorder>label_28</zorder>
+       <zorder>exitAppBtn2</zorder>
       </widget>
       <widget class="QPushButton" name="exitAppBtn">
        <property name="geometry">
