@@ -15530,6 +15530,96 @@ background-color: rgb(247, 124, 22);
         <string> M D I :</string>
        </property>
       </widget>
+      <widget class="ActionButton" name="Start">
+       <property name="geometry">
+        <rect>
+         <x>953</x>
+         <y>1220</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#Start {
+background-color: transparent;
+background: none;
+border:none;
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Cycle_start_on.png);
+}
+
+#Start:pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
+}</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+1</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>program.run</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="Pausa">
+       <property name="geometry">
+        <rect>
+         <x>953</x>
+         <y>1350</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#Pausa {
+background-color: transparent;
+background: none;
+border:none;
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Cycle_start_on.png);
+}
+
+#Pausa:pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
+}</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+1</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>program.run</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="Stop">
+       <property name="geometry">
+        <rect>
+         <x>953</x>
+         <y>1480</y>
+         <width>120</width>
+         <height>120</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#Stop {
+background-color: transparent;
+background: none;
+border:none;
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Cycle_start_on.png);
+}
+
+#Stop:pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
+}</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+1</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>program.run</string>
+       </property>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -15549,6 +15639,9 @@ background-color: rgb(247, 124, 22);
       <zorder>frame_19</zorder>
       <zorder>frame_20</zorder>
       <zorder>label_16</zorder>
+      <zorder>Start</zorder>
+      <zorder>Pausa</zorder>
+      <zorder>Stop</zorder>
      </widget>
     </item>
    </layout>
