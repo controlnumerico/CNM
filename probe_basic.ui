@@ -14391,14 +14391,40 @@ border: none;
       <widget class="QPushButton" name="exitAppBtn">
        <property name="geometry">
         <rect>
-         <x>960</x>
-         <y>690</y>
-         <width>101</width>
-         <height>81</height>
+         <x>921</x>
+         <y>1823</y>
+         <width>125</width>
+         <height>80</height>
         </rect>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#exitAppBtn {
+background-color: transparent;
+background: none;
+border:none;
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/BTN_6_Up.png);
+}
+
+#exitAppBtn :pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/BTN_5_Down.png);
+}</string>
+       </property>
        <property name="text">
-        <string>EXIT</string>
+        <string/>
        </property>
       </widget>
       <widget class="ActionCheckBox" name="stop">
@@ -14466,7 +14492,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_off_toggle.p
        <property name="geometry">
         <rect>
          <x>903</x>
-         <y>1660</y>
+         <y>1645</y>
          <width>160</width>
          <height>160</height>
         </rect>
@@ -14496,7 +14522,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>898</x>
-         <y>1656</y>
+         <y>1640</y>
          <width>170</width>
          <height>170</height>
         </rect>
@@ -15652,6 +15678,360 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:interp_state?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Flashing&quot;, &quot;expression&quot;: &quot;ch[0] == 'Paused'&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}, {&quot;name&quot;: &quot;New Rule&quot;, &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0] == 'Paused'&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;status:interp_state?text&quot;, &quot;trigger&quot;: true}]}]</string>
        </property>
       </widget>
+      <widget class="StatusLED" name="statusled_11">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>1540</y>
+         <width>15</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="diameter" stdset="0">
+        <number>15</number>
+       </property>
+       <property name="color" stdset="0">
+        <color>
+         <red>126</red>
+         <green>219</green>
+         <blue>11</blue>
+        </color>
+       </property>
+       <property name="state" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="flashRate" stdset="0">
+        <number>500</number>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:mist&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;bool(ch[0])&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}]</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="mode_auto">
+       <property name="geometry">
+        <rect>
+         <x>69</x>
+         <y>1533</y>
+         <width>87</width>
+         <height>87</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>87</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#mode_auto {
+background-color: transparent;
+background: none;
+border:none;
+
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/AutoMode_Up.png);
+}
+
+#mode_auto:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Auto_pressed.png);
+}</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>machine.mode.auto</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="mode_manual">
+       <property name="geometry">
+        <rect>
+         <x>256</x>
+         <y>1533</y>
+         <width>87</width>
+         <height>87</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>87</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#mode_manual {
+background-color: transparent;
+background: none;
+border:none;
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/ManualMode_Up.png);
+}
+
+#mode_manual:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Manual_pressed.png);
+}</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>machine.mode.manual</string>
+       </property>
+      </widget>
+      <widget class="StatusLED" name="statusled">
+       <property name="geometry">
+        <rect>
+         <x>136</x>
+         <y>1540</y>
+         <width>17</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="diameter" stdset="0">
+        <number>17</number>
+       </property>
+       <property name="color" stdset="0">
+        <color>
+         <red>246</red>
+         <green>211</green>
+         <blue>45</blue>
+        </color>
+       </property>
+       <property name="state" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_mode?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0] == 'Auto'&quot;, &quot;name&quot;: &quot;Rule_Auto&quot;}]</string>
+       </property>
+      </widget>
+      <widget class="StatusLED" name="statusled_10">
+       <property name="geometry">
+        <rect>
+         <x>416</x>
+         <y>1540</y>
+         <width>15</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="diameter" stdset="0">
+        <number>15</number>
+       </property>
+       <property name="color" stdset="0">
+        <color>
+         <red>126</red>
+         <green>219</green>
+         <blue>11</blue>
+        </color>
+       </property>
+       <property name="state" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="flashRate" stdset="0">
+        <number>500</number>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:flood&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;bool(ch[0])&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}]</string>
+       </property>
+      </widget>
+      <widget class="StatusLED" name="statusled_2">
+       <property name="geometry">
+        <rect>
+         <x>228</x>
+         <y>1540</y>
+         <width>17</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="diameter" stdset="0">
+        <number>17</number>
+       </property>
+       <property name="color" stdset="0">
+        <color>
+         <red>246</red>
+         <green>211</green>
+         <blue>45</blue>
+        </color>
+       </property>
+       <property name="state" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_mode?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0] == 'MDI'&quot;, &quot;name&quot;: &quot;Rule_MDI&quot;}]</string>
+       </property>
+      </widget>
+      <widget class="StatusLED" name="statusled_3">
+       <property name="geometry">
+        <rect>
+         <x>324</x>
+         <y>1540</y>
+         <width>17</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="diameter" stdset="0">
+        <number>17</number>
+       </property>
+       <property name="color" stdset="0">
+        <color>
+         <red>246</red>
+         <green>211</green>
+         <blue>45</blue>
+        </color>
+       </property>
+       <property name="state" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_mode?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0] == 'Manual'&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}]</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="Coolant">
+       <property name="geometry">
+        <rect>
+         <x>351</x>
+         <y>1532</y>
+         <width>87</width>
+         <height>87</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>87</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#Coolant {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Coolant_Up.png);
+}
+
+#Coolant:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Coolant_Down.png);
+}</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>coolant.flood.toggle</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="Mist">
+       <property name="geometry">
+        <rect>
+         <x>445</x>
+         <y>1532</y>
+         <width>87</width>
+         <height>87</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>87</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#Mist {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Mist_Up.png);
+}
+
+#Mist:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Mist_Down.png);
+}</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>coolant.mist.toggle</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="mode_mdi">
+       <property name="geometry">
+        <rect>
+         <x>162</x>
+         <y>1533</y>
+         <width>87</width>
+         <height>87</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>87</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#mode_mdi {
+background-color: transparent;
+background: none;
+border:none;
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MDIMode_Up.png);
+}
+
+#mode_mdi:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_MDI_pressed.png);
+}</string>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[]</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>machine.mode.mdi</string>
+       </property>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -15675,6 +16055,16 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <zorder>statusled_9</zorder>
       <zorder>Start</zorder>
       <zorder>Pausa</zorder>
+      <zorder>statusled_11</zorder>
+      <zorder>mode_auto</zorder>
+      <zorder>mode_manual</zorder>
+      <zorder>statusled</zorder>
+      <zorder>statusled_10</zorder>
+      <zorder>statusled_3</zorder>
+      <zorder>Coolant</zorder>
+      <zorder>Mist</zorder>
+      <zorder>mode_mdi</zorder>
+      <zorder>statusled_2</zorder>
      </widget>
     </item>
    </layout>
