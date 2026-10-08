@@ -15716,8 +15716,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="ActionButton" name="mode_auto">
        <property name="geometry">
         <rect>
-         <x>69</x>
-         <y>1533</y>
+         <x>57</x>
+         <y>1534</y>
          <width>87</width>
          <height>87</height>
         </rect>
@@ -15757,8 +15757,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Auto_pr
       <widget class="ActionButton" name="mode_manual">
        <property name="geometry">
         <rect>
-         <x>256</x>
-         <y>1533</y>
+         <x>257</x>
+         <y>1534</y>
          <width>87</width>
          <height>87</height>
         </rect>
@@ -15797,14 +15797,14 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Manual_
       <widget class="StatusLED" name="statusled">
        <property name="geometry">
         <rect>
-         <x>136</x>
-         <y>1540</y>
-         <width>17</width>
-         <height>17</height>
+         <x>122</x>
+         <y>1542</y>
+         <width>15</width>
+         <height>15</height>
         </rect>
        </property>
        <property name="diameter" stdset="0">
-        <number>17</number>
+        <number>15</number>
        </property>
        <property name="color" stdset="0">
         <color>
@@ -15858,14 +15858,14 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Manual_
       <widget class="StatusLED" name="statusled_2">
        <property name="geometry">
         <rect>
-         <x>228</x>
-         <y>1540</y>
-         <width>17</width>
-         <height>17</height>
+         <x>224</x>
+         <y>1542</y>
+         <width>15</width>
+         <height>15</height>
         </rect>
        </property>
        <property name="diameter" stdset="0">
-        <number>17</number>
+        <number>15</number>
        </property>
        <property name="color" stdset="0">
         <color>
@@ -15884,14 +15884,14 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Manual_
       <widget class="StatusLED" name="statusled_3">
        <property name="geometry">
         <rect>
-         <x>324</x>
-         <y>1540</y>
-         <width>17</width>
-         <height>17</height>
+         <x>322</x>
+         <y>1542</y>
+         <width>15</width>
+         <height>15</height>
         </rect>
        </property>
        <property name="diameter" stdset="0">
-        <number>17</number>
+        <number>15</number>
        </property>
        <property name="color" stdset="0">
         <color>
@@ -15910,8 +15910,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Manual_
       <widget class="ActionButton" name="Coolant">
        <property name="geometry">
         <rect>
-         <x>351</x>
-         <y>1532</y>
+         <x>357</x>
+         <y>1534</y>
          <width>87</width>
          <height>87</height>
         </rect>
@@ -15951,8 +15951,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Coolant_Down.png
       <widget class="ActionButton" name="Mist">
        <property name="geometry">
         <rect>
-         <x>445</x>
-         <y>1532</y>
+         <x>457</x>
+         <y>1534</y>
          <width>87</width>
          <height>87</height>
         </rect>
@@ -15992,8 +15992,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Mist_Down.png);
       <widget class="ActionButton" name="mode_mdi">
        <property name="geometry">
         <rect>
-         <x>162</x>
-         <y>1533</y>
+         <x>157</x>
+         <y>1534</y>
          <width>87</width>
          <height>87</height>
         </rect>
