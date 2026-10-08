@@ -14392,7 +14392,7 @@ border: none;
        <property name="geometry">
         <rect>
          <x>960</x>
-         <y>700</y>
+         <y>690</y>
          <width>101</width>
          <height>81</height>
         </rect>
@@ -15545,7 +15545,7 @@ background-color: transparent;
 background: none;
 border:none;
  
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Cycle_start_on.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Cycle_Up.png);
 }
 
 #Start:pressed {
@@ -15575,7 +15575,7 @@ background-color: transparent;
 background: none;
 border:none;
  
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Cycle_start_on.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Pause_Up.png);
 }
 
 #Pausa:pressed {
@@ -15605,7 +15605,7 @@ background-color: transparent;
 background: none;
 border:none;
  
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Cycle_start_on.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Stop_Up.png);
 }
 
 #Stop:pressed {
