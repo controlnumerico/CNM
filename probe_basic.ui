@@ -15587,7 +15587,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
         <string>Ctrl+1</string>
        </property>
        <property name="actionName" stdset="0">
-        <string>program.run</string>
+        <string>program.pause</string>
        </property>
       </widget>
       <widget class="ActionButton" name="Stop">
@@ -15617,7 +15617,39 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
         <string>Ctrl+1</string>
        </property>
        <property name="actionName" stdset="0">
-        <string>program.run</string>
+        <string>program.abort</string>
+       </property>
+      </widget>
+      <widget class="StatusLED" name="statusled_9">
+       <property name="geometry">
+        <rect>
+         <x>900</x>
+         <y>1020</y>
+         <width>170</width>
+         <height>170</height>
+        </rect>
+       </property>
+       <property name="diameter" stdset="0">
+        <number>170</number>
+       </property>
+       <property name="color" stdset="0">
+        <color>
+         <red>245</red>
+         <green>194</green>
+         <blue>17</blue>
+        </color>
+       </property>
+       <property name="state" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="flashing" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="flashRate" stdset="0">
+        <number>300</number>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_state?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Flashing&quot;, &quot;expression&quot;: &quot;ch[0] == 'E-Stop'&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}, {&quot;name&quot;: &quot;New Rule&quot;, &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0] == 'Paused'&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;status:interp_state?text&quot;, &quot;trigger&quot;: true}]}]</string>
        </property>
       </widget>
       <zorder>frame_4</zorder>
@@ -15642,6 +15674,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <zorder>Start</zorder>
       <zorder>Pausa</zorder>
       <zorder>Stop</zorder>
+      <zorder>statusled_9</zorder>
      </widget>
     </item>
    </layout>
