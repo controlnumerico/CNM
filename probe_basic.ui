@@ -15624,7 +15624,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1348</y>
+         <y>1349</y>
          <width>120</width>
          <height>120</height>
         </rect>
@@ -15634,9 +15634,9 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        </property>
        <property name="color" stdset="0">
         <color>
-         <red>245</red>
-         <green>194</green>
-         <blue>17</blue>
+         <red>249</red>
+         <green>240</green>
+         <blue>107</blue>
         </color>
        </property>
        <property name="state" stdset="0">
@@ -15649,7 +15649,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
         <number>300</number>
        </property>
        <property name="rules" stdset="0">
-        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:task_state?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Flashing&quot;, &quot;expression&quot;: &quot;ch[0] == 'Paused'&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}, {&quot;name&quot;: &quot;New Rule&quot;, &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0] == 'Paused'&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;status:interp_state?text&quot;, &quot;trigger&quot;: true}]}]</string>
+        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:interp_state?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Flashing&quot;, &quot;expression&quot;: &quot;ch[0] == 'Paused'&quot;, &quot;name&quot;: &quot;Rule_Manual&quot;}, {&quot;name&quot;: &quot;New Rule&quot;, &quot;property&quot;: &quot;On&quot;, &quot;expression&quot;: &quot;ch[0] == 'Paused'&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;status:interp_state?text&quot;, &quot;trigger&quot;: true}]}]</string>
        </property>
       </widget>
       <zorder>frame_4</zorder>
