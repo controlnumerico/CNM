@@ -2393,7 +2393,7 @@ color: rgb(246, 211, 45);
                      <x>420</x>
                      <y>0</y>
                      <width>451</width>
-                     <height>151</height>
+                     <height>221</height>
                     </rect>
                    </property>
                    <property name="sizePolicy">
@@ -2470,8 +2470,8 @@ color: rgb(246, 211, 45);
                   <widget class="QPushButton" name="machine_zoom_button">
                    <property name="geometry">
                     <rect>
-                     <x>100</x>
-                     <y>20</y>
+                     <x>220</x>
+                     <y>0</y>
                      <width>100</width>
                      <height>57</height>
                     </rect>
@@ -2522,8 +2522,8 @@ color: rgb(246, 211, 45);
                   <widget class="QPushButton" name="program_zoom_button">
                    <property name="geometry">
                     <rect>
-                     <x>100</x>
-                     <y>100</y>
+                     <x>320</x>
+                     <y>0</y>
                      <width>100</width>
                      <height>57</height>
                     </rect>
