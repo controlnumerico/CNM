@@ -16363,6 +16363,40 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_Front.pn
         <string>G0 X10 Y10</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="exitAppBtn2_2">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>1640</y>
+         <width>401</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans</family>
+         <pointsize>12</pointsize>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+#exitAppBtn2_2 {
+
+
+color: #3282f6;
+background-color: rgb(136, 138, 133,0);
+border: none;
+
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string>WWW.CONTROLNUMERICOMEXICO.COM</string>
+       </property>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -16400,6 +16434,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_Front.pn
       <zorder>XY_Zero_3</zorder>
       <zorder>XY_Zero_4</zorder>
       <zorder>XY_Zero</zorder>
+      <zorder>exitAppBtn2_2</zorder>
      </widget>
     </item>
    </layout>
