@@ -14390,9 +14390,9 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/timer.png);
        <widget class="QPushButton" name="exitAppBtn2">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>16</y>
-          <width>401</width>
+          <x>50</x>
+          <y>20</y>
+          <width>311</width>
           <height>24</height>
          </rect>
         </property>
@@ -14417,7 +14417,7 @@ border: none;
 </string>
         </property>
         <property name="text">
-         <string>www.controlnumericomexico.com</string>
+         <string>3 AXIS CNC CONTROLLER</string>
         </property>
        </widget>
        <zorder>frame_6</zorder>
