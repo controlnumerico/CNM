@@ -16366,7 +16366,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_Front.pn
       <widget class="QPushButton" name="exitAppBtn2_2">
        <property name="geometry">
         <rect>
-         <x>220</x>
+         <x>221</x>
          <y>1640</y>
          <width>391</width>
          <height>24</height>
