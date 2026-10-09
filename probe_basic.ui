@@ -14435,7 +14435,7 @@ border: none;
        <property name="geometry">
         <rect>
          <x>921</x>
-         <y>1823</y>
+         <y>1820</y>
          <width>125</width>
          <height>80</height>
         </rect>
@@ -15603,7 +15603,7 @@ background-color: rgb(247, 124, 22);
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1220</y>
+         <y>1010</y>
          <width>120</width>
          <height>120</height>
         </rect>
@@ -15616,7 +15616,8 @@ border:none;
 font: 13pt &quot;Bebas Kai&quot;;
  
 
-	color: rgb(192, 191, 188);
+ 
+	color: rgb(246, 245, 244);
  
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Cycle_Up.png);
 }
@@ -15640,7 +15641,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1350</y>
+         <y>1140</y>
          <width>120</width>
          <height>120</height>
         </rect>
@@ -15651,7 +15652,7 @@ background-color: transparent;
 background: none;
 border:none;
 font: 13pt &quot;Bebas Kai&quot;;
-	color: rgb(192, 191, 188);
+	color: rgb(246, 245, 244);
  
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Pause_Up.png);
 }
@@ -15675,7 +15676,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1480</y>
+         <y>1270</y>
          <width>120</width>
          <height>120</height>
         </rect>
@@ -15685,7 +15686,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
 background-color: transparent;
 background: none;
 border:none;
-	color: rgb(192, 191, 188);
+ 
+	color: rgb(246, 245, 244);
 font: 13pt &quot;Bebas Kai&quot;;
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Stop_Up.png);
 }
@@ -15709,7 +15711,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1349</y>
+         <y>1138</y>
          <width>120</width>
          <height>120</height>
         </rect>
