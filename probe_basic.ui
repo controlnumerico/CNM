@@ -15711,7 +15711,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1138</y>
+         <y>1140</y>
          <width>120</width>
          <height>120</height>
         </rect>
