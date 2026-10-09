@@ -16385,7 +16385,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_Front.pn
 #exitAppBtn2_2 {
 
 
-color: #3282f6;
+color: #0099ff;
 background-color: rgb(136, 138, 133,0);
 border: none;
 
