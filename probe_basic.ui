@@ -15613,8 +15613,10 @@ background-color: rgb(247, 124, 22);
 background-color: transparent;
 background: none;
 border:none;
-font: 15pt &quot;Bebas Kai&quot;;
-	color: rgb(255, 255, 255);
+font: 13pt &quot;Bebas Kai&quot;;
+ 
+
+	color: rgb(192, 191, 188);
  
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Cycle_Up.png);
 }
@@ -15648,8 +15650,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
 background-color: transparent;
 background: none;
 border:none;
-font: 15pt &quot;Bebas Kai&quot;;
-	color: rgb(255, 255, 255);
+font: 13pt &quot;Bebas Kai&quot;;
+	color: rgb(192, 191, 188);
  
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Pause_Up.png);
 }
@@ -15683,8 +15685,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
 background-color: transparent;
 background: none;
 border:none;
- 	color: rgb(255, 255, 255);
-font: 15pt &quot;Bebas Kai&quot;;
+	color: rgb(192, 191, 188);
+font: 13pt &quot;Bebas Kai&quot;;
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Stop_Up.png);
 }
 
