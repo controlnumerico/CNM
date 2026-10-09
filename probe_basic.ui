@@ -2680,8 +2680,8 @@ font: 20pt &quot;Bebas Kai&quot;;
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>1</y>
-                <width>100</width>
+                <y>0</y>
+                <width>125</width>
                 <height>57</height>
                </rect>
               </property>
@@ -2693,7 +2693,7 @@ font: 20pt &quot;Bebas Kai&quot;;
               </property>
               <property name="maximumSize">
                <size>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </size>
               </property>
@@ -2704,16 +2704,16 @@ background-color: transparent;
 background: none;
 border:none;
 color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOff.png);
 }
 
 #dialogbutton:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOn.png);
 color: rgb(246, 211, 45);
 }</string>
               </property>
               <property name="text">
-               <string>OPEN FILE</string>
+               <string>O P E N  F I L E</string>
               </property>
               <property name="dialogName" stdset="0">
                <string>open_file</string>
@@ -2722,9 +2722,9 @@ color: rgb(246, 211, 45);
              <widget class="DialogButton" name="dialogbutton_3">
               <property name="geometry">
                <rect>
-                <x>110</x>
+                <x>126</x>
                 <y>0</y>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </rect>
               </property>
@@ -2736,7 +2736,7 @@ color: rgb(246, 211, 45);
               </property>
               <property name="maximumSize">
                <size>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </size>
               </property>
@@ -2747,16 +2747,16 @@ background-color: transparent;
 background: none;
 border:none;
 color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOff.png);
 }
 
 #dialogbutton_3:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOn.png);
 color: rgb(246, 211, 45);
 }</string>
               </property>
               <property name="text">
-               <string>OPEN 1001</string>
+               <string>C L O S E</string>
               </property>
               <property name="rules" stdset="0">
                <string>[]</string>
@@ -2768,9 +2768,9 @@ color: rgb(246, 211, 45);
              <widget class="DialogButton" name="dialogbutton_4">
               <property name="geometry">
                <rect>
-                <x>220</x>
+                <x>252</x>
                 <y>0</y>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </rect>
               </property>
@@ -2782,7 +2782,7 @@ color: rgb(246, 211, 45);
               </property>
               <property name="maximumSize">
                <size>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </size>
               </property>
@@ -2793,16 +2793,16 @@ background-color: transparent;
 background: none;
 border:none;
 color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOff.png);
 }
 
 #dialogbutton_4:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOn.png);
 color: rgb(246, 211, 45);
 }</string>
               </property>
               <property name="text">
-               <string>OPEN 1002</string>
+               <string>E D I T </string>
               </property>
               <property name="dialogName" stdset="0">
                <string>open_file</string>
@@ -2811,9 +2811,9 @@ color: rgb(246, 211, 45);
              <widget class="DialogButton" name="dialogbutton_5">
               <property name="geometry">
                <rect>
-                <x>330</x>
+                <x>378</x>
                 <y>0</y>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </rect>
               </property>
@@ -2825,7 +2825,7 @@ color: rgb(246, 211, 45);
               </property>
               <property name="maximumSize">
                <size>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </size>
               </property>
@@ -2836,16 +2836,16 @@ background-color: transparent;
 background: none;
 border:none;
 color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOff.png);
 }
 
 #dialogbutton_5:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOn.png);
 color: rgb(246, 211, 45);
 }</string>
               </property>
               <property name="text">
-               <string>OPEN 1003</string>
+               <string>U P</string>
               </property>
               <property name="dialogName" stdset="0">
                <string>open_file</string>
@@ -2854,9 +2854,9 @@ color: rgb(246, 211, 45);
              <widget class="DialogButton" name="dialogbutton_6">
               <property name="geometry">
                <rect>
-                <x>440</x>
+                <x>504</x>
                 <y>0</y>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </rect>
               </property>
@@ -2868,7 +2868,7 @@ color: rgb(246, 211, 45);
               </property>
               <property name="maximumSize">
                <size>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </size>
               </property>
@@ -2879,16 +2879,16 @@ background-color: transparent;
 background: none;
 border:none;
 color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOff.png);
 }
 
 #dialogbutton_6:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOn.png);
 color: rgb(246, 211, 45);
 }</string>
               </property>
               <property name="text">
-               <string>OPEN 1004</string>
+               <string>O P E N   1 0 0 1</string>
               </property>
               <property name="dialogName" stdset="0">
                <string>open_file</string>
@@ -2897,9 +2897,9 @@ color: rgb(246, 211, 45);
              <widget class="DialogButton" name="dialogbutton_7">
               <property name="geometry">
                <rect>
-                <x>550</x>
+                <x>630</x>
                 <y>0</y>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </rect>
               </property>
@@ -2911,7 +2911,7 @@ color: rgb(246, 211, 45);
               </property>
               <property name="maximumSize">
                <size>
-                <width>100</width>
+                <width>125</width>
                 <height>57</height>
                </size>
               </property>
@@ -2922,16 +2922,59 @@ background-color: transparent;
 background: none;
 border:none;
 color: rgb(71, 87, 94);
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOff.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOff.png);
 }
 
 #dialogbutton_7:pressed {
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/VTKMenuOn.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOn.png);
 color: rgb(246, 211, 45);
 }</string>
               </property>
               <property name="text">
-               <string>OPEN 1005</string>
+               <string>O P E N   1 0 0 2</string>
+              </property>
+              <property name="dialogName" stdset="0">
+               <string>open_file</string>
+              </property>
+             </widget>
+             <widget class="DialogButton" name="dialogbutton_8">
+              <property name="geometry">
+               <rect>
+                <x>756</x>
+                <y>0</y>
+                <width>125</width>
+                <height>57</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>125</width>
+                <height>57</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">#dialogbutton_8{
+font: 15pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+color: rgb(71, 87, 94);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOff.png);
+}
+
+#dialogbutton_8:pressed {
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/MenuOn.png);
+color: rgb(246, 211, 45);
+}</string>
+              </property>
+              <property name="text">
+               <string>O P E N   1 0 0 3</string>
               </property>
               <property name="dialogName" stdset="0">
                <string>open_file</string>
@@ -14609,8 +14652,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed
        </property>
        <property name="iconSize">
         <size>
-         <width>20</width>
-         <height>20</height>
+         <width>30</width>
+         <height>30</height>
         </size>
        </property>
        <property name="rules" stdset="0">
@@ -14700,8 +14743,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG//CNC_Zero_presse
        </property>
        <property name="iconSize">
         <size>
-         <width>20</width>
-         <height>20</height>
+         <width>30</width>
+         <height>30</height>
         </size>
        </property>
        <property name="rules" stdset="0">
@@ -14791,8 +14834,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed
        </property>
        <property name="iconSize">
         <size>
-         <width>20</width>
-         <height>20</height>
+         <width>30</width>
+         <height>30</height>
         </size>
        </property>
        <property name="rules" stdset="0">
@@ -14939,8 +14982,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed
        </property>
        <property name="iconSize">
         <size>
-         <width>20</width>
-         <height>20</height>
+         <width>30</width>
+         <height>30</height>
         </size>
        </property>
        <property name="rules" stdset="0">
@@ -15019,8 +15062,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Zero_pressed
        </property>
        <property name="iconSize">
         <size>
-         <width>20</width>
-         <height>20</height>
+         <width>30</width>
+         <height>30</height>
         </size>
        </property>
        <property name="rules" stdset="0">
@@ -16038,10 +16081,10 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_MDI_pre
        </property>
        <property name="geometry">
         <rect>
-         <x>958</x>
-         <y>730</y>
-         <width>110</width>
-         <height>87</height>
+         <x>950</x>
+         <y>710</y>
+         <width>125</width>
+         <height>95</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -16052,8 +16095,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_MDI_pre
        </property>
        <property name="minimumSize">
         <size>
-         <width>110</width>
-         <height>87</height>
+         <width>125</width>
+         <height>95</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -16106,10 +16149,10 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_Back.png
        </property>
        <property name="geometry">
         <rect>
-         <x>958</x>
-         <y>810</y>
-         <width>110</width>
-         <height>87</height>
+         <x>950</x>
+         <y>800</y>
+         <width>125</width>
+         <height>95</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -16120,14 +16163,14 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_Back.png
        </property>
        <property name="minimumSize">
         <size>
-         <width>110</width>
+         <width>125</width>
          <height>87</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>125</width>
-         <height>90</height>
+         <height>95</height>
         </size>
        </property>
        <property name="focusPolicy">
@@ -16174,10 +16217,10 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_XY.png);
        </property>
        <property name="geometry">
         <rect>
-         <x>958</x>
+         <x>950</x>
          <y>890</y>
-         <width>110</width>
-         <height>87</height>
+         <width>125</width>
+         <height>95</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -16195,7 +16238,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_XY.png);
        <property name="maximumSize">
         <size>
          <width>125</width>
-         <height>90</height>
+         <height>95</height>
         </size>
        </property>
        <property name="focusPolicy">
@@ -16241,10 +16284,10 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_XYZ.png)
        </property>
        <property name="geometry">
         <rect>
-         <x>958</x>
-         <y>650</y>
-         <width>110</width>
-         <height>87</height>
+         <x>950</x>
+         <y>620</y>
+         <width>125</width>
+         <height>95</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -16262,7 +16305,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_XYZ.png)
        <property name="maximumSize">
         <size>
          <width>125</width>
-         <height>90</height>
+         <height>95</height>
         </size>
        </property>
        <property name="focusPolicy">
