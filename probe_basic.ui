@@ -15681,8 +15681,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="StatusLED" name="statusled_11">
        <property name="geometry">
         <rect>
-         <x>510</x>
-         <y>1540</y>
+         <x>590</x>
+         <y>1542</y>
          <width>15</width>
          <height>15</height>
         </rect>
@@ -15823,8 +15823,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Manual_
       <widget class="StatusLED" name="statusled_10">
        <property name="geometry">
         <rect>
-         <x>416</x>
-         <y>1540</y>
+         <x>490</x>
+         <y>1542</y>
          <width>15</width>
          <height>15</height>
         </rect>
@@ -15910,7 +15910,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_Manual_
       <widget class="ActionButton" name="Coolant">
        <property name="geometry">
         <rect>
-         <x>357</x>
+         <x>427</x>
          <y>1534</y>
          <width>87</width>
          <height>87</height>
@@ -15951,7 +15951,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Coolant_Down.png
       <widget class="ActionButton" name="Mist">
        <property name="geometry">
         <rect>
-         <x>457</x>
+         <x>527</x>
          <y>1534</y>
          <width>87</width>
          <height>87</height>
@@ -16032,6 +16032,276 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_MDI_pre
         <string>machine.mode.mdi</string>
        </property>
       </widget>
+      <widget class="MDIButton" name="XY_Zero_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>958</x>
+         <y>730</y>
+         <width>110</width>
+         <height>87</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>110</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#XY_Zero_2 {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+ 
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Up_Back.png);
+}
+
+#XY_Zero_2:pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_Back.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[]</string>
+       </property>
+       <property name="MDICommand" stdset="0">
+        <string>G0 X20 Y20</string>
+       </property>
+      </widget>
+      <widget class="MDIButton" name="XY_Zero_3">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>958</x>
+         <y>810</y>
+         <width>110</width>
+         <height>87</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>110</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#XY_Zero_3 {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+ 
+  
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Up_XY.png);
+}
+
+#XY_Zero_3:pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_XY.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[]</string>
+       </property>
+       <property name="MDICommand" stdset="0">
+        <string>G0 X0 Y0</string>
+       </property>
+      </widget>
+      <widget class="MDIButton" name="XY_Zero_4">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>958</x>
+         <y>890</y>
+         <width>110</width>
+         <height>87</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>110</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#XY_Zero_4 {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Up_XYZ.png);
+}
+
+#XY_Zero_4:pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_XYZ.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[]</string>
+       </property>
+       <property name="MDICommand" stdset="0">
+        <string>G0 X0 Y0 Z0</string>
+       </property>
+      </widget>
+      <widget class="MDIButton" name="XY_Zero">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>958</x>
+         <y>650</y>
+         <width>110</width>
+         <height>87</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>110</width>
+         <height>87</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#XY_Zero {
+font: 40pt &quot;Bebas Kai&quot;;
+background-color: transparent;
+background: none;
+border:none;
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Up_Front.png);
+}
+
+#XY_Zero:pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_Front.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="rules" stdset="0">
+        <string>[]</string>
+       </property>
+       <property name="MDICommand" stdset="0">
+        <string>G0 X10 Y10</string>
+       </property>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -16055,16 +16325,20 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/CNC_Mode_MDI_pre
       <zorder>statusled_9</zorder>
       <zorder>Start</zorder>
       <zorder>Pausa</zorder>
-      <zorder>statusled_11</zorder>
       <zorder>mode_auto</zorder>
       <zorder>mode_manual</zorder>
       <zorder>statusled</zorder>
-      <zorder>statusled_10</zorder>
       <zorder>statusled_3</zorder>
       <zorder>Coolant</zorder>
       <zorder>Mist</zorder>
       <zorder>mode_mdi</zorder>
       <zorder>statusled_2</zorder>
+      <zorder>statusled_11</zorder>
+      <zorder>statusled_10</zorder>
+      <zorder>XY_Zero_2</zorder>
+      <zorder>XY_Zero_3</zorder>
+      <zorder>XY_Zero_4</zorder>
+      <zorder>XY_Zero</zorder>
      </widget>
     </item>
    </layout>
