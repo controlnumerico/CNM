@@ -16754,6 +16754,111 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
         </property>
        </widget>
       </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>730</x>
+         <y>1887</y>
+         <width>16</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+background: none;
+border:none;
+ 
+	color: rgb(246, 245, 244);
+font: 12pt &quot;Bebas Kai&quot;;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>770</x>
+         <y>1780</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+background: none;
+border:none;
+ 
+	color: rgb(246, 245, 244);
+font: 12pt &quot;Bebas Kai&quot;;</string>
+       </property>
+       <property name="text">
+        <string>100</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_32">
+       <property name="geometry">
+        <rect>
+         <x>828</x>
+         <y>1887</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+background: none;
+border:none;
+ 
+	color: rgb(246, 245, 244);
+font: 12pt &quot;Bebas Kai&quot;;</string>
+       </property>
+       <property name="text">
+        <string>200</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>712</x>
+         <y>1830</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+background: none;
+border:none;
+ 
+	color: rgb(246, 245, 244);
+font: 12pt &quot;Bebas Kai&quot;;</string>
+       </property>
+       <property name="text">
+        <string>50</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>838</x>
+         <y>1830</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+background: none;
+border:none;
+ 
+	color: rgb(246, 245, 244);
+font: 12pt &quot;Bebas Kai&quot;;</string>
+       </property>
+       <property name="text">
+        <string>150</string>
+       </property>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -16805,6 +16910,11 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
       <zorder>JOG_6</zorder>
       <zorder>label_30</zorder>
       <zorder>frame_19</zorder>
+      <zorder>label_19</zorder>
+      <zorder>label_31</zorder>
+      <zorder>label_32</zorder>
+      <zorder>label_33</zorder>
+      <zorder>label_34</zorder>
      </widget>
     </item>
    </layout>
