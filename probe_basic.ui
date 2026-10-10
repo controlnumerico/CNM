@@ -351,7 +351,7 @@ QTabBar::tab:selected {
          <enum>QTabWidget::TabPosition::South</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="usesScrollButtons">
          <bool>false</bool>
@@ -16479,10 +16479,10 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="QFrame" name="frame_20">
        <property name="geometry">
         <rect>
-         <x>570</x>
-         <y>1793</y>
-         <width>120</width>
-         <height>120</height>
+         <x>641</x>
+         <y>1808</y>
+         <width>105</width>
+         <height>105</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -16509,10 +16509,10 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
        <widget class="CustomKnob" name="Knob5" native="true">
         <property name="geometry">
          <rect>
-          <x>570</x>
-          <y>1793</y>
-          <width>120</width>
-          <height>120</height>
+          <x>0</x>
+          <y>0</y>
+          <width>105</width>
+          <height>105</height>
          </rect>
         </property>
        </widget>
