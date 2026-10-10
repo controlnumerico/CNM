@@ -351,7 +351,7 @@ QTabBar::tab:selected {
          <enum>QTabWidget::TabPosition::South</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="usesScrollButtons">
          <bool>false</bool>
@@ -16526,7 +16526,7 @@ font: 12pt &quot;Bebas Kai&quot;;</string>
       <widget class="ActionButton" name="Stop_2">
        <property name="geometry">
         <rect>
-         <x>700</x>
+         <x>690</x>
          <y>1650</y>
          <width>50</width>
          <height>50</height>
@@ -16561,7 +16561,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="ActionButton" name="Stop_3">
        <property name="geometry">
         <rect>
-         <x>650</x>
+         <x>640</x>
          <y>1700</y>
          <width>50</width>
          <height>50</height>
@@ -16596,7 +16596,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="ActionButton" name="Stop_4">
        <property name="geometry">
         <rect>
-         <x>750</x>
+         <x>740</x>
          <y>1700</y>
          <width>50</width>
          <height>50</height>
@@ -16631,7 +16631,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="ActionButton" name="Stop_5">
        <property name="geometry">
         <rect>
-         <x>700</x>
+         <x>690</x>
          <y>1750</y>
          <width>50</width>
          <height>50</height>
