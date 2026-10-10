@@ -15358,8 +15358,8 @@ color: rgb(237, 51, 59);</string>
       <widget class="QFrame" name="frame_10">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>1730</y>
+         <x>42</x>
+         <y>1673</y>
          <width>140</width>
          <height>140</height>
         </rect>
@@ -15400,7 +15400,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>1730</y>
+         <y>1694</y>
          <width>140</width>
          <height>140</height>
         </rect>
@@ -16397,6 +16397,27 @@ border: none;
         <string>WWW.CONTROLNUMERICOMEXICO.COM</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>1650</y>
+         <width>62</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+background: none;
+border:none;
+ 
+	color: rgb(246, 245, 244);
+font: 18pt &quot;Bebas Kai&quot;;</string>
+       </property>
+       <property name="text">
+        <string>SPINDLE</string>
+       </property>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -16435,6 +16456,7 @@ border: none;
       <zorder>XY_Zero_4</zorder>
       <zorder>XY_Zero</zorder>
       <zorder>exitAppBtn2_2</zorder>
+      <zorder>label_2</zorder>
      </widget>
     </item>
    </layout>
