@@ -16666,7 +16666,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="ActionButton" name="JOG_5">
        <property name="geometry">
         <rect>
-         <x>810</x>
+         <x>811</x>
          <y>1640</y>
          <width>60</width>
          <height>60</height>
@@ -16701,7 +16701,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="ActionButton" name="JOG_6">
        <property name="geometry">
         <rect>
-         <x>810</x>
+         <x>811</x>
          <y>1750</y>
          <width>60</width>
          <height>60</height>
