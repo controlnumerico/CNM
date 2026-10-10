@@ -351,7 +351,7 @@ QTabBar::tab:selected {
          <enum>QTabWidget::TabPosition::South</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <property name="usesScrollButtons">
          <bool>false</bool>
@@ -7173,47 +7173,6 @@ QPushButton[style='active'][flashState='false']{
              <property name="filename" stdset="0">
               <string>probe_front_right_top_corner.ngc</string>
              </property>
-            </widget>
-            <widget class="QFrame" name="frame_19">
-             <property name="geometry">
-              <rect>
-               <x>470</x>
-               <y>960</y>
-               <width>140</width>
-               <height>140</height>
-              </rect>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">
-#frame_19 {
-
-
-
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
-
-
-}
-</string>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Shape::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
-             </property>
-             <property name="lineWidth">
-              <number>0</number>
-             </property>
-             <widget class="CustomKnob" name="Knob4" native="true">
-              <property name="geometry">
-               <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>140</width>
-                <height>140</height>
-               </rect>
-              </property>
-             </widget>
             </widget>
            </widget>
           </item>
@@ -16754,6 +16713,47 @@ font: 15pt &quot;Bebas Kai&quot;;</string>
         <string>JOG</string>
        </property>
       </widget>
+      <widget class="QFrame" name="frame_19">
+       <property name="geometry">
+        <rect>
+         <x>930</x>
+         <y>1480</y>
+         <width>140</width>
+         <height>140</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+#frame_19 {
+
+
+
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
+
+
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <widget class="CustomKnob" name="Knob4" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>140</width>
+          <height>140</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
       <zorder>frame_4</zorder>
       <zorder>exitAppBtn</zorder>
       <zorder>stop</zorder>
@@ -16804,6 +16804,7 @@ font: 15pt &quot;Bebas Kai&quot;;</string>
       <zorder>JOG_5</zorder>
       <zorder>JOG_6</zorder>
       <zorder>label_30</zorder>
+      <zorder>frame_19</zorder>
      </widget>
     </item>
    </layout>
