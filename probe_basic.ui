@@ -15358,8 +15358,8 @@ color: rgb(237, 51, 59);</string>
       <widget class="QFrame" name="frame_10">
        <property name="geometry">
         <rect>
-         <x>42</x>
-         <y>1673</y>
+         <x>28</x>
+         <y>1652</y>
          <width>140</width>
          <height>140</height>
         </rect>
@@ -16400,8 +16400,8 @@ border: none;
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>1650</y>
+         <x>23</x>
+         <y>1879</y>
          <width>62</width>
          <height>16</height>
         </rect>
