@@ -395,7 +395,6 @@ class ProbeBasic(VCPMainWindow):
 
 
 
-
         self.label = self.findChild(QLabel, "MyStatusLabel")
         self.edit = self.findChild(QStatusBar, "statusBar")
         #self.edit.showMessage("Hola")
