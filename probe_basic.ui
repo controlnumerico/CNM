@@ -7215,47 +7215,6 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
               </property>
              </widget>
             </widget>
-            <widget class="QFrame" name="frame_20">
-             <property name="geometry">
-              <rect>
-               <x>660</x>
-               <y>960</y>
-               <width>140</width>
-               <height>140</height>
-              </rect>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">
-#frame_20 {
-
-
-
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
-
-
-}
-</string>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Shape::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
-             </property>
-             <property name="lineWidth">
-              <number>0</number>
-             </property>
-             <widget class="CustomKnob" name="Knob5" native="true">
-              <property name="geometry">
-               <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>140</width>
-                <height>140</height>
-               </rect>
-              </property>
-             </widget>
-            </widget>
            </widget>
           </item>
          </layout>
@@ -16523,62 +16482,27 @@ font: 12pt &quot;Bebas Kai&quot;;</string>
         <string>150</string>
        </property>
       </widget>
-      <widget class="ActionButton" name="Stop_2">
-       <property name="geometry">
-        <rect>
-         <x>690</x>
-         <y>1650</y>
-         <width>50</width>
-         <height>50</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">#Stop_2 {
-background-color: transparent;
-background: none;
-border:none;
- 
-	color: rgb(246, 245, 244);
-font: 13pt &quot;Bebas Kai&quot;;
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_50x50.png);
-}
-
-#Stop_2:pressed {
- 
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
-}</string>
-       </property>
-       <property name="text">
-        <string>y</string>
-       </property>
-       <property name="shortcut">
-        <string>Ctrl+1</string>
-       </property>
-       <property name="actionName" stdset="0">
-        <string>program.abort</string>
-       </property>
-      </widget>
-      <widget class="ActionButton" name="Stop_3">
+      <widget class="ActionButton" name="JOG">
        <property name="geometry">
         <rect>
          <x>640</x>
-         <y>1700</y>
-         <width>50</width>
-         <height>50</height>
+         <y>1690</y>
+         <width>60</width>
+         <height>60</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#Stop_3 {
+        <string notr="true">#JOG {
 background-color: transparent;
 background: none;
 border:none;
  
 	color: rgb(246, 245, 244);
 font: 13pt &quot;Bebas Kai&quot;;
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_50x50.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_60x60.png);
 }
 
-#Stop_3:pressed {
+#JOG:pressed {
  
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
 }</string>
@@ -16590,100 +16514,176 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
         <string>Ctrl+1</string>
        </property>
        <property name="actionName" stdset="0">
-        <string>program.abort</string>
+        <string>machine.jog.axis:x,neg</string>
        </property>
       </widget>
-      <widget class="ActionButton" name="Stop_4">
+      <widget class="QFrame" name="frame_20">
        <property name="geometry">
         <rect>
-         <x>740</x>
-         <y>1700</y>
-         <width>50</width>
-         <height>50</height>
+         <x>570</x>
+         <y>1793</y>
+         <width>120</width>
+         <height>120</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#Stop_4 {
-background-color: transparent;
-background: none;
-border:none;
- 
-	color: rgb(246, 245, 244);
-font: 13pt &quot;Bebas Kai&quot;;
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_50x50.png);
-}
+        <string notr="true">
+#frame_20 {
 
-#Stop_4:pressed {
- 
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
-}</string>
+
+
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
+
+
+}
+</string>
        </property>
-       <property name="text">
-        <string>x</string>
+       <property name="frameShape">
+        <enum>QFrame::Shape::NoFrame</enum>
        </property>
-       <property name="shortcut">
-        <string>Ctrl+1</string>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
-       <property name="actionName" stdset="0">
-        <string>program.abort</string>
+       <property name="lineWidth">
+        <number>0</number>
        </property>
+       <widget class="CustomKnob" name="Knob5" native="true">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>1793</y>
+          <width>120</width>
+          <height>120</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
-      <widget class="ActionButton" name="Stop_5">
+      <widget class="ActionButton" name="JOG_2">
        <property name="geometry">
         <rect>
          <x>690</x>
-         <y>1750</y>
-         <width>50</width>
-         <height>50</height>
+         <y>1640</y>
+         <width>60</width>
+         <height>60</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#Stop_5 {
+        <string notr="true">#JOG_2 {
 background-color: transparent;
 background: none;
 border:none;
  
 	color: rgb(246, 245, 244);
 font: 13pt &quot;Bebas Kai&quot;;
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_50x50.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_60x60.png);
 }
 
-#Stop_5:pressed {
+#JOG_2:pressed {
  
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
 }</string>
        </property>
        <property name="text">
-        <string>y</string>
+        <string>Y</string>
        </property>
        <property name="shortcut">
         <string>Ctrl+1</string>
        </property>
        <property name="actionName" stdset="0">
-        <string>program.abort</string>
+        <string>machine.jog.axis:y,pos</string>
        </property>
       </widget>
-      <widget class="ActionButton" name="Stop_6">
+      <widget class="ActionButton" name="JOG_3">
        <property name="geometry">
         <rect>
-         <x>820</x>
-         <y>1650</y>
-         <width>50</width>
-         <height>50</height>
+         <x>740</x>
+         <y>1690</y>
+         <width>60</width>
+         <height>60</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#Stop_6 {
+        <string notr="true">#JOG_3 {
 background-color: transparent;
 background: none;
 border:none;
  
 	color: rgb(246, 245, 244);
 font: 13pt &quot;Bebas Kai&quot;;
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_50x50.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_60x60.png);
 }
 
-#Stop_6:pressed {
+#JOG_3:pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>X</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+1</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>machine.jog.axis:x,pos</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="JOG_4">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>1740</y>
+         <width>60</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#JOG_4 {
+background-color: transparent;
+background: none;
+border:none;
+ 
+	color: rgb(246, 245, 244);
+font: 13pt &quot;Bebas Kai&quot;;
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_60x60.png);
+}
+
+#JOG_4:pressed {
+ 
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>Y</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+1</string>
+       </property>
+       <property name="actionName" stdset="0">
+        <string>machine.jog.axis:y,neg</string>
+       </property>
+      </widget>
+      <widget class="ActionButton" name="JOG_5">
+       <property name="geometry">
+        <rect>
+         <x>810</x>
+         <y>1640</y>
+         <width>60</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#JOG_5 {
+background-color: transparent;
+background: none;
+border:none;
+ 
+	color: rgb(246, 245, 244);
+font: 13pt &quot;Bebas Kai&quot;;
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_60x60.png);
+}
+
+#JOG_5:pressed {
  
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
 }</string>
@@ -16695,30 +16695,30 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
         <string>Ctrl+1</string>
        </property>
        <property name="actionName" stdset="0">
-        <string>program.abort</string>
+        <string>machine.jog.axis:z,pos</string>
        </property>
       </widget>
-      <widget class="ActionButton" name="Stop_7">
+      <widget class="ActionButton" name="JOG_6">
        <property name="geometry">
         <rect>
-         <x>820</x>
+         <x>810</x>
          <y>1750</y>
-         <width>50</width>
-         <height>50</height>
+         <width>60</width>
+         <height>60</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">#Stop_7{
+        <string notr="true">#JOG_6 {
 background-color: transparent;
 background: none;
 border:none;
  
 	color: rgb(246, 245, 244);
 font: 13pt &quot;Bebas Kai&quot;;
-image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_50x50.png);
+image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/boton_perilla_60x60.png);
 }
 
-#Stop_7:pressed {
+#JOG_6:pressed {
  
 image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png);
 }</string>
@@ -16730,7 +16730,28 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
         <string>Ctrl+1</string>
        </property>
        <property name="actionName" stdset="0">
-        <string>program.abort</string>
+        <string>machine.jog.axis:z,neg</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_30">
+       <property name="geometry">
+        <rect>
+         <x>710</x>
+         <y>1710</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+background: none;
+border:none;
+ 
+	color: rgb(246, 245, 244);
+font: 15pt &quot;Bebas Kai&quot;;</string>
+       </property>
+       <property name="text">
+        <string>JOG</string>
        </property>
       </widget>
       <zorder>frame_4</zorder>
@@ -16775,12 +16796,14 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <zorder>label_20</zorder>
       <zorder>label_27</zorder>
       <zorder>label_29</zorder>
-      <zorder>Stop_2</zorder>
-      <zorder>Stop_3</zorder>
-      <zorder>Stop_4</zorder>
-      <zorder>Stop_5</zorder>
-      <zorder>Stop_6</zorder>
-      <zorder>Stop_7</zorder>
+      <zorder>JOG</zorder>
+      <zorder>frame_20</zorder>
+      <zorder>JOG_2</zorder>
+      <zorder>JOG_3</zorder>
+      <zorder>JOG_4</zorder>
+      <zorder>JOG_5</zorder>
+      <zorder>JOG_6</zorder>
+      <zorder>label_30</zorder>
      </widget>
     </item>
    </layout>
