@@ -15358,10 +15358,10 @@ color: rgb(237, 51, 59);</string>
       <widget class="QFrame" name="frame_10">
        <property name="geometry">
         <rect>
-         <x>28</x>
-         <y>1658</y>
-         <width>140</width>
-         <height>140</height>
+         <x>33</x>
+         <y>1661</y>
+         <width>130</width>
+         <height>130</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -15390,8 +15390,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>140</width>
-          <height>140</height>
+          <width>130</width>
+          <height>130</height>
          </rect>
         </property>
        </widget>
@@ -15399,8 +15399,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
       <widget class="QFrame" name="frame_11">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>1688</y>
+         <x>199</x>
+         <y>1700</y>
          <width>140</width>
          <height>140</height>
         </rect>
@@ -15440,8 +15440,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
       <widget class="QFrame" name="frame_18">
        <property name="geometry">
         <rect>
-         <x>370</x>
-         <y>1688</y>
+         <x>347</x>
+         <y>1700</y>
          <width>140</width>
          <height>140</height>
         </rect>
@@ -16479,10 +16479,10 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
       <widget class="QFrame" name="frame_20">
        <property name="geometry">
         <rect>
-         <x>641</x>
-         <y>1808</y>
-         <width>105</width>
-         <height>105</height>
+         <x>728</x>
+         <y>1799</y>
+         <width>110</width>
+         <height>110</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -16511,8 +16511,8 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/1Knob.png);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>105</width>
-          <height>105</height>
+          <width>110</width>
+          <height>110</height>
          </rect>
         </property>
        </widget>
@@ -16661,7 +16661,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>811</x>
-         <y>1750</y>
+         <y>1740</y>
          <width>60</width>
          <height>60</height>
         </rect>
@@ -16716,8 +16716,8 @@ font: 15pt &quot;Bebas Kai&quot;;</string>
       <widget class="QFrame" name="frame_19">
        <property name="geometry">
         <rect>
-         <x>930</x>
-         <y>1480</y>
+         <x>496</x>
+         <y>1700</y>
          <width>140</width>
          <height>140</height>
         </rect>
