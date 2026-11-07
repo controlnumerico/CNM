@@ -15521,7 +15521,7 @@ background-color: rgb(247, 124, 22);
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1010</y>
+         <y>1228</y>
          <width>120</width>
          <height>120</height>
         </rect>
@@ -15559,7 +15559,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1140</y>
+         <y>1361</y>
          <width>120</width>
          <height>120</height>
         </rect>
@@ -15594,7 +15594,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1270</y>
+         <y>1490</y>
          <width>120</width>
          <height>120</height>
         </rect>
@@ -15629,7 +15629,7 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/E_Stop_Inac.png)
        <property name="geometry">
         <rect>
          <x>953</x>
-         <y>1140</y>
+         <y>1360</y>
          <width>120</width>
          <height>120</height>
         </rect>
@@ -16286,15 +16286,15 @@ image: url(/home/cnc/dev/probe_basic/src/probe_basic/images/iMG/Go_Down_Front.pn
         <rect>
          <x>221</x>
          <y>1640</y>
-         <width>391</width>
+         <width>431</width>
          <height>24</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Sans</family>
-         <pointsize>12</pointsize>
-         <italic>true</italic>
+         <family>Droid Sans Fallback</family>
+         <pointsize>13</pointsize>
+         <italic>false</italic>
          <bold>true</bold>
         </font>
        </property>
@@ -16687,8 +16687,8 @@ font: 20pt &quot;Bebas Kai&quot;;</string>
       <widget class="QFrame" name="frame_19">
        <property name="geometry">
         <rect>
-         <x>920</x>
-         <y>1470</y>
+         <x>660</x>
+         <y>1480</y>
          <width>140</width>
          <height>140</height>
         </rect>
